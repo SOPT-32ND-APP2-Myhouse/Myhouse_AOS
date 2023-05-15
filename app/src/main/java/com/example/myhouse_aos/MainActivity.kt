@@ -1,11 +1,12 @@
 package com.example.myhouse_aos
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.myhouse_aos.databinding.ActivityMainBinding
+import com.example.myhouse_aos.util.binding.BindingActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
     }
 }
