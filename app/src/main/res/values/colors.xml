@@ -5,6 +5,17 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- MyHouse colors -->
+    <color name="main_color">#35C5F0</color>
+    <color name="point_color">#FF7777</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#2F3438</color>
+
+    <color name="grey_20">#F7F9FA</color>
+    <color name="light_grey">#EFF1F2</color>
+    <color name="grey">#E3E5E5</color>
+    <color name="dark_grey">#828C94</color>
+
 </resources>
