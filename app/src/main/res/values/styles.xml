@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Title01" parent="">
+        <item name="fontWeight">700</item>
+        <item name="android:fontFamily">@font/notosans_bold_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
+    <style name="TextAppearance.title01" parent="">
+        <item name="fontWeight">700</item>
+        <item name="android:fontFamily">@font/notosans_bold_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+
+    <style name="TextAppearance.headline01" parent="">
+        <item name="fontWeight">700</item>
+        <item name="android:fontFamily">@font/notosans_bold_font</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="TextAppearance.headline02" parent="">
+        <item name="fontWeight">500</item>
+        <item name="android:fontFamily">@font/notosans_medium_font</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="TextAppearance.body01" parent="">
+        <item name="fontWeight">400</item>
+        <item name="android:fontFamily">@font/notosans_regular_font</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">18dp</item>
+    </style>
+
+    <style name="TextAppearance.body02" parent="">
+        <item name="fontWeight">400</item>
+        <item name="android:fontFamily">@font/notosans_regular_font</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">17dp</item>
+    </style>
+
+    <style name="TextAppearance.caption01" parent="">
+        <item name="fontWeight">700</item>
+        <item name="android:fontFamily">@font/notosans_bold_font</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">17dp</item>
+    </style>
+
+    <style name="TextAppearance.caption02" parent="">
+        <item name="fontWeight">500</item>
+        <item name="android:fontFamily">@font/notosans_medium_font</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">17dp</item>
+    </style>
+
+    <style name="TextAppearance.miniCaption01" parent="">
+        <item name="fontWeight">500</item>
+        <item name="android:fontFamily">@font/notosans_medium_font</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">13dp</item>
+    </style>
+
+    <style name="TextAppearance.miniCaption02" parent="">
+        <item name="fontWeight">400</item>
+        <item name="android:fontFamily">@font/notosans_regular_font</item>
+        <item name="android:textSize">9sp</item>
+        <item name="lineHeight">14dp</item>
+    </style>
+
+    <style name="TextAppearance.miniCaption03" parent="">
+        <item name="fontWeight">500</item>
+        <item name="android:fontFamily">@font/notosans_medium_font</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">13dp</item>
+    </style>
+
+    <style name="TextAppearance.miniCaption04" parent="">
+        <item name="fontWeight">500</item>
+        <item name="android:fontFamily">@font/notosans_medium_font</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">13dp</item>
+    </style>
+
+    <style name="TextAppearance.price" parent="">
+        <item name="android:fontFamily">@font/pretendard_bold_font</item>
+        <item name="fontWeight">700</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+</resources>
