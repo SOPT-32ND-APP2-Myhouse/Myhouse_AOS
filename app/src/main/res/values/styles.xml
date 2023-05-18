@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  ImageView Style  -->
+    <style name="Radius4">
+        <item name="cornerSize">4dp</item>
+    </style>
 
+    <!--  Text Style  -->
     <style name="TextAppearance.Title01" parent="">
         <item name="fontWeight">700</item>
         <item name="android:fontFamily">@font/notosans_bold_font</item>
