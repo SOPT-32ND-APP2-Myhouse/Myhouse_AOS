@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
+
+    <!--  post  -->
+    <string name="hint_search">오늘의집 통합검색</string>
+    <string name="post_tab_recommandation">추천</string>
+    <string name="post_tab_following">팔로잉</string>
+    <string name="post_tab_housewarming">집들이</string>
+    <string name="post_tab_knowhow">노하우</string>
+    <string name="post_tab_export">전문가집들이</string>
+    <string name="post_hot_content_title">🔹 오늘의집 인기 콘텐츠 BEST 🔹</string>
+    <string name="post_more">더보기</string>
 </resources>
