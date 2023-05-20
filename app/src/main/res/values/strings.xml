@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
+    <string name="home">홈</string>
+    <string name="todayfind">오늘의 발견</string>
+    <string name="shopping">쇼핑</string>
+    <string name="various">이사/시공/생활</string>
+    <string name="mypage">마이페이지</string>
 </resources>
