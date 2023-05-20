@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
+
+    <!--  scrap  -->
+    <string name="scrap_title">스크랩북</string>
+    <string name="scrap_edit">편집</string>
+    <string name="scrap_nickname">nickname</string>
 </resources>
