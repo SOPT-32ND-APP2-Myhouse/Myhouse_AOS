@@ -9,5 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="더미 엑티비티"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
