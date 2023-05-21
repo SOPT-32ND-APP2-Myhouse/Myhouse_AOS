@@ -5,4 +5,20 @@
     <string name="shopping">쇼핑</string>
     <string name="various">이사/시공/생활</string>
     <string name="mypage">마이페이지</string>
+    <string name="input_comment">댓글을 입력해주세요.</string>
+    <string name="follow">팔로우</string>
+    <string name="total_comment">총 7개의 댓글 중 최신 5개</string>
+    <string name="comment_option">5일 · 좋아요 · 답글달기 · 신고</string>
+    <string name="comment_btn">등록</string>
+    <string name="today_recommend">오늘의 추천 상품</string>
+    <string name="user_best">유저들의 비슷한 공간 베스트</string>
+    <string name="nickname">nickname</string>
+    <string name="created_date">created_date</string>
+    <string name="option_tag">option_tag</string>
+    <string name="like">좋아요</string>
+    <string name="scrap">스크랩</string>
+    <string name="comment">댓글</string>
+    <string name="user_comment">와 너무 예뻐요</string>
+    <string name="back">back</string>
+    <string name="more">more</string>
 </resources>
