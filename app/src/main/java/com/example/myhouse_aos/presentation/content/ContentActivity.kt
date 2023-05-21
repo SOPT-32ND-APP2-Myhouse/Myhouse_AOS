@@ -50,5 +50,9 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         binding.rvContentUserimage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         contentUserimageAdapter.submitList(viewModel.userimageList)
 
+        val contentTodayRecommendAdapter = ItemContentTodayRecommendAdapter()
+        binding.rvContentTodayrecommend.adapter = contentTodayRecommendAdapter
+        binding.rvContentTodayrecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        contentTodayRecommendAdapter.submitList(viewModel.todayRecommendList)
     }
 }
