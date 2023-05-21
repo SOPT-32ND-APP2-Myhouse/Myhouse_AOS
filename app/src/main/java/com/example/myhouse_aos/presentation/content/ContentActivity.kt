@@ -32,5 +32,16 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         binding.rvContentDetail.adapter = contentDetailAdapter
         contentDetailAdapter.submitList(viewModel.ContentDetailList)
 
+        val flexboxAdapter = ItemContentHashtagAdapter()
+        FlexboxLayoutManager(this).apply{
+            flexWrap = FlexWrap.WRAP
+            flexDirection = FlexDirection.ROW
+            justifyContent = JustifyContent.FLEX_START
+        }.let{
+            binding.rvContentHashtag.layoutManager = it
+            binding.rvContentHashtag.adapter = flexboxAdapter
+        }
+
+        flexboxAdapter.submitList(viewModel.hashTagList)
     }
 }
