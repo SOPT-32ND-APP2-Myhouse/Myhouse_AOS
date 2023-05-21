@@ -1,15 +1,13 @@
 package com.example.myhouse_aos.presentation.content
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ActivityContentBinding
-import com.example.myhouse_aos.domain.model.ContentDetailData
-import com.example.myhouse_aos.presentation.content.adapter.ItemContentDetailAdapter
-import com.example.myhouse_aos.presentation.content.adapter.ItemContentHashtagAdapter
+import com.example.myhouse_aos.presentation.content.adapter.*
 import com.example.myhouse_aos.util.binding.BindingActivity
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
@@ -25,6 +23,9 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
             this,
             R.layout.activity_content
         )
+
+
+
         binding = ActivityContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -43,5 +44,11 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         }
 
         flexboxAdapter.submitList(viewModel.hashTagList)
+
+        val contentUserimageAdapter = ItemContentUserimageAdapter()
+        binding.rvContentUserimage.adapter = contentUserimageAdapter
+        binding.rvContentUserimage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        contentUserimageAdapter.submitList(viewModel.userimageList)
+
     }
 }
