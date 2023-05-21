@@ -22,6 +22,8 @@
             android:drawableLeft="@drawable/ic_search"
             android:fontFamily="@font/notosans_regular"
             android:hint="@string/hint_search"
+            android:includeFontPadding="false"
+            android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/iv_post_big_bookmark"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,11 +32,11 @@
             android:id="@+id/iv_post_big_bookmark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="7dp"
             android:src="@drawable/ic_bookmark_big"
-            app:layout_constraintBottom_toBottomOf="@+id/et_post_search"
             app:layout_constraintEnd_toStartOf="@+id/iv_post_cart"
-            app:layout_constraintTop_toTopOf="@+id/et_post_search" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_post_cart"
@@ -42,8 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:src="@drawable/ic_cart"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_post_big_bookmark"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_post"
@@ -193,6 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing14"
                     android:layout_marginTop="22dp"
+                    android:includeFontPadding="false"
                     android:text="@string/post_hot_content_title"
                     android:textAppearance="@style/TextAppearance.headline01"
                     app:layout_constraintStart_toStartOf="parent"
@@ -202,6 +205,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/spacing14"
+                    android:includeFontPadding="false"
                     android:text="@string/post_more"
                     android:textAppearance="@style/TextAppearance.caption01"
                     android:textColor="@color/main_color"
@@ -227,7 +231,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="11dp"
                     android:layout_marginTop="41dp"
+                    android:layout_marginBottom="36dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rv_hot_contents"
