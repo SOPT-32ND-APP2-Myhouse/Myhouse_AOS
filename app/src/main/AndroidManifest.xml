@@ -23,7 +23,6 @@
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="true">
-
         </activity>
         <activity
             android:name=".presentation.dummy.DummyActivity"

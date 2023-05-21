@@ -20,10 +20,9 @@ class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemConte
     class ItemContentDetailViewHolder(private val binding: ItemContentDetailBinding) :
             RecyclerView.ViewHolder(binding.root){
                 fun onBind(data: ContentDetailData.Images){
-                    binding.ivItemContentdetail.setImageDrawable(binding.root.context.getDrawable(data.image))
-                    if(data.content != null)
-                    {binding.tvItemContentdetail.text = data.content}
-                    else{
+                    binding.data = data
+                    if(data.content == null)
+                    {
                         binding.tvItemContentdetail.visibility = View.GONE
                     }
                     binding.btnItemContentdetailScrap.setOnClickListener {

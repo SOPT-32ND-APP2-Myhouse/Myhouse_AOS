@@ -29,6 +29,8 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         binding = ActivityContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.data = viewModel.contentDetail
+
         val contentDetailAdapter = ItemContentDetailAdapter()
         binding.rvContentDetail.adapter = contentDetailAdapter
         contentDetailAdapter.submitList(viewModel.ContentDetailList)
@@ -54,5 +56,10 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         binding.rvContentTodayrecommend.adapter = contentTodayRecommendAdapter
         binding.rvContentTodayrecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         contentTodayRecommendAdapter.submitList(viewModel.todayRecommendList)
+
+        val contentUserBestAdapter = ItemContentUserBestAdapter()
+        binding.rvContentUserbest.adapter = contentUserBestAdapter
+        binding.rvContentUserbest.layoutManager = GridLayoutManager(this,2)
+        contentUserBestAdapter.submitList(viewModel.userBestList)
     }
 }

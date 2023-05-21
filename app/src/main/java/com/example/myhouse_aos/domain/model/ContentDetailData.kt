@@ -6,12 +6,12 @@ data class ContentDetailData(
     val post_id: Int,
     val user_name: String,
     val created_date: String,
-    val potion_tag: String,
+    val option_tag: String,
     val hash_tag: String,
-    val like_count: Int,
-    val scrap_count: Int,
-    val comment_count: Int,
-    val view_count: Int,
+    val like_count: String,
+    val scrap_count: String,
+    val comment_count: String,
+    val view_count: String,
 ){
     data class Images(
         val image_id: Int,

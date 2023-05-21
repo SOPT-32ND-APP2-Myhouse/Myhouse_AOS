@@ -20,7 +20,7 @@ class ItemContentHashtagAdapter : ListAdapter<HashTagData, ItemContentHashtagAda
     class ItemContentHashtagViewHolder(private val binding: ItemContentHashtagBinding) :
         RecyclerView.ViewHolder(binding.root){
         fun onBind(data: HashTagData){
-            binding.tvItemContenthashtag.text = data.hash_tag
+            binding.data = data
         }
     }
 
