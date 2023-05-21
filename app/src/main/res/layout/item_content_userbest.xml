@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.myhouse_aos.domain.model.UserBestData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="3dp">
+
+        <ImageView
+            android:id="@+id/iv_content_userbest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="200dp"
+            android:scaleType="fitCenter"
+            android:src="@{context.getDrawable(data.image)}"
+            tools:src="@drawable/userbest"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/watch_more"
+            app:layout_constraintTop_toTopOf="@id/iv_content_userbest"
+            app:layout_constraintEnd_toEndOf="@id/iv_content_userbest"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/bookmark"
+            app:layout_constraintBottom_toBottomOf="@id/iv_content_userbest"
+            app:layout_constraintEnd_toEndOf="@id/iv_content_userbest"/>
+
+        <TextView
+            android:id="@+id/tv_content_userbest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.title}"
+            tools:text="좁은 세탁실,딱 세 가지로 깔끔한\n 수납공간으로 대변신"
+            android:theme="@style/TextAppearance.body02"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/iv_content_userbest"
+            app:layout_constraintStart_toStartOf="@id/iv_content_userbest"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

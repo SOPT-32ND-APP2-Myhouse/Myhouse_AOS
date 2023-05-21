@@ -404,6 +404,37 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_content_todayrecommend"/>
 
+                <View
+                    android:id="@+id/v_content_line7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/rv_content_todayrecommend"/>
+
+                <TextView
+                    android:id="@+id/tv_content_userbest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_best"
+                    android:includeFontPadding="false"
+                    android:theme="@style/TextAppearance.title01"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line7"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_content_userbest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_userbest"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
 
                 <View
                     android:layout_width="match_parent"
