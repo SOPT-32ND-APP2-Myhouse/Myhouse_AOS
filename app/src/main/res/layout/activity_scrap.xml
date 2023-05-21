@@ -5,9 +5,6 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="com.example.myhouse_aos.presentation.scrap.ScrapViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/notosans_bold"
+            android:includeFontPadding="false"
             android:text="@string/scrap_title"
             android:textColor="@color/black"
             android:textSize="18dp"
@@ -61,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:includeFontPadding="false"
             android:text="@string/scrap_nickname"
             android:textAppearance="@style/TextAppearance.caption02"
             android:textColor="@color/dark_grey"
@@ -74,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="14dp"
+            android:includeFontPadding="false"
             android:text="@string/scrap_edit"
             android:textAppearance="@style/TextAppearance.headline02"
             android:textColor="@color/main_color"
