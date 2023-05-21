@@ -20,7 +20,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_main"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="46dp"
         app:itemIconSize="24dp"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,6 +29,8 @@
         app:itemIconTint="@drawable/menu_selector_color"
         app:itemTextColor="@drawable/menu_selector_color"
         app:menu="@menu/main"
-        android:theme="@style/TextAppearance.miniCaption01"/>
+        app:itemTextAppearanceActive="@style/TextAppearance.miniCaption01"
+        app:itemTextAppearanceInactive="@style/TextAppearance.miniCaption02"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
