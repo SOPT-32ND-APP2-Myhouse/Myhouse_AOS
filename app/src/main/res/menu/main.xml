@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:icon="@drawable/home_selector"
         android:id="@+id/menu_home"
         android:title="@string/home"
         />
     <item
+        android:icon="@drawable/todayfind_selector"
         android:id="@+id/menu_todayfind"
         android:title="@string/todayfind"
         />
     <item
+        android:icon="@drawable/shopping"
         android:id="@+id/menu_shopping"
         android:title="@string/shopping"
         android:enabled="false"
         />
     <item
+        android:icon="@drawable/various"
         android:id="@+id/menu_various"
         android:title="@string/various"
         android:enabled="false"
         />
     <item
+        android:icon="@drawable/mypage"
         android:id="@+id/menu_mypage"
         android:title="@string/mypage"
         android:enabled="false"
