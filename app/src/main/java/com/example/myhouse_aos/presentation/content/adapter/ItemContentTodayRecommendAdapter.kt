@@ -4,9 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ItemContentTodayRecommendBinding
 import com.example.myhouse_aos.domain.model.TodayRecommendData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
+import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
+import kotlinx.coroutines.NonDisposableHandle.parent
 
 class ItemContentTodayRecommendAdapter : ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
     ItemDiffCallback<TodayRecommendData>(
@@ -18,6 +21,20 @@ class ItemContentTodayRecommendAdapter : ListAdapter<TodayRecommendData, ItemCon
         RecyclerView.ViewHolder(binding.root){
             fun onBind(data: TodayRecommendData){
                 binding.data = data
+
+                var isButtonPressed = false
+
+                binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
+                    if(isButtonPressed){
+                        isButtonPressed = false
+                        binding.btnItemContentTodayrecommendBookmark.setImageResource(R.drawable.bookmark)
+                    }else{
+                        val snackbar = ScrapSnackBar.make(binding.root, "스낵바 메시지")
+                        snackbar.show()
+                        isButtonPressed = true
+                        binding.btnItemContentTodayrecommendBookmark.setImageResource(R.drawable.bookmark_clicked)
+                    }
+                }
             }
         }
 

@@ -27,6 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageButton
+            android:id="@+id/btn_content_userbest_watchmore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -35,6 +36,7 @@
             app:layout_constraintEnd_toEndOf="@id/iv_content_userbest"/>
 
         <ImageButton
+            android:id="@+id/btn_content_userbest_bookmark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"

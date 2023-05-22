@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ItemContentDetailBinding
 import com.example.myhouse_aos.domain.model.ContentDetailData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
+import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 
 class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemContentDetailAdapter.ItemContentDetailViewHolder>(
     ItemDiffCallback<ContentDetailData.Images>(
@@ -25,8 +27,20 @@ class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemConte
                     {
                         binding.tvItemContentdetail.visibility = View.GONE
                     }
+
+                    var isButtonPressed = false
+
                     binding.btnItemContentdetailScrap.setOnClickListener {
-                        ItemClickListener.onButtonClick(binding.btnItemContentdetailScrap)
+                        if(isButtonPressed){
+                            isButtonPressed = false
+                            binding.btnItemContentdetailScrap.setImageResource(R.drawable.scrap_button)
+                        }else{
+                            val snackbar = ScrapSnackBar.make(binding.root, "스낵바 메시지")
+                            snackbar.show()
+                            isButtonPressed = true
+                            binding.btnItemContentdetailScrap.setImageResource(R.drawable.scrap_button_clicked)
+                        }
+
                     }
                 }
             }
@@ -38,14 +52,5 @@ class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemConte
 
     override fun onBindViewHolder(holder: ItemContentDetailViewHolder, position: Int) {
         holder.onBind(getItem(position))
-    }
-
-    interface ItemClickListener {
-        fun onButtonClick(imageId: Int)
-
-        companion object {
-            fun onButtonClick(btnItemContentdetailScrap: ImageButton) {
-            }
-        }
     }
 }

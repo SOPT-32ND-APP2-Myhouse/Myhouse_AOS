@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ItemContentUserbestBinding
 import com.example.myhouse_aos.domain.model.UserBestData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
+import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 
 class ItemContentUserBestAdapter : ListAdapter<UserBestData, ItemContentUserBestAdapter.ItemContentUserBestViewHolder>(
     ItemDiffCallback<UserBestData>(
@@ -18,6 +20,20 @@ class ItemContentUserBestAdapter : ListAdapter<UserBestData, ItemContentUserBest
         RecyclerView.ViewHolder(binding.root){
         fun onBind(data: UserBestData){
             binding.data = data
+
+            var isButtonPressed = false
+
+            binding.btnContentUserbestBookmark.setOnClickListener {
+                if(isButtonPressed){
+                    isButtonPressed = false
+                    binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark)
+                }else{
+                val snackbar = ScrapSnackBar.make(binding.root, "스낵바 메시지")
+                snackbar.show()
+                isButtonPressed = true
+                binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark_clicked)
+            }
+            }
         }
     }
 
