@@ -56,19 +56,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginEnd="6dp"
-                android:src="@drawable/ic_cart"
+                android:src="@drawable/ic_home_cart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_home_scrap"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_statusbar" />
+            <ImageView
+                android:id="@+id/iv_home_banner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/img_banner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_cart" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_menu"
                 android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_cart" />
+                app:layout_constraintTop_toBottomOf="@id/iv_home_banner" />
 
             <ImageView
                 android:id="@+id/iv_home_sectionbar1"
@@ -80,14 +94,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
 
+            <TextView
+                android:id="@+id/tv_home_popular_contents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="194dp"
+                android:text="@string/string_home_popular_contents"
+                android:textAppearance="@style/TextAppearance.title01"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar1" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_popular_contents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar1"
-                tools:layout_editor_absoluteX="70dp" />
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_popular_contents"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_popular_contents" />
 
             <ImageView
                 android:id="@+id/iv_home_sectionbar2"
@@ -99,13 +128,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_popular_contents" />
 
+            <TextView
+                android:id="@+id/tv_home_recommend_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="150dp"
+                android:text="@string/string_home_recommend_house"
+                android:textAppearance="@style/TextAppearance.headline01"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar2" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_recommend_house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="18dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar2" />
+                android:layout_marginTop="12dp"
+                tools:listitem="@layout/item_recommend_home"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_house"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+
 
             <ImageView
                 android:id="@+id/iv_home_sectionbar3"
@@ -117,13 +163,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_recommend_house" />
 
+            <TextView
+                android:id="@+id/tv_home_recommend_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="256dp"
+                android:text="@string/string_home_recommend_product"
+                android:textAppearance="@style/TextAppearance.headline01"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar3" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_recommend_product"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="18dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar3" />
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_recommend_product"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_product" />
 
             <ImageView
                 android:id="@+id/iv_home_sectionbar4"
@@ -135,13 +197,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_recommend_product" />
 
+
+            <TextView
+                android:id="@+id/tv_home_modern_interior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="149dp"
+                android:text="@string/string_home_modern_interior"
+                android:textAppearance="@style/TextAppearance.headline01"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar4" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_modern_interior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_modern_contents"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="18dp"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar4" />
+                app:layout_constraintTop_toBottomOf="@id/tv_home_modern_interior" />
 
             <ImageView
                 android:id="@+id/iv_home_sectionbar5"
@@ -160,7 +239,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="227dp"
-                android:text="카테고리별 상품 찾기"
+                android:text="@string/string_home_category_product"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -170,6 +249,9 @@
                 android:id="@+id/rv_home_find_category_product"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_category_product"
                 android:layout_marginTop="14dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_find_category_product" />
 
@@ -190,7 +272,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="184dp"
-                android:text="여름맞이 강력추천 콘텐츠"
+                android:text="@string/string_home_summer_content"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -201,6 +283,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
+                android:layout_marginStart="10dp"
+                tools:listitem="@layout/item_summer_contents"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_summer_content" />
 
             <ImageButton
@@ -232,7 +318,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="19dp"
                 android:layout_marginEnd="133dp"
-                android:text="요새 힙한 #컬러/레터링조명 인테리어"
+                android:text="@string/string_home_color_interior"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -242,6 +328,9 @@
                 android:id="@+id/rv_home_color_interior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_color_interior"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_color_interior" />
@@ -253,7 +342,7 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="189dp"
-                android:text="컬러/레터링조명 인기상품"
+                android:text="@string/string_home_color_product"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -265,6 +354,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_color_product"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_color_product" />
@@ -304,7 +396,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="95dp"
-                android:text="서울특별시 동작구 주변 시공 리뷰"
+                android:text="@string/string_home_review"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_review"
                 app:layout_constraintEnd_toStartOf="@id/iv_home_find_company"
@@ -329,6 +421,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_review"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_find_company" />
@@ -350,7 +445,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="221dp"
-                android:text="오늘의 기획전"
+                android:text="@string/string_home_plan"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_plan"
                 app:layout_constraintEnd_toStartOf="@id/iv_home_more"
