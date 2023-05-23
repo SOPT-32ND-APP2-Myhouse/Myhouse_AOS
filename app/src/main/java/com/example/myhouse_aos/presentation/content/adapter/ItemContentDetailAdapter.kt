@@ -28,16 +28,13 @@ class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemConte
                         binding.tvItemContentdetail.visibility = View.GONE
                     }
 
-                    var isButtonPressed = false
-
                     binding.btnItemContentdetailScrap.setOnClickListener {
-                        if(isButtonPressed){
-                            isButtonPressed = false
+                        if(binding.btnItemContentdetailScrap.isSelected){
+                            binding.btnItemContentdetailScrap.isSelected = false
                             binding.btnItemContentdetailScrap.setImageResource(R.drawable.scrap_button)
                         }else{
-                            val snackbar = ScrapSnackBar.make(binding.root, "스낵바 메시지")
-                            snackbar.show()
-                            isButtonPressed = true
+                            ScrapSnackBar.make(binding.root).show()
+                            binding.btnItemContentdetailScrap.isSelected = true
                             binding.btnItemContentdetailScrap.setImageResource(R.drawable.scrap_button_clicked)
                         }
 

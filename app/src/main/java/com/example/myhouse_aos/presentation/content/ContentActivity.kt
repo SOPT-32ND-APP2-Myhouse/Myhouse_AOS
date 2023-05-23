@@ -49,17 +49,14 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
 
         val contentUserimageAdapter = ItemContentUserimageAdapter()
         binding.rvContentUserimage.adapter = contentUserimageAdapter
-        binding.rvContentUserimage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         contentUserimageAdapter.submitList(viewModel.userimageList)
 
         val contentTodayRecommendAdapter = ItemContentTodayRecommendAdapter()
         binding.rvContentTodayrecommend.adapter = contentTodayRecommendAdapter
-        binding.rvContentTodayrecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         contentTodayRecommendAdapter.submitList(viewModel.todayRecommendList)
 
         val contentUserBestAdapter = ItemContentUserBestAdapter()
         binding.rvContentUserbest.adapter = contentUserBestAdapter
-        binding.rvContentUserbest.layoutManager = GridLayoutManager(this,2)
         contentUserBestAdapter.submitList(viewModel.userBestList)
     }
 }

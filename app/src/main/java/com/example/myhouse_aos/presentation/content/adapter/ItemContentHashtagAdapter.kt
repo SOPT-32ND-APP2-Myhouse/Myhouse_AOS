@@ -1,13 +1,10 @@
 package com.example.myhouse_aos.presentation.content.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myhouse_aos.databinding.ItemContentDetailBinding
 import com.example.myhouse_aos.databinding.ItemContentHashtagBinding
-import com.example.myhouse_aos.domain.model.ContentDetailData
 import com.example.myhouse_aos.domain.model.HashTagData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 

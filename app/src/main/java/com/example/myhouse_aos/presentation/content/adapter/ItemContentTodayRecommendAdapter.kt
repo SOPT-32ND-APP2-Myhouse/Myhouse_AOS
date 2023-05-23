@@ -9,6 +9,7 @@ import com.example.myhouse_aos.databinding.ItemContentTodayRecommendBinding
 import com.example.myhouse_aos.domain.model.TodayRecommendData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.NonDisposableHandle.parent
 
 class ItemContentTodayRecommendAdapter : ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
@@ -22,16 +23,13 @@ class ItemContentTodayRecommendAdapter : ListAdapter<TodayRecommendData, ItemCon
             fun onBind(data: TodayRecommendData){
                 binding.data = data
 
-                var isButtonPressed = false
-
                 binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
-                    if(isButtonPressed){
-                        isButtonPressed = false
+                    if(binding.btnItemContentTodayrecommendBookmark.isSelected){
+                        binding.btnItemContentTodayrecommendBookmark.isSelected = false
                         binding.btnItemContentTodayrecommendBookmark.setImageResource(R.drawable.bookmark)
                     }else{
-                        val snackbar = ScrapSnackBar.make(binding.root, "스낵바 메시지")
-                        snackbar.show()
-                        isButtonPressed = true
+                        ScrapSnackBar.make(binding.root).show()
+                        binding.btnItemContentTodayrecommendBookmark.isSelected = true
                         binding.btnItemContentTodayrecommendBookmark.setImageResource(R.drawable.bookmark_clicked)
                     }
                 }

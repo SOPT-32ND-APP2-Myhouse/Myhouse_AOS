@@ -21,17 +21,14 @@ class ItemContentUserBestAdapter : ListAdapter<UserBestData, ItemContentUserBest
         fun onBind(data: UserBestData){
             binding.data = data
 
-            var isButtonPressed = false
-
             binding.btnContentUserbestBookmark.setOnClickListener {
-                if(isButtonPressed){
-                    isButtonPressed = false
+                if(binding.btnContentUserbestBookmark.isSelected){
+                    binding.btnContentUserbestBookmark.isSelected = false
                     binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark)
                 }else{
-                val snackbar = ScrapSnackBar.make(binding.root, "스낵바 메시지")
-                snackbar.show()
-                isButtonPressed = true
-                binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark_clicked)
+                    ScrapSnackBar.make(binding.root).show()
+                    binding.btnContentUserbestBookmark.isSelected = true
+                    binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark_clicked)
             }
             }
         }

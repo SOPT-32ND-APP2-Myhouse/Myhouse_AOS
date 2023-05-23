@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:maxWidth="200dp"
             android:scaleType="fitCenter"
             android:src="@{context.getDrawable(data.image)}"
             tools:src="@drawable/userbest"
@@ -40,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:src="@drawable/bookmark"
+            android:src="@drawable/bookmark_selector"
             app:layout_constraintBottom_toBottomOf="@id/iv_content_userbest"
             app:layout_constraintEnd_toEndOf="@id/iv_content_userbest"/>
 

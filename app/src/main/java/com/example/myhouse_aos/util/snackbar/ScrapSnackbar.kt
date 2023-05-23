@@ -1,26 +1,24 @@
 package com.example.myhouse_aos.util.snackbar
 
 import android.annotation.SuppressLint
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.CustomSnackbarBinding
 import com.google.android.material.snackbar.Snackbar
 
-class ScrapSnackBar(view: View, private val message: String) {
+
+class ScrapSnackBar(view: View) {
 
     companion object {
-
-        fun make(view: View, message: String) = ScrapSnackBar(view, message)
+        fun make(view: View) = ScrapSnackBar(view)
     }
 
     private val context = view.context
-    private val snackbar = Snackbar.make(view, "", 5000)
+    private val snackbar = Snackbar.make(view, "", 3000)
     private val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
 
     private val inflater = LayoutInflater.from(context)
@@ -30,7 +28,6 @@ class ScrapSnackBar(view: View, private val message: String) {
 
     init {
         initView()
-        initData()
     }
 
     @SuppressLint("RestrictedApi")
@@ -57,12 +54,12 @@ class ScrapSnackBar(view: View, private val message: String) {
             }
         }
     }
-
-    private fun initData() {
-    }
-
     fun show() {
         snackbar.animationMode = Snackbar.ANIMATION_MODE_SLIDE
         snackbar.show()
+    }
+
+    fun dismiss(){
+        snackbar.dismiss()
     }
 }

@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:padding="6dp"
-            android:src="@drawable/bookmark"
+            android:src="@drawable/bookmark_selector"
             app:layout_constraintBottom_toBottomOf="@id/iv_item_content_todayrecommend"
             app:layout_constraintEnd_toEndOf="@id/iv_item_content_todayrecommend" />
 
