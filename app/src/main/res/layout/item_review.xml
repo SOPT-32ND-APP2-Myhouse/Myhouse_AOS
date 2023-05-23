@@ -23,7 +23,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_home_review_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            android:text="@{contentsData.description}"
+            android:textColor="@color/main_color"
+            android:textAppearance="@style/TextAppearance.caption01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_review_image" />
 
+        <TextView
+            android:id="@+id/tv_home_review_sub_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{contentsData.subDescription}"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.body01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_home_review_description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

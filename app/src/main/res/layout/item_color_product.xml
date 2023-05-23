@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="contentsData"
-            type="com.example.myhouse_aos.domain.model.ContentsData" />
+            name="BestProductModel"
+            type="com.example.myhouse_aos.domain.model.BestProductModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,11 +16,62 @@
             android:id="@+id/iv_color_interior_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@{context.getDrawable(contentsData.image)}"
+            android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
             android:layout_marginEnd="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_color_interior_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{BestProductModel.brand}"
+            android:layout_marginEnd="140dp"
+            android:textColor="@color/dark_grey"
+            android:textAppearance="@style/TextAppearance.body02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_color_interior_image" />
+
+        <TextView
+            android:id="@+id/tv_color_interior_title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@{BestProductModel.postTitle}"
+            android:textAppearance="@style/TextAppearance.body02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_color_interior_brand" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_color_interior_title"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_color_interior_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:text="@{BestProductModel.discount}"
+                android:textColor="@color/main_color"
+                android:textAppearance="@style/TextAppearance.title01" />
+
+            <TextView
+                android:id="@+id/tv_color_interior_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="42dp"
+                android:text="@{BestProductModel.price}"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.title01" />
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

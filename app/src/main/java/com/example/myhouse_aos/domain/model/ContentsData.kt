@@ -5,5 +5,6 @@ import androidx.annotation.DrawableRes
 class ContentsData (
     val contentId: Int,
     @DrawableRes val image: Int,
-    val description : String
+    val description : String,
+    val subDescription : String
 )

@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="contentsData"
-            type="com.example.myhouse_aos.domain.model.ContentsData" />
+            name="RecommendHomeModel"
+            type="com.example.myhouse_aos.domain.model.RecommendHomeModel" />
     </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +17,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@{context.getDrawable(contentsData.image)}"
+                android:src="@{context.getDrawable(RecommendHomeModel.imageUrl)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/Radius4" />
@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:text="@{contentsData.description}"
+                android:text="@{RecommendHomeModel.title}"
                 android:textAppearance="@style/TextAppearance.caption02"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

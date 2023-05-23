@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhouse_aos.databinding.ItemRecommendHomeBinding
 import com.example.myhouse_aos.domain.model.ContentsData
+import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
-class RecommendHomeAdapter : ListAdapter<ContentsData, RecommendHomeAdapter.ContentViewHolder>(
-    ItemDiffCallback<ContentsData>(
-        onItemsTheSame = { old, new -> old.contentId == new.contentId },
+class RecommendHomeAdapter : ListAdapter<RecommendHomeModel, RecommendHomeAdapter.ContentViewHolder>(
+    ItemDiffCallback<RecommendHomeModel>(
+        onItemsTheSame = { old, new -> old.postId == new.postId },
         onContentsTheSame = { old, new -> old == new }
     )
 ) {
@@ -18,8 +19,8 @@ class RecommendHomeAdapter : ListAdapter<ContentsData, RecommendHomeAdapter.Cont
     class ContentViewHolder(
         private val binding: ItemRecommendHomeBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: ContentsData) {
-            binding.contentsData = data
+        fun onBind(data: RecommendHomeModel) {
+            binding.recommendHomeModel = data
             binding.executePendingBindings()
         }
     }
