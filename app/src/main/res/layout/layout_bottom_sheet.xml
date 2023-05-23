@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape">
+
+        <Space
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_bottom_title"/>
+
+        <TextView
+            android:id="@+id/tv_bottom_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="13dp"
+            android:textAppearance="@style/TextAppearance.Title01"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_bottom_close"
+            app:layout_constraintTop_toBottomOf="@id/bottom_layout"
+            app:layout_constraintBottom_toTopOf="@id/iv_bottom_cell1"
+            android:text="폴더 선택"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_bottom_close"
+            android:layout_marginStart="113dp"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_layout"
+            app:layout_constraintStart_toEndOf="@id/tv_bottom_title"
+            app:layout_constraintBottom_toTopOf="@id/iv_bottom_cell1"/>
+
+        <ImageView
+            android:id="@+id/iv_bottom_cell1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/img_bottom_1"
+            app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_bottom_title" />
+
+        <TextView
+            android:id="@+id/tv_bottom_cell1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="158dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintTop_toBottomOf="@id/tv_bottom_title"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell1"
+            app:layout_constraintBottom_toTopOf="@id/v_section_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="새로운 폴더 추가하기"/>
+
+        <View
+            android:id="@+id/v_section_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell1"
+            android:background="@color/light_grey" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_bottom_cell2"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/img_bottom_2"
+            app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_section_1"/>
+        <TextView
+            android:id="@+id/tv_bottom_cell2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="18dp"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintTop_toBottomOf="@id/v_section_1"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/v_section_2"
+            android:text="내 취향 인테리어 " />
+
+        <View
+            android:id="@+id/v_section_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell2"
+            android:background="@color/light_grey" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_bottom_cell3"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/img_bottom_3"
+            app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_section_2"/>
+        <TextView
+            android:id="@+id/tv_bottom_cell3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="18dp"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintTop_toBottomOf="@id/v_section_2"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/v_section_3"
+            android:text="친구 집들이 선물 " />
+
+        <View
+            android:id="@+id/v_section_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell3"
+            android:background="@color/light_grey" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_bottom_cell4"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/img_bottom_4"
+            app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_section_3"/>
+        <TextView
+            android:id="@+id/tv_bottom_cell4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="170dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="18dp"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintTop_toBottomOf="@id/v_section_3"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell4"
+            app:layout_constraintBottom_toTopOf="@id/v_section_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="인테리어 꿀팁 모음 " />
+
+        <View
+            android:id="@+id/v_section_5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell4"
+            android:background="@color/light_grey" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

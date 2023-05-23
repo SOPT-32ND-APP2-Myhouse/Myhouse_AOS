@@ -15,7 +15,13 @@
         <item name="android:backgroundTint">@color/main_color</item>
         <item name="android:radius">4dp</item>
     </style>
+    <style name="TransparentBottomSheetDialogFragment" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransparentBottomSheetDialogFragmentChild</item>
+    </style>
 
+    <style name="TransparentBottomSheetDialogFragmentChild" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">#00000000</item>
+    </style>
     <style name="TextAppearance.Title01" parent="">
         <item name="fontWeight">700</item>
         <item name="android:fontFamily">@font/notosans_bold_font</item>
