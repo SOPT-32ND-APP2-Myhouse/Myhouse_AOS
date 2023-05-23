@@ -26,11 +26,9 @@ class ItemContentTodayRecommendAdapter : ListAdapter<TodayRecommendData, ItemCon
                 binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
                     if(binding.btnItemContentTodayrecommendBookmark.isSelected){
                         binding.btnItemContentTodayrecommendBookmark.isSelected = false
-                        binding.btnItemContentTodayrecommendBookmark.setImageResource(R.drawable.bookmark)
                     }else{
                         ScrapSnackBar.make(binding.root).show()
                         binding.btnItemContentTodayrecommendBookmark.isSelected = true
-                        binding.btnItemContentTodayrecommendBookmark.setImageResource(R.drawable.bookmark_clicked)
                     }
                 }
             }

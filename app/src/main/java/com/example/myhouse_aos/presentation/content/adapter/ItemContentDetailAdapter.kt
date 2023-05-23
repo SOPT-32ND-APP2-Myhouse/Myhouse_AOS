@@ -31,11 +31,9 @@ class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemConte
                     binding.btnItemContentdetailScrap.setOnClickListener {
                         if(binding.btnItemContentdetailScrap.isSelected){
                             binding.btnItemContentdetailScrap.isSelected = false
-                            binding.btnItemContentdetailScrap.setImageResource(R.drawable.scrap_button)
                         }else{
                             ScrapSnackBar.make(binding.root).show()
                             binding.btnItemContentdetailScrap.isSelected = true
-                            binding.btnItemContentdetailScrap.setImageResource(R.drawable.scrap_button_clicked)
                         }
 
                     }

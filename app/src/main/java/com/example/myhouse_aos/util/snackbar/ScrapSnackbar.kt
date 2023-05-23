@@ -29,7 +29,7 @@ class ScrapSnackBar(view: View) {
     init {
         initView()
     }
-    
+
     private fun initView() {
         with(snackbarLayout) {
             removeAllViews()

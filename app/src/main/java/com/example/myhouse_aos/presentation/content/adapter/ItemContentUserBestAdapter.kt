@@ -24,11 +24,9 @@ class ItemContentUserBestAdapter : ListAdapter<UserBestData, ItemContentUserBest
             binding.btnContentUserbestBookmark.setOnClickListener {
                 if(binding.btnContentUserbestBookmark.isSelected){
                     binding.btnContentUserbestBookmark.isSelected = false
-                    binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark)
                 }else{
                     ScrapSnackBar.make(binding.root).show()
                     binding.btnContentUserbestBookmark.isSelected = true
-                    binding.btnContentUserbestBookmark.setImageResource(R.drawable.bookmark_clicked)
             }
             }
         }
