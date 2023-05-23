@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:src="@{context.getDrawable(contentsData.image)}"
             android:layout_marginEnd="6dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,9 +28,9 @@
             android:layout_marginTop="11dp"
             android:layout_marginEnd="6dp"
             android:text="@{contentsData.description}"
+            android:includeFontPadding="false"
             android:textColor="@color/main_color"
             android:textAppearance="@style/TextAppearance.caption02"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_home_summer_image" />
 
@@ -42,9 +41,9 @@
             android:layout_marginTop="11dp"
             android:layout_marginEnd="6dp"
             android:text="@{contentsData.subDescription}"
+            android:includeFontPadding="false"
             android:textColor="@color/black"
             android:textAppearance="@style/TextAppearance.caption02"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_home_summer_description"
             app:layout_constraintTop_toBottomOf="@id/iv_home_summer_image" />
 
