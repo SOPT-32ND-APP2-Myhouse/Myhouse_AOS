@@ -10,4 +10,9 @@
     <string name="post_tab_export">전문가집들이</string>
     <string name="post_hot_content_title">🔹 오늘의집 인기 콘텐츠 BEST 🔹</string>
     <string name="post_more">더보기</string>
+
+    <!--  scrap  -->
+    <string name="scrap_title">스크랩북</string>
+    <string name="scrap_edit">편집</string>
+    <string name="scrap_nickname">nickname</string>
 </resources>
