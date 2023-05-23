@@ -29,8 +29,7 @@ class ScrapSnackBar(view: View) {
     init {
         initView()
     }
-
-    @SuppressLint("RestrictedApi")
+    
     private fun initView() {
         with(snackbarLayout) {
             removeAllViews()
