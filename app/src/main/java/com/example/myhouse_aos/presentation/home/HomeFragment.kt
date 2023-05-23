@@ -2,6 +2,7 @@ package com.example.myhouse_aos.presentation.home
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
@@ -20,6 +21,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     private lateinit var colorProductAdapter: ColorProductAdapter
     private lateinit var reviewAdapter: ReviewAdapter
     private lateinit var menuAdapter: MenuAdapter
+    private lateinit var popularPhotoAdapter: PopularPhotoAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
@@ -33,6 +35,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         getColorProduct()
         getReview()
         getMenu()
+        getPopularPhoto()
     }
 
     private fun initAdapter(){
@@ -46,6 +49,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         colorProductAdapter = ColorProductAdapter()
         reviewAdapter = ReviewAdapter()
         menuAdapter = MenuAdapter()
+        popularPhotoAdapter = PopularPhotoAdapter()
 
         binding.rvHomePopularContents.adapter = popularContentsAdapter
         binding.rvHomeRecommendHouse.adapter = recommendHomeAdapter
@@ -57,6 +61,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         binding.rvHomeColorProduct.adapter = colorProductAdapter
         binding.rvHomeReview.adapter = reviewAdapter
         binding.rvHomeMenu.adapter = menuAdapter
+        binding.rvHomePopularPhoto.adapter = popularPhotoAdapter
     }
 
     private fun getPopularContents() {
@@ -88,5 +93,8 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     }
     private fun getMenu() {
         menuAdapter.submitList(viewModel.menuList)
+    }
+    private fun getPopularPhoto() {
+        popularPhotoAdapter.submitList(viewModel.popularPhotoList)
     }
 }
