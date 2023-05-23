@@ -20,6 +20,11 @@ class SummerContentsAdapter : ListAdapter<ContentsData, SummerContentsAdapter.Co
         private val binding: ItemSummerContentsBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ContentsData) {
+            val tvTitle = data.description
+            val tvSubtitle = data.subDescription
+            val connectedText = "${tvTitle}${tvSubtitle}"
+            data.subDescription = connectedText
+            data.description = ""
             binding.contentsData = data
             binding.executePendingBindings()
         }

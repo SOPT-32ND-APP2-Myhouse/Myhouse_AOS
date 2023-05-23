@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
-    <string name="string_home_popular_contents">이주의 인기콘텐츠</string>
+    <string name="string_home_popular_contents">🏅 이주의 인기 콘텐츠 🏅</string>
     <string name="string_home_recommend_house">닉네임님을 위한 추천 집들이</string>
     <string name="string_home_recommend_product">오늘의 추천 상품</string>
     <string name="string_home_modern_interior">모던한 인테리어 콘텐츠 둘러보기</string>
     <string name="string_home_category_product">카테고리별 상품 찾기</string>
-    <string name="string_home_summer_content">여름맞이 강력추천 콘텐츠</string>
+    <string name="string_home_summer_content">여름맞이 강력추천 콘텐츠 👀</string>
     <string name="string_home_color_interior">요새 힙한 #컬러/레터링조명 인테리어</string>
     <string name="string_home_color_product">컬러/레터링조명 인기상품</string>
     <string name="string_home_review">서울특별시 동작구 주변 시공 리뷰</string>
