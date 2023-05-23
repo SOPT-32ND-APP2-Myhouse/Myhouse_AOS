@@ -25,6 +25,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
+        initBottomSheet()
         getPopularContents()
         getRecommendHome()
         getRecommendProduct()
@@ -63,7 +64,12 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         binding.rvHomeMenu.adapter = menuAdapter
         binding.rvHomePopularPhoto.adapter = popularPhotoAdapter
     }
-
+    private fun initBottomSheet(){
+        binding.ivHomeScrap.setOnClickListener {
+            val bottomSheet = BottomSheet()
+            bottomSheet.show(requireActivity().supportFragmentManager, bottomSheet.tag)
+        }
+    }
     private fun getPopularContents() {
         popularContentsAdapter.submitList(viewModel.popularContentsList)
     }
