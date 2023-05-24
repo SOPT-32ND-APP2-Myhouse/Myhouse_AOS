@@ -10,4 +10,9 @@
     <string name="string_home_color_product">컬러/레터링조명 인기상품</string>
     <string name="string_home_review">서울특별시 동작구 주변 시공 리뷰</string>
     <string name="string_home_plan">오늘의 기획전</string>
+    <string name="tv_btsheet_title">폴더 선택</string>
+    <string name="tv_btsheet_1">새로운 폴더 추가하기</string>
+    <string name="tv_btsheet_2">내 취향 인테리어</string>
+    <string name="tv_btsheet_3">친구 집들이 선물</string>
+    <string name="tv_btsheet_4">인테리어 꿀팁 모음</string>
 </resources>
