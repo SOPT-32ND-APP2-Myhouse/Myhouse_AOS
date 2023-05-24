@@ -22,7 +22,7 @@
     <string name="user_comment">와 너무 예뻐요</string>
     <string name="back">back</string>
     <string name="more">more</string>
-  
+
     <!--  home  -->
     <string name="string_home_popular_contents">🏅 이주의 인기 콘텐츠 🏅</string>
     <string name="string_home_recommend_house">닉네임님을 위한 추천 집들이</string>
@@ -68,4 +68,10 @@
     <string name="scraped">스크랩했습니다.</string>
     <string name="btn_folder">폴더에 담기</string>
     <string name="btn_scrapbook">스크랩북 보기</string>
+    <!--    bottom sheet-->
+    <string name="tv_btsheet_title">폴더 선택</string>
+    <string name="tv_btsheet_1">새로운 폴더 추가하기</string>
+    <string name="tv_btsheet_2">내 취향 인테리어</string>
+    <string name="tv_btsheet_3">친구 집들이 선물</string>
+    <string name="tv_btsheet_4">인테리어 꿀팁 모음</string>
 </resources>

@@ -28,6 +28,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
+        initBottomSheet()
         getPopularContents()
         getRecommendHome()
         getRecommendProduct()
@@ -97,7 +98,12 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
             tab.text = tabTitles[position]
         }.attach()
     }
-
+    private fun initBottomSheet(){
+        binding.ivHomeScrap.setOnClickListener {
+            val bottomSheetDialog = BottomSheetDialog()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager, bottomSheetDialog.tag)
+        }
+    }
     private fun getPopularContents() {
         popularContentsAdapter.submitList(viewModel.popularContentsList)
     }

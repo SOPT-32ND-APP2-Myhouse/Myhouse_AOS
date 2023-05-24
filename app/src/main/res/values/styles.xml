@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  
+
    <!--  TextView Style  -->
     <style name="HomePointTextViewStyle" parent="android:Widget.TextView">
         <item name="android:layout_width">84dp</item>
@@ -9,7 +9,7 @@
         <item name="android:padding">4dp</item>
         <item name="cornerSize">4dp</item>
     </style>
-  
+
     <!--  ImageView Style  -->
     <style name="Radius4">
         <item name="cornerSize">4dp</item>
@@ -19,6 +19,23 @@
         <item name="android:background">@color/main_color</item>
         <item name="android:backgroundTint">@color/main_color</item>
         <item name="cornerSize">4dp</item>
+    </style>
+
+    <!--  btSheet Style  -->
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/btsheet_with_corner</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="TransparentBottomSheetDialogFragment" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransparentBottomSheetDialogFragmentChild</item>
+    </style>
+
+    <style name="TransparentBottomSheetDialogFragmentChild" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">#00000000</item>
     </style>
 
     <!--  font Style  -->
