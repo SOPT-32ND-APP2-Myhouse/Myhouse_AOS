@@ -12,11 +12,12 @@ data class ContentDetailData(
     val scrapCount: String,
     val commentCount: String,
     val viewCount: String,
-){
+) {
     data class Images(
         val imageId: Int,
         @DrawableRes val image: Int,
         val content: String?,
     )
+
     val images: List<Images>? = null
 }

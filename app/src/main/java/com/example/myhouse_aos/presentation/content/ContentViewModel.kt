@@ -18,45 +18,30 @@ class ContentViewModel : ViewModel() {
     )
     val ContentDetailList = listOf(
         ContentDetailData.Images(
-            imageId = 1,
-            image = R.drawable.content_detail_card,
-            content = "식물들 창가로 몰아주기"
-        ),
-        ContentDetailData.Images(
-            imageId = 2,
-            image = R.drawable.content_detail_card,
-            content = null
-        ),
-        ContentDetailData.Images(
-            imageId = 3,
-            image = R.drawable.content_detail_card,
-            content = null
+            imageId = 1, image = R.drawable.content_detail_card, content = "식물들 창가로 몰아주기"
+        ), ContentDetailData.Images(
+            imageId = 2, image = R.drawable.content_detail_card, content = null
+        ), ContentDetailData.Images(
+            imageId = 3, image = R.drawable.content_detail_card, content = null
         )
     )
 
     val hashTagList = listOf(
         HashTagData(
             hash_tag = "#취미일상"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#6평"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#원룸"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#오피스텔"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#방꾸미기"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#홈테코"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#홈스타일링"
-        ),
-        HashTagData(
+        ), HashTagData(
             hash_tag = "#인테리어"
         )
     )
@@ -64,11 +49,9 @@ class ContentViewModel : ViewModel() {
     val userimageList = listOf(
         UserimageData(
             image = R.drawable.userimage
-        ),
-        UserimageData(
+        ), UserimageData(
             image = R.drawable.userimage
-        ),
-        UserimageData(
+        ), UserimageData(
             image = R.drawable.userimage
         )
     )
@@ -110,20 +93,13 @@ class ContentViewModel : ViewModel() {
 
     val userBestList = listOf(
         UserBestData(
-            image = R.drawable.userbest,
-            title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
-        ),
-        UserBestData(
-            image = R.drawable.userbest,
-            title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
-        ),
-        UserBestData(
-            image = R.drawable.userbest,
-            title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
-        ),
-        UserBestData(
-            image = R.drawable.userbest,
-            title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
+            image = R.drawable.userbest, title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
+        ), UserBestData(
+            image = R.drawable.userbest, title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
+        ), UserBestData(
+            image = R.drawable.userbest, title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
+        ), UserBestData(
+            image = R.drawable.userbest, title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
         )
     )
 }

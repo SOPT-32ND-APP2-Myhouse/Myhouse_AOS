@@ -309,7 +309,7 @@ class HomeViewModel : ViewModel() {
         ),
         ContentsData(
             contentId = 5,
-            image = R.drawable.ic_cart,
+            image = R.drawable.ic_cart2,
             description = "장보기",
             subDescription = ""
         ),

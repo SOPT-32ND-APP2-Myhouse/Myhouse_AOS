@@ -12,30 +12,38 @@ import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.NonDisposableHandle.parent
 
-class ItemContentTodayRecommendAdapter : ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
-    ItemDiffCallback<TodayRecommendData>(
-        onItemsTheSame = {old, new -> old.todayrecommend_id == new.todayrecommend_id},
-        onContentsTheSame = {old, new -> old == new}
-    )
-) {
+class ItemContentTodayRecommendAdapter :
+    ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
+        ItemDiffCallback<TodayRecommendData>(
+            onItemsTheSame = { old, new -> old.todayrecommend_id == new.todayrecommend_id },
+            onContentsTheSame = { old, new -> old == new }
+        )
+    ) {
     class ItemContentTodayRecommendViewHolder(private val binding: ItemContentTodayRecommendBinding) :
-        RecyclerView.ViewHolder(binding.root){
-            fun onBind(data: TodayRecommendData){
-                binding.data = data
+        RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: TodayRecommendData) {
+            binding.data = data
 
-                binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
-                    if(binding.btnItemContentTodayrecommendBookmark.isSelected){
-                        binding.btnItemContentTodayrecommendBookmark.isSelected = false
-                    }else{
-                        ScrapSnackBar.make(binding.root).show()
-                        binding.btnItemContentTodayrecommendBookmark.isSelected = true
-                    }
+            binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
+                if (binding.btnItemContentTodayrecommendBookmark.isSelected) {
+                    binding.btnItemContentTodayrecommendBookmark.isSelected = false
+                } else {
+                    ScrapSnackBar.make(binding.root).show()
+                    binding.btnItemContentTodayrecommendBookmark.isSelected = true
                 }
             }
         }
+    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder {
-        val binding = ItemContentTodayRecommendBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder {
+        val binding = ItemContentTodayRecommendBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder(binding)
     }
 
