@@ -615,6 +615,7 @@
                 tools:listitem="@layout/item_plan"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btn_home_more_plan"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_plan" />
 
             <ImageButton
@@ -638,6 +639,7 @@
                 android:src="@drawable/img_sectionbar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_home_best_title"
                 app:layout_constraintTop_toBottomOf="@id/btn_home_more_plan" />
 
             <TextView
@@ -650,7 +652,7 @@
                 android:text="베스트"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintBottom_toTopOf="@id/rv_home_plan"
+                app:layout_constraintBottom_toTopOf="@id/home_tabLayout"
                 app:layout_constraintEnd_toStartOf="@id/iv_home_best_more"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar11" />
@@ -662,14 +664,59 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="9dp"
                 android:src="@drawable/ic_more"
-                app:layout_constraintBottom_toTopOf="@id/rv_home_plan"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/home_tabLayout"
                 app:layout_constraintStart_toEndOf="@id/tv_home_best_title"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar11" />
 
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/home_tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="11dp"
+                app:layout_constraintBottom_toTopOf="@id/iv_home_best_more"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_best_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabIndicator="@null"
+                android:includeFontPadding="false"
+                app:tabIndicatorColor="@color/main_color"
+                app:tabIndicatorHeight="4dp"
+                app:tabSelectedTextColor="@color/main_color"
+                app:tabTextAppearance="@style/TextAppearance.headline02"
+                app:tabTextColor="@color/black"
+                app:tabGravity="fill"
+                app:tabMode="scrollable" />
 
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/home_viewPager"
+                app:layout_constraintTop_toBottomOf="@id/home_tabLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btn_home_plan_more"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
+            <ImageButton
+                android:id="@+id/btn_home_plan_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="31dp"
+                android:background="@null"
+                android:src="@drawable/ic_more_plan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_viewPager" />
 
+            <Space
+                android:id="@+id/home_last_space"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_home_plan_more"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

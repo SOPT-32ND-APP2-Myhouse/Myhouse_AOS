@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_color_interior_image"
+            android:id="@+id/iv_best_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
@@ -35,10 +35,10 @@
             android:textColor="@color/dark_grey"
             android:textAppearance="@style/TextAppearance.miniCaption02"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_color_interior_image" />
+            app:layout_constraintTop_toBottomOf="@id/iv_best_image" />
 
         <TextView
-            android:id="@+id/tv_color_interior_title"
+            android:id="@+id/tv_best_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -54,11 +54,12 @@
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_color_interior_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_best_title"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/tv_color_interior_discount"
+                android:id="@+id/tv_best_discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
@@ -69,7 +70,7 @@
                 android:textAppearance="@style/TextAppearance.caption01" />
 
             <TextView
-                android:id="@+id/tv_color_interior_price"
+                android:id="@+id/tv_best_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"

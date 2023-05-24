@@ -40,10 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
             android:layout_marginEnd="6dp"
+            android:layout_marginBottom="11dp"
             android:text="@{contentsData.subDescription}"
             android:includeFontPadding="false"
             android:textColor="@color/black"
             android:textAppearance="@style/TextAppearance.caption02"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_home_summer_description"
             app:layout_constraintTop_toBottomOf="@id/iv_home_summer_image" />
 
