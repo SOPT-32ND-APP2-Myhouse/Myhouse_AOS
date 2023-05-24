@@ -28,7 +28,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        initBottomSheet()
         getPopularContents()
         getRecommendHome()
         getRecommendProduct()
@@ -73,10 +72,10 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         binding.rvHomePlan.adapter = planAdapter
     }
 
-    private fun initBestTab(){
+    private fun initBestTab() {
         val tabLayout = binding.homeTabLayout
         val pagerAdapter = PagerFragmentAdapter(requireActivity())
-            .apply{
+            .apply {
                 addFragment(PagerFragment())
                 addFragment(PagerFragment())
                 addFragment(PagerFragment())
@@ -86,7 +85,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
             }
         val viewPager = binding.homeViewPager.apply {
             adapter = pagerAdapter
-            registerOnPageChangeCallback(object :ViewPager2.OnPageChangeCallback(){
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                 }
@@ -98,12 +97,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
             tab.text = tabTitles[position]
         }.attach()
     }
-    private fun initBottomSheet(){
-        binding.ivHomeScrap.setOnClickListener {
-            val bottomSheetDialog = BottomSheetDialog()
-            bottomSheetDialog.show(requireActivity().supportFragmentManager, bottomSheetDialog.tag)
-        }
-    }
+
     private fun getPopularContents() {
         popularContentsAdapter.submitList(viewModel.popularContentsList)
     }

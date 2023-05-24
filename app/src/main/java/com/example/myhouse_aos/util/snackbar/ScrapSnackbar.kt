@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class ScrapSnackBar(
     view: View,
+    val showFolderBottomSheet: () -> Unit,
 ) {
     private val context = view.context
     private val snackbar = Snackbar.make(view, "", 3000)
@@ -34,12 +35,16 @@ class ScrapSnackBar(
             addView(snackbarBinding.root, 0)
 
             snackbarBinding.btnCustomSnackbarScrap.setOnClickListener {
-                context.startActivity(Intent(context, ScrapActivity::class.java))
+                moveToScrap()
             }
             snackbarBinding.btnCustomSnackbarFolder.setOnClickListener {
-
+                showFolderBottomSheet()
             }
         }
+    }
+
+    private fun moveToScrap() {
+        context.startActivity(Intent(context, ScrapActivity::class.java))
     }
 
     fun show() {

@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ActivityContentBinding
 import com.example.myhouse_aos.presentation.content.adapter.*
+import com.example.myhouse_aos.presentation.home.BottomSheetDialog
 import com.example.myhouse_aos.util.binding.BindingActivity
 import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 import com.google.android.flexbox.FlexDirection
@@ -59,7 +60,12 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
     }
 
     private fun showScrapSnackBar() {
-        ScrapSnackBar(binding.root).show()
+        ScrapSnackBar(binding.root, ::showFolderBottomSheet).show()
+    }
+
+    private fun showFolderBottomSheet() {
+        val bottomSheetDialog = BottomSheetDialog()
+        bottomSheetDialog.show(this.supportFragmentManager, bottomSheetDialog.tag)
     }
 
     private fun moveToBack() {

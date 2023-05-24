@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myhouse_aos.databinding.ItemContentTodayRecommendBinding
 import com.example.myhouse_aos.domain.model.TodayRecommendData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
-import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 
 class ItemContentTodayRecommendAdapter(
     val showScrapSnackBar: () -> Unit,
@@ -30,7 +29,6 @@ class ItemContentTodayRecommendAdapter(
                 if (binding.btnItemContentTodayrecommendBookmark.isSelected) {
                     binding.btnItemContentTodayrecommendBookmark.isSelected = false
                 } else {
-                    ScrapSnackBar(binding.root).show()
                     binding.btnItemContentTodayrecommendBookmark.isSelected = true
                     showScrapSnackBar()
                 }
