@@ -8,7 +8,9 @@ import com.example.myhouse_aos.databinding.ItemPostContentBinding
 import com.example.myhouse_aos.domain.model.PostContent
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
-class ContentAdapter : ListAdapter<PostContent, ContentAdapter.ContentViewHolder>(
+class ContentAdapter(
+    private val moveToContent: () -> Unit,
+) : ListAdapter<PostContent, ContentAdapter.ContentViewHolder>(
     ItemDiffCallback<PostContent>(
         onItemsTheSame = { old, new -> old.postId == new.postId },
         onContentsTheSame = { old, new -> old == new }
@@ -18,9 +20,16 @@ class ContentAdapter : ListAdapter<PostContent, ContentAdapter.ContentViewHolder
     class ContentViewHolder(
         private val binding: ItemPostContentBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(content: PostContent) {
+        fun onBind(
+            content: PostContent,
+            moveToContent: () -> Unit,
+        ) {
             binding.content = content
             binding.executePendingBindings()
+
+            binding.ivContentImage.setOnClickListener {
+                moveToContent()
+            }
         }
     }
 
@@ -31,6 +40,6 @@ class ContentAdapter : ListAdapter<PostContent, ContentAdapter.ContentViewHolder
     }
 
     override fun onBindViewHolder(holder: ContentViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+        holder.onBind(getItem(position), moveToContent)
     }
 }

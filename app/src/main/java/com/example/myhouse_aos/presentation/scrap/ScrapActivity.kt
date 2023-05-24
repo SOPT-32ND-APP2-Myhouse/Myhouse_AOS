@@ -9,5 +9,16 @@ class ScrapActivity : BindingActivity<ActivityScrapBinding>(R.layout.activity_sc
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        addListeners()
+    }
+
+    private fun addListeners() {
+        binding.ivScrapBack.setOnClickListener {
+            moveToBack()
+        }
+    }
+
+    private fun moveToBack() {
+        finish()
     }
 }
