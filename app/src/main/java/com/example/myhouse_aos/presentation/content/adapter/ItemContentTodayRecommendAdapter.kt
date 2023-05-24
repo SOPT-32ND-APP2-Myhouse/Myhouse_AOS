@@ -9,7 +9,9 @@ import com.example.myhouse_aos.domain.model.TodayRecommendData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 
-class ItemContentTodayRecommendAdapter :
+class ItemContentTodayRecommendAdapter(
+    val showScrapSnackBar: () -> Unit,
+) :
     ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
         ItemDiffCallback<TodayRecommendData>(
             onItemsTheSame = { old, new -> old.todayrecommend_id == new.todayrecommend_id },
@@ -18,15 +20,19 @@ class ItemContentTodayRecommendAdapter :
     ) {
     class ItemContentTodayRecommendViewHolder(private val binding: ItemContentTodayRecommendBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: TodayRecommendData) {
+        fun onBind(
+            data: TodayRecommendData,
+            showScrapSnackBar: () -> Unit,
+        ) {
             binding.data = data
 
             binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
                 if (binding.btnItemContentTodayrecommendBookmark.isSelected) {
                     binding.btnItemContentTodayrecommendBookmark.isSelected = false
                 } else {
-                    ScrapSnackBar.make(binding.root).show()
+                    ScrapSnackBar(binding.root).show()
                     binding.btnItemContentTodayrecommendBookmark.isSelected = true
+                    showScrapSnackBar()
                 }
             }
         }
@@ -45,7 +51,7 @@ class ItemContentTodayRecommendAdapter :
     }
 
     override fun onBindViewHolder(holder: ItemContentTodayRecommendViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+        holder.onBind(getItem(position), showScrapSnackBar)
     }
 
 }

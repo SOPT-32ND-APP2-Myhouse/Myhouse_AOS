@@ -6,6 +6,7 @@ import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ActivityContentBinding
 import com.example.myhouse_aos.presentation.content.adapter.*
 import com.example.myhouse_aos.util.binding.BindingActivity
+import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -24,7 +25,7 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
 
         binding.data = viewModel.contentDetail
 
-        val contentDetailAdapter = ItemContentDetailAdapter()
+        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar)
         binding.rvContentDetail.adapter = contentDetailAdapter
         contentDetailAdapter.submitList(viewModel.ContentDetailList)
 
@@ -44,12 +45,24 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         binding.rvContentUserimage.adapter = contentUserimageAdapter
         contentUserimageAdapter.submitList(viewModel.userimageList)
 
-        val contentTodayRecommendAdapter = ItemContentTodayRecommendAdapter()
+        val contentTodayRecommendAdapter = ItemContentTodayRecommendAdapter(::showScrapSnackBar)
         binding.rvContentTodayrecommend.adapter = contentTodayRecommendAdapter
         contentTodayRecommendAdapter.submitList(viewModel.todayRecommendList)
 
-        val contentUserBestAdapter = ItemContentUserBestAdapter()
+        val contentUserBestAdapter = ItemContentUserBestAdapter(::showScrapSnackBar)
         binding.rvContentUserbest.adapter = contentUserBestAdapter
         contentUserBestAdapter.submitList(viewModel.userBestList)
+
+        binding.btnContentBack.setOnClickListener {
+            moveToBack()
+        }
+    }
+
+    private fun showScrapSnackBar() {
+        ScrapSnackBar(binding.root).show()
+    }
+
+    private fun moveToBack() {
+        finish()
     }
 }

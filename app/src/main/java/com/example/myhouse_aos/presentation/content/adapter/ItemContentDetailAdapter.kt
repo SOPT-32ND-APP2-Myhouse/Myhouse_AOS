@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myhouse_aos.databinding.ItemContentDetailBinding
 import com.example.myhouse_aos.domain.model.ContentDetailData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
-import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 
-class ItemContentDetailAdapter :
+class ItemContentDetailAdapter(
+    val showScrapSnackBar: () -> Unit,
+) :
     ListAdapter<ContentDetailData.Images, ItemContentDetailAdapter.ItemContentDetailViewHolder>(
         ItemDiffCallback<ContentDetailData.Images>(
             onItemsTheSame = { old, new -> old.imageId == new.imageId },
@@ -19,7 +20,9 @@ class ItemContentDetailAdapter :
     ) {
     class ItemContentDetailViewHolder(private val binding: ItemContentDetailBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: ContentDetailData.Images) {
+        fun onBind(
+            data: ContentDetailData.Images,
+            showScrapSnackBar: () -> Unit,) {
             binding.data = data
             if (data.content == null) {
                 binding.tvItemContentdetail.visibility = View.GONE
@@ -29,8 +32,8 @@ class ItemContentDetailAdapter :
                 if (binding.btnItemContentdetailScrap.isSelected) {
                     binding.btnItemContentdetailScrap.isSelected = false
                 } else {
-                    ScrapSnackBar.make(binding.root).show()
                     binding.btnItemContentdetailScrap.isSelected = true
+                    showScrapSnackBar()
                 }
             }
         }
@@ -43,6 +46,6 @@ class ItemContentDetailAdapter :
     }
 
     override fun onBindViewHolder(holder: ItemContentDetailViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+        holder.onBind(getItem(position), showScrapSnackBar)
     }
 }
