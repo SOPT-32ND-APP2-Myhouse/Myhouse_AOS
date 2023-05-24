@@ -1,10 +1,20 @@
 package com.example.myhouse_aos.presentation.content
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myhouse_aos.R
+import com.example.myhouse_aos.data.ServicePool
+import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
 import com.example.myhouse_aos.domain.model.*
+import retrofit2.Call
+import retrofit2.Response
 
 class ContentViewModel : ViewModel() {
+    private val _contentDetailResult : MutableLiveData<ResponseContentDetailDto> = MutableLiveData()
+    val contentDetailResult: LiveData<ResponseContentDetailDto> = _contentDetailResult
+
     val contentDetail = ContentDetailData(
         1,
         "nickname",
@@ -126,4 +136,33 @@ class ContentViewModel : ViewModel() {
             title = "좁은 세탁실,딱 세 가지로 깔끔한 수납공간으로 대변신"
         )
     )
+
+    private val getContentDetailService = ServicePool.getContentDetailService
+    fun completeGetUsers() {
+        getContentDetailService.get()
+            .enqueue(object : retrofit2.Callback<ResponseContentDetailDto> {
+                override fun onResponse(
+                    call: Call<ResponseContentDetailDto>,
+                    response: Response<ResponseContentDetailDto>,
+                ) {
+                    if (response.isSuccessful) {
+                        _contentDetailResult.value = response.body()
+                        Log.e("test log", "isSuccessful")
+
+                    } else {
+                        Log.e("test log", "isnotSuccessful")
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseContentDetailDto>, t: Throwable) {
+                    Log.e("test log", "onFailure" , t)
+                }
+            })
+    }
+    fun createHashTagArray(str: String): List<HashTagData> {
+        val tagArray = str.split(" ")
+        return tagArray.map { str ->
+            HashTagData(str)
+        }.toList()
+    }
 }
