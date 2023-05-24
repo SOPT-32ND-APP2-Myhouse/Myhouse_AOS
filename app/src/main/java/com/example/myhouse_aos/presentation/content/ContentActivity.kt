@@ -2,9 +2,6 @@ package com.example.myhouse_aos.presentation.content
 
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ActivityContentBinding
 import com.example.myhouse_aos.presentation.content.adapter.*
@@ -32,11 +29,11 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
         contentDetailAdapter.submitList(viewModel.ContentDetailList)
 
         val flexboxAdapter = ItemContentHashtagAdapter()
-        FlexboxLayoutManager(this).apply{
+        FlexboxLayoutManager(this).apply {
             flexWrap = FlexWrap.WRAP
             flexDirection = FlexDirection.ROW
             justifyContent = JustifyContent.FLEX_START
-        }.let{
+        }.let {
             binding.rvContentHashtag.layoutManager = it
             binding.rvContentHashtag.adapter = flexboxAdapter
         }
