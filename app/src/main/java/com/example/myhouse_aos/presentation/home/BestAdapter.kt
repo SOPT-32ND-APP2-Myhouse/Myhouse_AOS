@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhouse_aos.databinding.ItemBestBinding
-import com.example.myhouse_aos.databinding.ItemColorProductBinding
 import com.example.myhouse_aos.domain.model.BestProductModel
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 

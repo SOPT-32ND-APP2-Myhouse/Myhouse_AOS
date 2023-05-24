@@ -1,10 +1,7 @@
 package com.example.myhouse_aos.presentation.home
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import androidx.core.app.NotificationCompat.getCategory
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myhouse_aos.R
@@ -95,7 +92,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
             })
         }
         viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        val tabTitles = arrayOf("전체", "가구", "패브릭", "가전 디지털", "주방용품", "식품")
+        val tabTitles = resources.getStringArray(R.array.home_tab_item)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()

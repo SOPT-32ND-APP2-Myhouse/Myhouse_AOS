@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myhouse_aos.databinding.ItemRecommendProductBinding
 import com.example.myhouse_aos.databinding.ItemSummerContentsBinding
 import com.example.myhouse_aos.domain.model.ContentsData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
