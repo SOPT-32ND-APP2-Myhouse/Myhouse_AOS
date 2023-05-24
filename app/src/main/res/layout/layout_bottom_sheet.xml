@@ -14,10 +14,10 @@
             android:id="@+id/bottom_layout"
             android:layout_width="match_parent"
             android:layout_height="13dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_bottom_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tv_bottom_title"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_bottom_title"
@@ -25,26 +25,26 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="148dp"
             android:layout_marginTop="13dp"
+            android:includeFontPadding="false"
+            android:text="@string/tv_btsheet_title"
             android:textAppearance="@style/TextAppearance.Title01"
             android:textSize="18sp"
-            android:includeFontPadding="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/iv_bottom_close"
-            app:layout_constraintTop_toBottomOf="@id/bottom_layout"
             app:layout_constraintBottom_toTopOf="@id/iv_bottom_cell1"
-            android:text="@string/tv_btsheet_title"/>
+            app:layout_constraintEnd_toStartOf="@id/iv_bottom_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_layout" />
 
         <ImageView
+            android:id="@+id/iv_bottom_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/iv_bottom_close"
             android:layout_marginStart="113dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toTopOf="@id/iv_bottom_cell1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bottom_layout"
             app:layout_constraintStart_toEndOf="@id/tv_bottom_title"
-            app:layout_constraintBottom_toTopOf="@id/iv_bottom_cell1"/>
+            app:layout_constraintTop_toBottomOf="@id/bottom_layout" />
 
         <ImageView
             android:id="@+id/iv_bottom_cell1"
@@ -63,16 +63,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
-            android:layout_marginEnd="158dp"
             android:layout_marginTop="27dp"
             android:layout_marginBottom="20dp"
-            android:textAppearance="@style/TextAppearance.headline02"
-            app:layout_constraintTop_toBottomOf="@id/tv_bottom_title"
-            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell1"
-            app:layout_constraintBottom_toTopOf="@id/v_section_1"
-            app:layout_constraintEnd_toEndOf="parent"
             android:includeFontPadding="false"
-            android:text="@string/tv_btsheet_1"/>
+            android:text="@string/tv_btsheet_1"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintBottom_toTopOf="@id/v_section_1"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell1"
+            app:layout_constraintTop_toBottomOf="@id/tv_bottom_title" />
 
         <View
             android:id="@+id/v_section_1"
@@ -81,37 +79,36 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="7dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/light_grey"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell1"
-            android:background="@color/light_grey" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell1" />
 
         <ImageView
+            android:id="@+id/iv_bottom_cell2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/iv_bottom_cell2"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:src="@drawable/img_bottom_2"
             app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/v_section_1"/>
+            app:layout_constraintTop_toBottomOf="@id/v_section_1" />
+
         <TextView
             android:id="@+id/tv_bottom_cell2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
-            android:layout_marginEnd="180dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="18dp"
-            android:textAppearance="@style/TextAppearance.headline02"
-            app:layout_constraintTop_toBottomOf="@id/v_section_1"
-            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/v_section_2"
             android:includeFontPadding="false"
-            android:text="@string/tv_btsheet_2" />
+            android:text="@string/tv_btsheet_2"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintBottom_toTopOf="@id/v_section_2"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell2"
+            app:layout_constraintTop_toBottomOf="@id/v_section_1" />
 
         <View
             android:id="@+id/v_section_2"
@@ -119,37 +116,36 @@
             android:layout_height="1dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="7dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/light_grey"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell2"
-            android:background="@color/light_grey" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell2" />
 
         <ImageView
+            android:id="@+id/iv_bottom_cell3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/iv_bottom_cell3"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:src="@drawable/img_bottom_3"
             app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/v_section_2"/>
+            app:layout_constraintTop_toBottomOf="@id/v_section_2" />
+
         <TextView
             android:id="@+id/tv_bottom_cell3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
-            android:layout_marginEnd="180dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="18dp"
-            android:textAppearance="@style/TextAppearance.headline02"
-            app:layout_constraintTop_toBottomOf="@id/v_section_2"
-            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/v_section_3"
             android:includeFontPadding="false"
-            android:text="@string/tv_btsheet_3" />
+            android:text="@string/tv_btsheet_3"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintBottom_toTopOf="@id/v_section_3"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell3"
+            app:layout_constraintTop_toBottomOf="@id/v_section_2" />
 
         <View
             android:id="@+id/v_section_3"
@@ -157,36 +153,36 @@
             android:layout_height="1dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="7dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/light_grey"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell3"
-            android:background="@color/light_grey" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell3" />
+
         <ImageView
+            android:id="@+id/iv_bottom_cell4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/iv_bottom_cell4"
             android:layout_marginStart="15dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="7dp"
             android:src="@drawable/img_bottom_4"
             app:layout_constraintEnd_toStartOf="@id/tv_bottom_cell4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/v_section_3"/>
+            app:layout_constraintTop_toBottomOf="@id/v_section_3" />
+
         <TextView
             android:id="@+id/tv_bottom_cell4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
-            android:layout_marginEnd="170dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="18dp"
-            android:textAppearance="@style/TextAppearance.headline02"
-            app:layout_constraintTop_toBottomOf="@id/v_section_3"
-            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell4"
-            app:layout_constraintBottom_toTopOf="@id/v_section_5"
-            app:layout_constraintEnd_toEndOf="parent"
             android:includeFontPadding="false"
-            android:text="@string/tv_btsheet_4" />
+            android:text="@string/tv_btsheet_4"
+            android:textAppearance="@style/TextAppearance.headline02"
+            app:layout_constraintBottom_toTopOf="@id/v_section_5"
+            app:layout_constraintStart_toEndOf="@id/iv_bottom_cell4"
+            app:layout_constraintTop_toBottomOf="@id/v_section_3" />
 
         <View
             android:id="@+id/v_section_5"
@@ -194,14 +190,14 @@
             android:layout_height="1dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="7dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/light_grey"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell4"
-            android:background="@color/light_grey" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bottom_cell4" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="212dp"
-            app:layout_constraintTop_toBottomOf="@id/v_section_5"/>
+            app:layout_constraintTop_toBottomOf="@id/v_section_5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
