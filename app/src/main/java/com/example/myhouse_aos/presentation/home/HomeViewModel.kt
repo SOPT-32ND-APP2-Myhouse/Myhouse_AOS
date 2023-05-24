@@ -376,6 +376,34 @@ class HomeViewModel : ViewModel() {
             description = "",
             subDescription = ""
         )
-
+    )
+    val bestList = listOf(
+        BestProductModel(
+            imageUrl = R.drawable.img_best,
+            postTitle = "Q4 유로탑 롤팩 매트리...",
+            discount="56%",
+            brand="",
+            price="34,900",
+            rate="1",
+            reviewsCount=""
+        ),
+        BestProductModel(
+            imageUrl = R.drawable.img_best,
+            postTitle = "Q4 유로탑 롤팩 매트리...",
+            discount="56%",
+            brand="",
+            price="34,900",
+            rate="2",
+            reviewsCount=""
+        ),
+        BestProductModel(
+            imageUrl = R.drawable.img_best,
+            postTitle = "Q4 유로탑 롤팩 매트리...",
+            discount="56%",
+            brand="",
+            price="34,900",
+            rate="3",
+            reviewsCount=""
+        ),
     )
 }
