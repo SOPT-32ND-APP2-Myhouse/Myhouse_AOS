@@ -19,10 +19,6 @@ class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(
-            this,
-            R.layout.activity_content
-        )
 
 
 

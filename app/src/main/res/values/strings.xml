@@ -36,4 +36,7 @@
     <string name="scrap_title">스크랩북</string>
     <string name="scrap_edit">편집</string>
     <string name="scrap_nickname">nickname</string>
+    <string name="scraped">스크랩했습니다.</string>
+    <string name="btn_folder">폴더에 담기</string>
+    <string name="btn_scrapbook">스크랩북 보기</string>
 </resources>

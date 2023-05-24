@@ -14,7 +14,7 @@ import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 
 class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemContentDetailAdapter.ItemContentDetailViewHolder>(
     ItemDiffCallback<ContentDetailData.Images>(
-        onItemsTheSame = {old, new -> old.image_id == new.image_id},
+        onItemsTheSame = {old, new -> old.imageId == new.imageId},
         onContentsTheSame = {old, new -> old == new}
     )
 )
@@ -35,7 +35,6 @@ class ItemContentDetailAdapter : ListAdapter<ContentDetailData.Images, ItemConte
                             ScrapSnackBar.make(binding.root).show()
                             binding.btnItemContentdetailScrap.isSelected = true
                         }
-
                     }
                 }
             }

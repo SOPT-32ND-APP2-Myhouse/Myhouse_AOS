@@ -18,17 +18,17 @@ class ContentViewModel : ViewModel() {
     )
     val ContentDetailList = listOf(
         ContentDetailData.Images(
-            image_id = 1,
+            imageId = 1,
             image = R.drawable.content_detail_card,
             content = "식물들 창가로 몰아주기"
         ),
         ContentDetailData.Images(
-            image_id = 2,
+            imageId = 2,
             image = R.drawable.content_detail_card,
             content = null
         ),
         ContentDetailData.Images(
-            image_id = 3,
+            imageId = 3,
             image = R.drawable.content_detail_card,
             content = null
         )

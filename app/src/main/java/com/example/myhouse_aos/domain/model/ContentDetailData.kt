@@ -3,18 +3,18 @@ package com.example.myhouse_aos.domain.model
 import androidx.annotation.DrawableRes
 
 data class ContentDetailData(
-    val post_id: Int,
-    val user_name: String,
-    val created_date: String,
-    val option_tag: String,
-    val hash_tag: String,
-    val like_count: String,
-    val scrap_count: String,
-    val comment_count: String,
-    val view_count: String,
+    val postId: Int,
+    val userName: String,
+    val createdDate: String,
+    val optionTag: String,
+    val hashTag: String,
+    val likeCount: String,
+    val scrapCount: String,
+    val commentCount: String,
+    val viewCount: String,
 ){
     data class Images(
-        val image_id: Int,
+        val imageId: Int,
         @DrawableRes val image: Int,
         val content: String?,
     )
