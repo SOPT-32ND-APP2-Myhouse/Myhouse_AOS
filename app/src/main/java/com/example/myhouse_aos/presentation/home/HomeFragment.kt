@@ -2,7 +2,6 @@ package com.example.myhouse_aos.presentation.home
 
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import androidx.fragment.app.viewModels
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
@@ -66,8 +65,8 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     }
     private fun initBottomSheet(){
         binding.ivHomeScrap.setOnClickListener {
-            val bottomSheet = BottomSheet()
-            bottomSheet.show(requireActivity().supportFragmentManager, bottomSheet.tag)
+            val bottomSheetDialog = BottomSheetDialog()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager, bottomSheetDialog.tag)
         }
     }
     private fun getPopularContents() {
