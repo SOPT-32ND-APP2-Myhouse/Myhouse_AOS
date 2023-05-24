@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{BestProductModel.brand}"
+            android:includeFontPadding="false"
             android:layout_marginEnd="75dp"
             android:textColor="@color/dark_grey"
             android:textAppearance="@style/TextAppearance.miniCaption02"
@@ -41,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
+            android:includeFontPadding="false"
             android:text="@{BestProductModel.postTitle}"
             android:textAppearance="@style/TextAppearance.body02"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +62,7 @@
             android:layout_marginEnd="6dp"
             android:layout_height="wrap_content"
             android:text="@{BestProductModel.discount}"
+            android:includeFontPadding="false"
             android:textColor="@color/main_color"
             android:textAppearance="@style/TextAppearance.title01" />
 
@@ -67,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="42dp"
+            android:includeFontPadding="false"
             android:text="@{BestProductModel.price}"
             android:textColor="@color/black"
             android:textAppearance="@style/TextAppearance.title01" />

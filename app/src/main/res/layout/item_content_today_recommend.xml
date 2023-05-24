@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.myhouse_aos.domain.model.TodayRecommendData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp">
+
+        <ImageView
+            android:id="@+id/iv_item_content_todayrecommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{context.getDrawable(data.image)}"
+            tools:src="@drawable/todayrecommend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/btn_item_content_todayrecommend_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="6dp"
+            android:src="@drawable/bookmark_selector"
+            app:layout_constraintBottom_toBottomOf="@id/iv_item_content_todayrecommend"
+            app:layout_constraintEnd_toEndOf="@id/iv_item_content_todayrecommend" />
+
+        <TextView
+            android:id="@+id/tv_item_content_todayrecommend_manufacture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.manufacture}"
+            tools:text="우드레이"
+            android:includeFontPadding="false"
+            android:layout_marginTop="9dp"
+            android:theme="@style/TextAppearance.miniCaption01"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintTop_toBottomOf="@id/iv_item_content_todayrecommend"
+            app:layout_constraintStart_toStartOf="@id/iv_item_content_todayrecommend"/>
+
+        <TextView
+            android:id="@+id/tv_item_content_todayrecommend_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.product}"
+            tools:text="홈카페 원형 식탁 테이블\n800size"
+            android:includeFontPadding="false"
+            android:layout_marginTop="4dp"
+            android:theme="@style/TextAppearance.body02"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_content_todayrecommend_manufacture"
+            app:layout_constraintStart_toStartOf="@id/iv_item_content_todayrecommend"
+            />
+        <TextView
+            android:id="@+id/tv_item_content_todayrecommend_price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.price1}"
+            tools:text="60%"
+            android:includeFontPadding="false"
+            android:layout_marginTop="3dp"
+            android:theme="@style/TextAppearance.price"
+            android:textColor="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_content_todayrecommend_product"
+            app:layout_constraintStart_toStartOf="@id/iv_item_content_todayrecommend"/>
+
+        <TextView
+            android:id="@+id/tv_item_content_todayrecommend_price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.price2}"
+            tools:text="74,800"
+            android:includeFontPadding="false"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="2dp"
+            android:theme="@style/TextAppearance.price"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_content_todayrecommend_product"
+            app:layout_constraintStart_toEndOf="@id/tv_item_content_todayrecommend_price1"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

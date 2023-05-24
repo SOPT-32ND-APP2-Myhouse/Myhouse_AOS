@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhouse_aos.databinding.ItemRecommendHomeBinding
-import com.example.myhouse_aos.domain.model.ContentsData
 import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 

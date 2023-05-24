@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.myhouse_aos.domain.model.UserimageData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_content_userimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{context.getDrawable(data.image)}"
+            tools:src="@drawable/userimage"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/btn_content_userimage_watchmore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/watch_more"
+            android:layout_margin="4dp"
+            app:layout_constraintTop_toTopOf="@id/iv_content_userimage"
+            app:layout_constraintEnd_toEndOf="@id/iv_content_userimage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

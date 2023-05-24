@@ -1,15 +1,73 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
-    <string name="string_home_popular_contents">이주의 인기콘텐츠</string>
+
+    <string name="home">홈</string>
+    <string name="todayfind">오늘의 발견</string>
+    <string name="shopping">쇼핑</string>
+    <string name="various">이사/시공/생활</string>
+    <string name="mypage">마이페이지</string>
+    <string name="input_comment">댓글을 입력해주세요.</string>
+    <string name="follow">팔로우</string>
+    <string name="total_comment">총 7개의 댓글 중 최신 5개</string>
+    <string name="comment_option">5일 · 좋아요 · 답글달기 · 신고</string>
+    <string name="comment_btn">등록</string>
+    <string name="today_recommend">오늘의 추천 상품</string>
+    <string name="user_best">유저들의 비슷한 공간 베스트</string>
+    <string name="nickname">nickname</string>
+    <string name="created_date">created_date</string>
+    <string name="option_tag">option_tag</string>
+    <string name="like">좋아요</string>
+    <string name="scrap">스크랩</string>
+    <string name="comment">댓글</string>
+    <string name="user_comment">와 너무 예뻐요</string>
+    <string name="back">back</string>
+    <string name="more">more</string>
+
+    <!--  home  -->
+    <string name="string_home_popular_contents">🏅 이주의 인기 콘텐츠 🏅</string>
     <string name="string_home_recommend_house">닉네임님을 위한 추천 집들이</string>
     <string name="string_home_recommend_product">오늘의 추천 상품</string>
     <string name="string_home_modern_interior">모던한 인테리어 콘텐츠 둘러보기</string>
     <string name="string_home_category_product">카테고리별 상품 찾기</string>
-    <string name="string_home_summer_content">여름맞이 강력추천 콘텐츠</string>
+    <string name="string_home_summer_content">여름맞이 강력추천 콘텐츠 👀</string>
     <string name="string_home_color_interior">요새 힙한 #컬러/레터링조명 인테리어</string>
     <string name="string_home_color_product">컬러/레터링조명 인기상품</string>
     <string name="string_home_review">서울특별시 동작구 주변 시공 리뷰</string>
     <string name="string_home_plan">오늘의 기획전</string>
+    <string name="string_home_deal_time">01:31:17 남음</string>
+    <string name="string_deal_text1">[오늘의딜] 23년신상! 보랄 무\n선 선풍기 미니</string>
+    <string name="string_home_discount">84%</string>
+    <string name="string_home_text2">특가 832개 보기</string>
+    <string name="string_home_popular_photo">인기사진 TOP 10</string>
+    <string name="string_home_popular_photo_more">더보기</string>
+    <string name="string_home_popular_photo_text">매일 1,2,3위에게 최대 1000P 지급!</string>
+    <string name="string_home_best">베스트</string>
+    <string-array name="home_tab_item">
+        <item>전체</item>
+        <item>가구</item>
+        <item>패브릭</item>
+        <item>가전ㆍ디지털</item>
+        <item>주방용품</item>
+        <item>식품</item>
+    </string-array>
+
+    <!--  post  -->
+    <string name="hint_search">오늘의집 통합검색</string>
+    <string name="post_tab_recommandation">추천</string>
+    <string name="post_tab_following">팔로잉</string>
+    <string name="post_tab_housewarming">집들이</string>
+    <string name="post_tab_knowhow">노하우</string>
+    <string name="post_tab_export">전문가집들이</string>
+    <string name="post_hot_content_title">🔹 오늘의집 인기 콘텐츠 BEST 🔹</string>
+    <string name="post_more">더보기</string>
+
+    <!--  scrap  -->
+    <string name="scrap_title">스크랩북</string>
+    <string name="scrap_edit">편집</string>
+    <string name="scrap_nickname">nickname</string>
+    <string name="scraped">스크랩했습니다.</string>
+    <string name="btn_folder">폴더에 담기</string>
+    <string name="btn_scrapbook">스크랩북 보기</string>
     <!--    bottom sheet-->
     <string name="tv_btsheet_title">폴더 선택</string>
     <string name="tv_btsheet_1">새로운 폴더 추가하기</string>

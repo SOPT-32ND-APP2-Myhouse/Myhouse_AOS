@@ -1,12 +1,9 @@
 package com.example.myhouse_aos.presentation.home
 
-import com.example.myhouse_aos.databinding.ItemColorInteriorBinding
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myhouse_aos.databinding.ItemModernContentsBinding
 import com.example.myhouse_aos.databinding.ItemReviewBinding
 import com.example.myhouse_aos.domain.model.ContentsData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback

@@ -285,7 +285,7 @@ class HomeViewModel : ViewModel() {
     val menuList = listOf(
         ContentsData(
             contentId = 1,
-            image = R.drawable.ic_cart,
+            image = R.drawable.ic_shopping,
             description = "쇼핑하기",
             subDescription = ""
         ),
@@ -297,31 +297,31 @@ class HomeViewModel : ViewModel() {
         ),
         ContentsData(
             contentId = 3,
-            image = R.drawable.ic_discount,
+            image = R.drawable.ic_deal,
             description = "오늘의 딜",
             subDescription = ""
         ),
         ContentsData(
             contentId = 4,
-            image = R.drawable.ic_heart,
+            image = R.drawable.ic_fav,
             description = "취향의 발견",
             subDescription = ""
         ),
         ContentsData(
             contentId = 5,
-            image = R.drawable.ic_food,
+            image = R.drawable.ic_cart,
             description = "장보기",
             subDescription = ""
         ),
         ContentsData(
             contentId = 6,
-            image = R.drawable.ic_home,
+            image = R.drawable.ic_house,
             description = "집들이",
             subDescription = ""
         ),
         ContentsData(
             contentId = 7,
-            image = R.drawable.ic_cart,
+            image = R.drawable.ic_shopping,
             description = "쇼핑하기",
             subDescription = ""
         ),
@@ -351,5 +351,59 @@ class HomeViewModel : ViewModel() {
             subTitle = ""
         ),
     )
-
+    val planList = listOf(
+        ContentsData(
+            contentId = 1,
+            image = R.drawable.img_plan,
+            description = "",
+            subDescription = ""
+        ),
+        ContentsData(
+            contentId = 2,
+            image = R.drawable.img_plan,
+            description = "",
+            subDescription = ""
+        ),
+        ContentsData(
+            contentId = 3,
+            image = R.drawable.img_plan,
+            description = "",
+            subDescription = ""
+        ),
+        ContentsData(
+            contentId = 4,
+            image = R.drawable.img_plan,
+            description = "",
+            subDescription = ""
+        )
+    )
+    val bestList = listOf(
+        BestProductModel(
+            imageUrl = R.drawable.img_best,
+            postTitle = "Q4 유로탑 롤팩 매트리...",
+            discount="56%",
+            brand="",
+            price="34,900",
+            rate="1",
+            reviewsCount=""
+        ),
+        BestProductModel(
+            imageUrl = R.drawable.img_best,
+            postTitle = "Q4 유로탑 롤팩 매트리...",
+            discount="56%",
+            brand="",
+            price="34,900",
+            rate="2",
+            reviewsCount=""
+        ),
+        BestProductModel(
+            imageUrl = R.drawable.img_best,
+            postTitle = "Q4 유로탑 롤팩 매트리...",
+            discount="56%",
+            brand="",
+            price="34,900",
+            rate="3",
+            reviewsCount=""
+        ),
+    )
 }

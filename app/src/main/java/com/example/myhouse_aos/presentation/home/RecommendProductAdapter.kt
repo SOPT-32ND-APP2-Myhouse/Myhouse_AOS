@@ -4,10 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myhouse_aos.databinding.ItemRecommendHomeBinding
 import com.example.myhouse_aos.databinding.ItemRecommendProductBinding
 import com.example.myhouse_aos.domain.model.BestProductModel
-import com.example.myhouse_aos.domain.model.ContentsData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
 class RecommendProductAdapter : ListAdapter<BestProductModel, RecommendProductAdapter.ContentViewHolder>(

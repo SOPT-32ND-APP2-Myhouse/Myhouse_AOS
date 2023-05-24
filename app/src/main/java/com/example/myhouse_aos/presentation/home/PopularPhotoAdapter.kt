@@ -4,10 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myhouse_aos.databinding.ItemPopularContentsBinding
 import com.example.myhouse_aos.databinding.ItemPopularPhotoBinding
 import com.example.myhouse_aos.domain.model.PopularContentsModel
-import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
 class PopularPhotoAdapter :
