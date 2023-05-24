@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
-    <!--    home-->
+
+    <string name="home">홈</string>
+    <string name="todayfind">오늘의 발견</string>
+    <string name="shopping">쇼핑</string>
+    <string name="various">이사/시공/생활</string>
+    <string name="mypage">마이페이지</string>
+    <string name="input_comment">댓글을 입력해주세요.</string>
+    <string name="follow">팔로우</string>
+    <string name="total_comment">총 7개의 댓글 중 최신 5개</string>
+    <string name="comment_option">5일 · 좋아요 · 답글달기 · 신고</string>
+    <string name="comment_btn">등록</string>
+    <string name="today_recommend">오늘의 추천 상품</string>
+    <string name="user_best">유저들의 비슷한 공간 베스트</string>
+    <string name="nickname">nickname</string>
+    <string name="created_date">created_date</string>
+    <string name="option_tag">option_tag</string>
+    <string name="like">좋아요</string>
+    <string name="scrap">스크랩</string>
+    <string name="comment">댓글</string>
+    <string name="user_comment">와 너무 예뻐요</string>
+    <string name="back">back</string>
+    <string name="more">more</string>
+  
+    <!--  home  -->
     <string name="string_home_popular_contents">🏅 이주의 인기 콘텐츠 🏅</string>
     <string name="string_home_recommend_house">닉네임님을 위한 추천 집들이</string>
     <string name="string_home_recommend_product">오늘의 추천 상품</string>
@@ -28,28 +51,6 @@
         <item>식품</item>
     </string-array>
 
-    <string name="home">홈</string>
-    <string name="todayfind">오늘의 발견</string>
-    <string name="shopping">쇼핑</string>
-    <string name="various">이사/시공/생활</string>
-    <string name="mypage">마이페이지</string>
-    <string name="input_comment">댓글을 입력해주세요.</string>
-    <string name="follow">팔로우</string>
-    <string name="total_comment">총 7개의 댓글 중 최신 5개</string>
-    <string name="comment_option">5일 · 좋아요 · 답글달기 · 신고</string>
-    <string name="comment_btn">등록</string>
-    <string name="today_recommend">오늘의 추천 상품</string>
-    <string name="user_best">유저들의 비슷한 공간 베스트</string>
-    <string name="nickname">nickname</string>
-    <string name="created_date">created_date</string>
-    <string name="option_tag">option_tag</string>
-    <string name="like">좋아요</string>
-    <string name="scrap">스크랩</string>
-    <string name="comment">댓글</string>
-    <string name="user_comment">와 너무 예뻐요</string>
-    <string name="back">back</string>
-    <string name="more">more</string>
-
     <!--  post  -->
     <string name="hint_search">오늘의집 통합검색</string>
     <string name="post_tab_recommandation">추천</string>
@@ -67,5 +68,4 @@
     <string name="scraped">스크랩했습니다.</string>
     <string name="btn_folder">폴더에 담기</string>
     <string name="btn_scrapbook">스크랩북 보기</string>
-
 </resources>
