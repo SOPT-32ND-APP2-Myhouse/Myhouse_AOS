@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  
+   <!--  TextView Style  -->
+    <style name="HomePointTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">84dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:background">@color/point_color</item>
+        <item name="android:padding">4dp</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+  
     <!--  ImageView Style  -->
     <style name="Radius4">
         <item name="cornerSize">4dp</item>
     </style>
 
-    <!--  Text Style  -->
+    <style name="RankingRectangleStyle">
+        <item name="android:background">@color/main_color</item>
+        <item name="android:backgroundTint">@color/main_color</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <!--  font Style  -->
     <style name="TextAppearance.Title01" parent="">
         <item name="fontWeight">700</item>
         <item name="android:fontFamily">@font/notosans_bold_font</item>

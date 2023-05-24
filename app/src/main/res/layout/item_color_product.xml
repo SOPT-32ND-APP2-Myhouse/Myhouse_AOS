@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="BestProductModel"
+            type="com.example.myhouse_aos.domain.model.BestProductModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_best_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_color_interior_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{BestProductModel.brand}"
+            tools:text="헬로우슬립"
+            android:includeFontPadding="false"
+            android:textColor="@color/dark_grey"
+            android:textAppearance="@style/TextAppearance.miniCaption02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_best_image" />
+
+        <TextView
+            android:id="@+id/tv_best_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false"
+            android:text="@{BestProductModel.postTitle}"
+            android:textAppearance="@style/TextAppearance.miniCaption02"
+            app:layout_constraintBottom_toTopOf="@id/layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_color_interior_brand"
+            tools:text="LED 오로라 블루투스 스\n피커 무드등 인기상품임..." />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_best_title"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_best_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:includeFontPadding="false"
+                tools:text="56%"
+                android:text="@{BestProductModel.discount}"
+                android:textColor="@color/main_color"
+                android:textAppearance="@style/TextAppearance.caption01" />
+
+            <TextView
+                android:id="@+id/tv_best_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="42dp"
+                android:text="@{BestProductModel.price}"
+                tools:text="34,900"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.caption01" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
