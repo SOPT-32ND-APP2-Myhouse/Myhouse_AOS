@@ -1,13 +1,15 @@
 package com.example.myhouse_aos.presentation.post
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.FragmentPostBinding
+import com.example.myhouse_aos.presentation.content.ContentActivity
 import com.example.myhouse_aos.util.binding.BindingFragment
 
-class FragmentPost : BindingFragment<FragmentPostBinding>(R.layout.fragment_post) {
+class PostFragment : BindingFragment<FragmentPostBinding>(R.layout.fragment_post) {
     private val viewModel: PostViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -16,10 +18,10 @@ class FragmentPost : BindingFragment<FragmentPostBinding>(R.layout.fragment_post
         initLayout()
     }
 
-    fun initLayout() {
-        val contentAdapterTop = ContentAdapter()
+    private fun initLayout() {
+        val contentAdapterTop = ContentAdapter(::moveToContent)
         val hotAdapter = HotContentAdapter()
-        val contentAdapterBottom = ContentAdapter()
+        val contentAdapterBottom = ContentAdapter(::moveToContent)
 
         binding.rvPostContents.adapter = contentAdapterTop
         contentAdapterTop.submitList(viewModel.contentList1)
@@ -29,4 +31,7 @@ class FragmentPost : BindingFragment<FragmentPostBinding>(R.layout.fragment_post
         contentAdapterBottom.submitList(viewModel.contentList1)
     }
 
+    private fun moveToContent() {
+        startActivity(Intent(requireContext(), ContentActivity::class.java))
+    }
 }
