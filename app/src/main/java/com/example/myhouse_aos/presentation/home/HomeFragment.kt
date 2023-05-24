@@ -3,6 +3,7 @@ package com.example.myhouse_aos.presentation.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
@@ -83,6 +84,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
                 addFragment(PagerFragment())
                 addFragment(PagerFragment())
             }
+
         val viewPager = binding.homeViewPager.apply {
             adapter = pagerAdapter
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

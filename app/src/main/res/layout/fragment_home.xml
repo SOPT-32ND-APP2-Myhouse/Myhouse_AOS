@@ -21,67 +21,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/iv_home_statusbar"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/et_home_search"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img_statusbar"
-                app:layout_constraintEnd_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/backgrond_search"
+                android:drawableLeft="@drawable/ic_search"
+                android:fontFamily="@font/notosans_regular"
+                android:hint="@string/hint_search"
+                android:includeFontPadding="false"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/iv_home_big_bookmark"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/iv_home_search"
+                android:id="@+id/iv_home_big_bookmark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/img_search"
-                app:layout_constraintEnd_toStartOf="@id/iv_home_scrap"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_statusbar" />
-
-            <ImageView
-                android:id="@+id/iv_home_scrap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
                 android:layout_marginTop="6dp"
-                android:src="@drawable/ic_scrap"
-                app:layout_constraintEnd_toStartOf="@id/iv_home_cart"
-                app:layout_constraintStart_toEndOf="@id/iv_home_search"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_statusbar" />
+                android:layout_marginEnd="7dp"
+                android:src="@drawable/ic_bookmark_big"
+                app:layout_constraintEnd_toStartOf="@+id/iv_post_cart"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/iv_home_cart"
+                android:id="@+id/iv_post_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="6dp"
+                android:layout_marginEnd="5dp"
                 android:src="@drawable/ic_cart_1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_home_scrap"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_statusbar" />
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
                 android:id="@+id/iv_home_banner"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
                 android:layout_marginTop="19dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/img_banner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_cart" />
+                app:layout_constraintTop_toBottomOf="@id/et_home_search" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_menu"
                 android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_banner" />
 
             <ImageView
@@ -101,10 +99,8 @@
                 android:includeFontPadding="false"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="194dp"
                 android:text="@string/string_home_popular_contents"
                 android:textAppearance="@style/TextAppearance.title01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar1" />
 
@@ -136,10 +132,8 @@
                 android:includeFontPadding="false"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginEnd="150dp"
                 android:text="@string/string_home_recommend_house"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar2" />
 
@@ -147,7 +141,7 @@
                 android:id="@+id/rv_home_recommend_house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginHorizontal="7dp"
                 android:layout_marginTop="12dp"
                 tools:listitem="@layout/item_recommend_home"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_house"
@@ -171,11 +165,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginEnd="256dp"
                 android:includeFontPadding="false"
                 android:text="@string/string_home_recommend_product"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar3" />
 
@@ -207,11 +199,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="149dp"
                 android:includeFontPadding="false"
                 android:text="@string/string_home_modern_interior"
                 android:textAppearance="@style/TextAppearance.title01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar4" />
 
@@ -242,11 +232,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="14dp"
-                android:layout_marginEnd="227dp"
                 android:text="@string/string_home_category_product"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar5" />
 
@@ -255,6 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginStart="11dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_category_product"
                 android:layout_marginTop="14dp"
@@ -276,11 +265,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="14dp"
-                android:layout_marginEnd="295dp"
                 android:text="오늘의 딜"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar6" />
 
@@ -302,13 +289,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:layout_marginEnd="105dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/string_home_deal_time"
                 android:textColor="@color/white"
                 style="@style/HomePointTextViewStyle"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.caption02"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_home_deal_image"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar6" />
 
@@ -317,11 +303,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/string_deal_text1"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.caption02"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_home_deal_image"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_deal_time" />
 
@@ -330,13 +315,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="85dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/string_home_discount"
                 android:includeFontPadding="false"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:textColor="@color/point_color"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_home_deal_image"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_deal_title" />
             <TextView
@@ -344,12 +328,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="100dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/string_home_text2"
                 android:textColor="@color/point_color"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.caption01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_home_deal_image"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_deal_discount" />
             <TextView
@@ -358,11 +341,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="43dp"
-                android:layout_marginEnd="184dp"
                 android:text="@string/string_home_summer_content"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_deal_image" />
 
@@ -371,7 +352,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginHorizontal="7dp"
                 tools:listitem="@layout/item_summer_contents"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
@@ -405,11 +386,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="19dp"
-                android:layout_marginEnd="133dp"
                 android:text="@string/string_home_color_interior"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar7" />
 
@@ -430,11 +409,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="189dp"
                 android:text="@string/string_home_color_product"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_color_interior" />
 
@@ -466,12 +443,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginEnd="196dp"
                 android:text="@string/string_home_popular_photo"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintBottom_toTopOf="@id/tv_home_popular_photo_subtitle"
-                app:layout_constraintEnd_toStartOf="@id/tv_home_popular_photo_more"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar8" />
 
@@ -486,7 +461,6 @@
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline02"
                 app:layout_constraintBottom_toTopOf="@id/tv_home_popular_photo_subtitle"
-                app:layout_constraintStart_toEndOf="@id/tv_home_popular_photo_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar8" />
             <TextView
@@ -495,12 +469,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginEnd="172dp"
                 android:text="@string/string_home_popular_photo_text"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.caption02"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_popular_photo"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_popular_photo_title" />
 
@@ -533,26 +505,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="95dp"
                 android:text="@string/string_home_review"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_review"
-                app:layout_constraintEnd_toStartOf="@id/iv_home_find_company"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar9" />
 
-            <ImageView
-                android:id="@+id/iv_home_find_company"
+            <TextView
+                android:id="@+id/tv_home_find_company_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_search_company"
+                android:text="업체찾기"
+                android:textColor="@color/main_color"
+                android:includeFontPadding="false"
+                android:textAppearance="@style/TextAppearance.headline02"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_review"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tv_home_review"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar9" />
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_review"
@@ -565,7 +538,7 @@
                 tools:listitem="@layout/item_review"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_find_company" />
+                app:layout_constraintTop_toBottomOf="@id/tv_home_find_company_more" />
 
             <ImageView
                 android:id="@+id/iv_home_sectionbar10"
@@ -583,25 +556,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="221dp"
                 android:text="@string/string_home_plan"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_plan"
-                app:layout_constraintEnd_toStartOf="@id/iv_home_more"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar10" />
 
-            <ImageView
-                android:id="@+id/iv_home_more"
+            <TextView
+                android:id="@+id/tv_home_plan_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_more"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="9dp"
+                android:text="@string/string_home_popular_photo_more"
+                android:textColor="@color/main_color"
+                android:includeFontPadding="false"
+                android:textAppearance="@style/TextAppearance.headline02"
                 app:layout_constraintBottom_toTopOf="@id/rv_home_plan"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tv_home_plan"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar10" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -648,33 +621,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="17dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/string_home_best"
                 android:includeFontPadding="false"
                 android:textAppearance="@style/TextAppearance.headline01"
                 app:layout_constraintBottom_toTopOf="@id/home_tabLayout"
-                app:layout_constraintEnd_toStartOf="@id/iv_home_best_more"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar11" />
-
-            <ImageView
-                android:id="@+id/iv_home_best_more"
+            <TextView
+                android:id="@+id/tv_home_best_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="9dp"
-                android:src="@drawable/ic_more"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/string_home_popular_photo_more"
+                android:textColor="@color/main_color"
+                android:includeFontPadding="false"
+                android:textAppearance="@style/TextAppearance.headline02"
                 app:layout_constraintBottom_toTopOf="@id/home_tabLayout"
-                app:layout_constraintStart_toEndOf="@id/tv_home_best_title"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar11" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_sectionbar11"/>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/home_tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="11dp"
-                app:layout_constraintBottom_toTopOf="@id/iv_home_best_more"
+                app:layout_constraintBottom_toTopOf="@id/tv_home_best_more"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_best_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -691,11 +663,11 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/home_viewPager"
                 app:layout_constraintTop_toBottomOf="@id/home_tabLayout"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/btn_home_plan_more"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
 
             <ImageButton
                 android:id="@+id/btn_home_plan_more"
@@ -704,7 +676,7 @@
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="31dp"
                 android:background="@null"
-                android:src="@drawable/ic_more_plan"
+                android:src="@drawable/ic_more_best"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/home_viewPager" />

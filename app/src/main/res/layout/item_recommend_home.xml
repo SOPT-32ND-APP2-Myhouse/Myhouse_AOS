@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -9,27 +10,31 @@
     </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:layout_marginBottom="7dp">
 
             <ImageView
                 android:id="@+id/iv_home_recommend_image"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@{context.getDrawable(RecommendHomeModel.imageUrl)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/Radius4" />
+                app:shapeAppearanceOverlay="@style/Radius4"
+                tools:src="@drawable/img_recommend_home" />
             <TextView
                 android:id="@+id/iv_home_recommend_description"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
                 android:text="@{RecommendHomeModel.title}"
                 android:includeFontPadding="false"
+                tools:text="소형평수반려묘를 위한 아이디\n어! 24평 구축 리모델링"
                 android:textAppearance="@style/TextAppearance.caption02"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/iv_home_recommend_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_recommend_image" />
         </androidx.constraintlayout.widget.ConstraintLayout>
