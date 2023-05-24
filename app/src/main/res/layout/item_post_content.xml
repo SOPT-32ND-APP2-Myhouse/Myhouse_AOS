@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="content"
+            type="com.example.myhouse_aos.domain.model.PostContent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/iv_content_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@{context.getDrawable(content.image)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Radius4"
+            tools:src="@drawable/post_content" />
+
+        <ImageView
+            android:id="@+id/iv_content_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_images"
+            app:layout_constraintEnd_toEndOf="@+id/iv_content_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_content_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_content_image"
+            app:layout_constraintEnd_toEndOf="@+id/iv_content_image" />
+
+
+        <TextView
+            android:id="@+id/tv_content_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:includeFontPadding="false"
+            android:text="@{content.title}"
+            android:textAppearance="@style/TextAppearance.body02"
+            app:layout_constraintEnd_toEndOf="@+id/iv_content_image"
+            app:layout_constraintStart_toStartOf="@+id/iv_content_image"
+            app:layout_constraintTop_toBottomOf="@id/iv_content_image"
+            tools:text="좁은 세탁실, 딱 세 가지로 깔끔한\n수납공간으로 대변신" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
