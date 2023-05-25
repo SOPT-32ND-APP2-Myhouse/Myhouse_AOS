@@ -3,6 +3,7 @@ package com.example.myhouse_aos.util.snackbar
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myhouse_aos.R
@@ -34,6 +35,9 @@ class ScrapSnackBar(
             setPadding(0, 0, 0, 0)
             setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
             addView(snackbarBinding.root, 0)
+            val params = layoutParams as ViewGroup.MarginLayoutParams
+            params.setMargins(0, 0, 0, 0)  // 패딩을 없애기 위해 마진 값을 0으로 설정
+            layoutParams = params
 
             snackbarBinding.btnCustomSnackbarScrap.setOnClickListener {
                 moveToScrap()

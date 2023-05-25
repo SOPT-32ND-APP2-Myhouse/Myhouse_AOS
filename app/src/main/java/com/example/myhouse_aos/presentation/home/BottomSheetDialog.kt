@@ -53,30 +53,33 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
             Log.e("test log", "isSuccessful")
             addFolder(1, imageUrl)
             dismiss()
+            SuccessSnackBar(rootView).show()
         }
         binding.ivBottomCell2.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(2, imageUrl)
             dismiss()
+            SuccessSnackBar(rootView).show()
         }
         binding.ivBottomCell3.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(3, imageUrl)
             dismiss()
+            SuccessSnackBar(rootView).show()
         }
         binding.ivBottomCell4.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(4, imageUrl)
+            dismiss()
+            SuccessSnackBar(rootView).show()
+        }
+        binding.ivBottomClose.setOnClickListener {
             dismiss()
         }
 
         return view
     }
 
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-        SuccessSnackBar(rootView).show()
-    }
 
     override fun getTheme(): Int = R.style.AppBottomSheetDialogTheme
 
