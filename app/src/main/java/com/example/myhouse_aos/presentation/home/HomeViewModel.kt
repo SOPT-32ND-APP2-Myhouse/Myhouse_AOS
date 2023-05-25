@@ -7,23 +7,33 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.data.repository.GetPopularContentsRespositoryImpl
+import com.example.myhouse_aos.data.repository.GetRecommendHomeRepositoryImpl
 import com.example.myhouse_aos.data.service.AuthState
 import com.example.myhouse_aos.domain.model.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val getPopularContentsRespositoryImpl: GetPopularContentsRespositoryImpl) :
+class HomeViewModel(
+    private val getPopularContentsRespositoryImpl: GetPopularContentsRespositoryImpl,
+    private val getRecommendHomeRepositoryImpl: GetRecommendHomeRepositoryImpl
+) :
     ViewModel() {
-    private var _popularContentsList = MutableLiveData<List<PopularContentsModel>>()
-    val popularContentsList: List<PopularContentsModel>?
-        get() = _popularContentsList.value
     private val _getListState = MutableLiveData<AuthState>()
     val getListState: LiveData<AuthState>
         get() = _getListState
 
+    private var _popularContentsList = MutableLiveData<List<PopularContentsModel>>()
+    val popularContentsList: List<PopularContentsModel>?
+        get() = _popularContentsList.value
+
+    private var _recommendHome = MutableLiveData<RecommendHomeModel>()
+    val recommendHome: RecommendHomeModel?
+        get() = _recommendHome.value
+
     init {
         getPopularContentList()
+        getRecommendHomeList()
     }
 
     private fun getPopularContentList() {
@@ -39,36 +49,19 @@ class HomeViewModel(private val getPopularContentsRespositoryImpl: GetPopularCon
         }
     }
 
-    val recommendHomeList = listOf(
-        RecommendHomeModel(
-            postId = "1",
-            imageUrl = R.drawable.img_recommend_home,
-            title = "깔끔하게 변신한 20살 아파트",
-            tag = "",
-            userName = "nickname"
-        ),
-        RecommendHomeModel(
-            postId = "2",
-            imageUrl = R.drawable.img_recommend_home,
-            title = "소형평수&반려묘를 위한 아이디\n어! 24평 구축 리모델링",
-            tag = "",
-            userName = "nickname"
-        ),
-        RecommendHomeModel(
-            postId = "3",
-            imageUrl = R.drawable.img_recommend_home,
-            title = "조명맛집! 자취 4년 차의 서울 \n신축 6평 원룸",
-            tag = "",
-            userName = "nickname"
-        ),
-        RecommendHomeModel(
-            postId = "4",
-            imageUrl = R.drawable.img_recommend_home,
-            title = "로망집 ! 흙을 밟으며 마음껏 뛰노\n는 마당 있는 집",
-            tag = "",
-            userName = "nickname"
-        ),
-    )
+    private fun getRecommendHomeList() {
+        viewModelScope.launch {
+            getRecommendHomeRepositoryImpl.getRecommendHome()
+                .onSuccess { response ->
+                    _recommendHome.value = response
+                    _getListState.value = AuthState.SUCCESS
+                }
+                .onFailure {response ->
+                    _getListState.value = AuthState.FAIL
+                    Log.e("home", "Failed to get recommend home: ${response.message}", response)
+                }
+        }
+    }
 
     val recommendProductList = listOf(
         BestProductModel(
@@ -339,21 +332,21 @@ class HomeViewModel(private val getPopularContentsRespositoryImpl: GetPopularCon
         PopularContentsModel(
             postId = 1,
             rate = 1,
-            image = "drawable://"+R.drawable.img_popular_photo,
+            image = "drawable://" + R.drawable.img_popular_photo,
             title = "",
             subTitle = ""
         ),
         PopularContentsModel(
             postId = 2,
             rate = 2,
-            image = "drawable://"+R.drawable.img_popular_photo,
+            image = "drawable://" + R.drawable.img_popular_photo,
             title = "",
             subTitle = ""
         ),
         PopularContentsModel(
             postId = 3,
             rate = 3,
-            image = "drawable://"+R.drawable.img_popular_photo,
+            image = "drawable://" + R.drawable.img_popular_photo,
             title = "",
             subTitle = ""
         ),

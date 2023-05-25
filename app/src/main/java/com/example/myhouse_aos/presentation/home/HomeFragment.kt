@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.data.service.AuthState
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
+import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.presentation.common.ViewModelFactory
 import com.example.myhouse_aos.presentation.post.PostViewModel
 import com.example.myhouse_aos.util.binding.BindingFragment
@@ -17,6 +18,7 @@ import kotlinx.coroutines.launch
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val viewModel: HomeViewModel by viewModels { ViewModelFactory(requireContext()) }
+    private val recommendHomeList: MutableList<RecommendHomeModel>  = mutableListOf()
     private lateinit var popularContentsAdapter: PopularContentsAdapter
     private lateinit var recommendHomeAdapter: RecommendHomeAdapter
     private lateinit var recommendProductAdapter: RecommendProductAdapter
@@ -34,7 +36,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         getPopularContentsData()
-        getRecommendHome()
+        getRecommendHomeData()
         getRecommendProduct()
         getModernInterior()
         getCategory()
@@ -55,6 +57,24 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
                     viewModel.popularContentsList?.let { contentsList ->
                         popularContentsAdapter.submitList(contentsList)
                         Log.e("success", contentsList.toString())
+                    }
+                }
+            }else{
+                Log.e("fail", "fail")
+            }
+        }
+    }
+
+    private fun getRecommendHomeData(){
+        viewModel.getListState.observe(viewLifecycleOwner) { getListState ->
+            if(getListState == AuthState.SUCCESS){
+                viewLifecycleOwner.lifecycleScope.launch {
+                    viewModel.recommendHome?.let { recommendHome ->
+                        repeat(4) {
+                            recommendHomeList.addAll(listOf(recommendHome))
+                        }
+                        recommendHomeAdapter.submitList(recommendHomeList)
+                        Log.e("success", recommendHomeList.toString())
                     }
                 }
             }else{
@@ -116,10 +136,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
-    }
-
-    private fun getRecommendHome() {
-        recommendHomeAdapter.submitList(viewModel.recommendHomeList)
     }
 
     private fun getRecommendProduct() {
