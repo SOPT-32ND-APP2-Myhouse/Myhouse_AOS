@@ -22,6 +22,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintTop_toTopOf="parent"
             app:spanCount="2"
+            tools:itemCount="4"
             tools:listitem="@layout/item_scrap" />
 
         <TextView
