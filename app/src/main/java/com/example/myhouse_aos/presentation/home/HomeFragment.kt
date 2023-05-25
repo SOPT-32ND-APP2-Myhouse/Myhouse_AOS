@@ -1,17 +1,22 @@
 package com.example.myhouse_aos.presentation.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myhouse_aos.R
+import com.example.myhouse_aos.data.service.AuthState
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
+import com.example.myhouse_aos.presentation.common.ViewModelFactory
+import com.example.myhouse_aos.presentation.post.PostViewModel
 import com.example.myhouse_aos.util.binding.BindingFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.launch
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
-
-    private val viewModel by viewModels<HomeViewModel>()
+    private val viewModel: HomeViewModel by viewModels { ViewModelFactory(requireContext()) }
     private lateinit var popularContentsAdapter: PopularContentsAdapter
     private lateinit var recommendHomeAdapter: RecommendHomeAdapter
     private lateinit var recommendProductAdapter: RecommendProductAdapter
@@ -28,7 +33,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        getPopularContents()
+        getPopularContentsData()
         getRecommendHome()
         getRecommendProduct()
         getModernInterior()
@@ -41,6 +46,21 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         getPopularPhoto()
         getTodayPlan()
         initBestTab()
+    }
+
+    private fun getPopularContentsData(){
+        viewModel.getListState.observe(viewLifecycleOwner) { getListState ->
+            if(getListState == AuthState.SUCCESS){
+                viewLifecycleOwner.lifecycleScope.launch {
+                    viewModel.popularContentsList?.let { contentsList ->
+                        popularContentsAdapter.submitList(contentsList)
+                        Log.e("success", contentsList.toString())
+                    }
+                }
+            }else{
+                Log.e("fail", "fail")
+            }
+        }
     }
 
     private fun initAdapter() {
@@ -96,10 +116,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
-    }
-
-    private fun getPopularContents() {
-        popularContentsAdapter.submitList(viewModel.popularContentsList)
     }
 
     private fun getRecommendHome() {

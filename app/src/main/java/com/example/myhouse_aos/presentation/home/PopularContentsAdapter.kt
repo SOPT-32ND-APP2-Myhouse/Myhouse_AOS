@@ -22,8 +22,13 @@ class PopularContentsAdapter() :
         fun onBind(data: PopularContentsModel) {
             val tvTitle = data.title
             val tvSubtitle = data.subTitle
-            val connectedText = "${tvTitle}${tvSubtitle}"
-            data.title = connectedText
+            val connectedText = "${tvTitle}\n${tvSubtitle}"
+            val connectedTextTruncated = if (connectedText.length > 14) {
+                connectedText.substring(0, 14) + "\n" + connectedText.substring(14)
+            } else {
+                connectedText
+            }
+            data.title = connectedTextTruncated
             data.subTitle = ""
             binding.popularContentsModel = data
             binding.executePendingBindings()

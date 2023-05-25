@@ -5,11 +5,12 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.FragmentPagerBinding
+import com.example.myhouse_aos.presentation.common.ViewModelFactory
 import com.example.myhouse_aos.util.binding.BindingFragment
 
 class PagerFragment : BindingFragment<FragmentPagerBinding>(R.layout.fragment_pager) {
 
-    private val viewModel by viewModels<HomeViewModel>()
+    private val viewModel: HomeViewModel by viewModels { ViewModelFactory(requireContext()) }
     private lateinit var bestAdapter: BestAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -1,36 +1,43 @@
 package com.example.myhouse_aos.presentation.home
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.myhouse_aos.R
-import com.example.myhouse_aos.domain.model.BestProductModel
-import com.example.myhouse_aos.domain.model.ContentsData
-import com.example.myhouse_aos.domain.model.PopularContentsModel
-import com.example.myhouse_aos.domain.model.RecommendHomeModel
+import com.example.myhouse_aos.data.repository.GetPopularContentsRespositoryImpl
+import com.example.myhouse_aos.data.service.AuthState
+import com.example.myhouse_aos.domain.model.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() {
-    val popularContentsList = listOf(
-        PopularContentsModel(
-            postId = "1",
-            rate = "1",
-            imageUrl = R.drawable.img_popular_contents,
-            title = "간결해진 삶에 행복을 더하\n는!",
-            subTitle = " 뷰맛집 상큼하우스"
-        ),
-        PopularContentsModel(
-            postId = "2",
-            rate = "2",
-            imageUrl = R.drawable.img_popular_contents,
-            title = "간결해진 삶에 행복을 더하\n는!",
-            subTitle = " 뷰맛집 상큼하우스"
-        ),
-        PopularContentsModel(
-            postId = "3",
-            rate = "3",
-            imageUrl = R.drawable.img_popular_contents,
-            title = "간결해진 삶에 행복을 더하\n는!",
-            subTitle = " 뷰맛집 상큼하우스"
-        ),
-    )
+class HomeViewModel(private val getPopularContentsRespositoryImpl: GetPopularContentsRespositoryImpl) :
+    ViewModel() {
+    private var _popularContentsList = MutableLiveData<List<PopularContentsModel>>()
+    val popularContentsList: List<PopularContentsModel>?
+        get() = _popularContentsList.value
+    private val _getListState = MutableLiveData<AuthState>()
+    val getListState: LiveData<AuthState>
+        get() = _getListState
+
+    init {
+        getPopularContentList()
+    }
+
+    private fun getPopularContentList() {
+        viewModelScope.launch {
+            getPopularContentsRespositoryImpl.getPopularContents()
+                .onSuccess { response ->
+                    _popularContentsList.value = response
+                    _getListState.value = AuthState.SUCCESS
+                }
+                .onFailure {
+                    _getListState.value = AuthState.FAIL
+                }
+        }
+    }
 
     val recommendHomeList = listOf(
         RecommendHomeModel(
@@ -67,39 +74,39 @@ class HomeViewModel : ViewModel() {
         BestProductModel(
             imageUrl = R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
 
         ),
         BestProductModel(
             imageUrl = R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
     )
 
@@ -222,38 +229,38 @@ class HomeViewModel : ViewModel() {
         BestProductModel(
             imageUrl = R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount="56%",
-            brand="헬로우슬립",
-            price="34,900",
-            rate="",
-            reviewsCount=""
+            discount = "56%",
+            brand = "헬로우슬립",
+            price = "34,900",
+            rate = "",
+            reviewsCount = ""
         ),
     )
     val reviewList = listOf(
@@ -326,27 +333,27 @@ class HomeViewModel : ViewModel() {
             subDescription = ""
         ),
 
-    )
+        )
 
     val popularPhotoList = listOf(
         PopularContentsModel(
-            postId = "1",
-            rate = "1",
-            imageUrl = R.drawable.img_popular_photo,
+            postId = 1,
+            rate = 1,
+            image = "drawable://"+R.drawable.img_popular_photo,
             title = "",
             subTitle = ""
         ),
         PopularContentsModel(
-            postId = "2",
-            rate = "2",
-            imageUrl = R.drawable.img_popular_photo,
+            postId = 2,
+            rate = 2,
+            image = "drawable://"+R.drawable.img_popular_photo,
             title = "",
             subTitle = ""
         ),
         PopularContentsModel(
-            postId = "3",
-            rate = "3",
-            imageUrl = R.drawable.img_popular_photo,
+            postId = 3,
+            rate = 3,
+            image = "drawable://"+R.drawable.img_popular_photo,
             title = "",
             subTitle = ""
         ),
@@ -381,29 +388,29 @@ class HomeViewModel : ViewModel() {
         BestProductModel(
             imageUrl = R.drawable.img_best,
             postTitle = "Q4 유로탑 롤팩 매트리...",
-            discount="56%",
-            brand="",
-            price="34,900",
-            rate="1",
-            reviewsCount=""
+            discount = "56%",
+            brand = "",
+            price = "34,900",
+            rate = "1",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_best,
             postTitle = "Q4 유로탑 롤팩 매트리...",
-            discount="56%",
-            brand="",
-            price="34,900",
-            rate="2",
-            reviewsCount=""
+            discount = "56%",
+            brand = "",
+            price = "34,900",
+            rate = "2",
+            reviewsCount = ""
         ),
         BestProductModel(
             imageUrl = R.drawable.img_best,
             postTitle = "Q4 유로탑 롤팩 매트리...",
-            discount="56%",
-            brand="",
-            price="34,900",
-            rate="3",
-            reviewsCount=""
+            discount = "56%",
+            brand = "",
+            price = "34,900",
+            rate = "3",
+            reviewsCount = ""
         ),
     )
 }
