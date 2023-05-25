@@ -14,15 +14,10 @@ class PagerFragment : BindingFragment<FragmentPagerBinding>(R.layout.fragment_pa
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        getBest()
     }
+
     private fun initAdapter() {
         bestAdapter = BestAdapter()
-        binding.rvHomePager.adapter = bestAdapter
-
-    }
-    private fun getBest() {
-        bestAdapter.submitList(viewModel.bestList)
     }
 }
 
