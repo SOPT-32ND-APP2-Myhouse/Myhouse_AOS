@@ -3,7 +3,6 @@ package com.example.myhouse_aos.presentation.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
