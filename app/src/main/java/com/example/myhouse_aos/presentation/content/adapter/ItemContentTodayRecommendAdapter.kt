@@ -9,7 +9,6 @@ import com.example.myhouse_aos.domain.model.TodayRecommendData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
 class ItemContentTodayRecommendAdapter(
-    val showScrapSnackBar: () -> Unit,
 ) :
     ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
         ItemDiffCallback<TodayRecommendData>(
@@ -21,7 +20,6 @@ class ItemContentTodayRecommendAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(
             data: TodayRecommendData,
-            showScrapSnackBar: () -> Unit,
         ) {
             binding.data = data
 
@@ -30,7 +28,6 @@ class ItemContentTodayRecommendAdapter(
                     binding.btnItemContentTodayrecommendBookmark.isSelected = false
                 } else {
                     binding.btnItemContentTodayrecommendBookmark.isSelected = true
-                    showScrapSnackBar()
                 }
             }
         }
@@ -49,7 +46,7 @@ class ItemContentTodayRecommendAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemContentTodayRecommendViewHolder, position: Int) {
-        holder.onBind(getItem(position), showScrapSnackBar)
+        holder.onBind(getItem(position))
     }
 
 }

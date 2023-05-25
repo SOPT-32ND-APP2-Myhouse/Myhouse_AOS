@@ -1,11 +1,8 @@
 package com.example.myhouse_aos.presentation.content
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhouse_aos.R
-import com.example.myhouse_aos.data.ServicePool
 import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
 import com.example.myhouse_aos.databinding.ActivityContentBinding
 import com.example.myhouse_aos.presentation.content.adapter.*
@@ -34,7 +31,7 @@ class ContentActivity : AppCompatActivity() {
 
 
 
-        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar)
+        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar,viewModel)
         binding.rvContentDetail.adapter = contentDetailAdapter
 
 
@@ -54,11 +51,11 @@ class ContentActivity : AppCompatActivity() {
         binding.rvContentUserimage.adapter = contentUserimageAdapter
         contentUserimageAdapter.submitList(viewModel.userimageList)
 
-        val contentTodayRecommendAdapter = ItemContentTodayRecommendAdapter(::showScrapSnackBar)
+        val contentTodayRecommendAdapter = ItemContentTodayRecommendAdapter()
         binding.rvContentTodayrecommend.adapter = contentTodayRecommendAdapter
         contentTodayRecommendAdapter.submitList(viewModel.todayRecommendList)
 
-        val contentUserBestAdapter = ItemContentUserBestAdapter(::showScrapSnackBar)
+        val contentUserBestAdapter = ItemContentUserBestAdapter()
         binding.rvContentUserbest.adapter = contentUserBestAdapter
         contentUserBestAdapter.submitList(viewModel.userBestList)
 
@@ -76,12 +73,14 @@ class ContentActivity : AppCompatActivity() {
 
     }
 
-    private fun showScrapSnackBar() {
-        ScrapSnackBar(binding.root, ::showFolderBottomSheet).show()
+    private fun showScrapSnackBar(imageUrl: String) {
+        ScrapSnackBar(binding.root,imageUrl) {
+            showFolderBottomSheet(imageUrl)
+        }.show()
     }
 
-    private fun showFolderBottomSheet() {
-        val bottomSheetDialog = BottomSheetDialog()
+    private fun showFolderBottomSheet(imageUrl: String) {
+        val bottomSheetDialog = BottomSheetDialog.newInstance(imageUrl)
         bottomSheetDialog.show(this.supportFragmentManager, bottomSheetDialog.tag)
     }
 

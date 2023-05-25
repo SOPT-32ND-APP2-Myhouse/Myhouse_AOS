@@ -6,23 +6,21 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.myhouse_aos.R
-import com.example.myhouse_aos.databinding.CustomSnackbarBinding
+import com.example.myhouse_aos.databinding.SuccessSnackbarBinding
 import com.example.myhouse_aos.presentation.scrap.ScrapActivity
 import com.google.android.material.snackbar.Snackbar
 
 
-class ScrapSnackBar(
+class SuccessSnackBar(
     view: View,
-    val imageUrl: String,
-    val showFolderBottomSheet: (String) -> Unit,
 ) {
     private val context = view.context
     private val snackbar = Snackbar.make(view, "", 3000)
     private val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
 
     private val inflater = LayoutInflater.from(context)
-    private val snackbarBinding: CustomSnackbarBinding =
-        DataBindingUtil.inflate(inflater, R.layout.custom_snackbar, null, false)
+    private val snackbarBinding: SuccessSnackbarBinding =
+        DataBindingUtil.inflate(inflater, R.layout.success_snackbar, null, false)
 
     init {
         initView()
@@ -35,11 +33,8 @@ class ScrapSnackBar(
             setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
             addView(snackbarBinding.root, 0)
 
-            snackbarBinding.btnCustomSnackbarScrap.setOnClickListener {
+            snackbarBinding.btnSuccessSnackbarScrapbook.setOnClickListener {
                 moveToScrap()
-            }
-            snackbarBinding.btnCustomSnackbarFolder.setOnClickListener {
-                showFolderBottomSheet(imageUrl)
             }
         }
     }
