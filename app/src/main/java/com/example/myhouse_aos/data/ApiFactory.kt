@@ -27,5 +27,5 @@ object ApiFactory {
 }
 
 object ServicePool {
-    val getPopularContentsService = ApiFactory.create<GetService>()
+    val getService = ApiFactory.create<GetService>()
 }

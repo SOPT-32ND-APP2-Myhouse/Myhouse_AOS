@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes
 class RecommendHomeModel (
     val tag: String,
     val userName: String,
-    val postId: String,
-    @DrawableRes val imageUrl: Int,
+    val postId: Int,
+    val imageUrl: String,
     val title: String
     )
