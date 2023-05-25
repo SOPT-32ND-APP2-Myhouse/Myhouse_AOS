@@ -1,5 +1,6 @@
 package com.example.myhouse_aos.data.service
 
+import com.example.myhouse_aos.data.model.response.ResponseBestProduct
 import com.example.myhouse_aos.data.model.response.ResponsePopularContent
 import com.example.myhouse_aos.data.model.response.ResponseRecommendHome
 import retrofit2.http.GET
@@ -10,4 +11,7 @@ interface GetService {
 
     @GET("home/post/recommend")
     suspend fun getRecommendHome(): ResponseRecommendHome
+
+    @GET("home/product")
+    suspend fun getBestProduct(): ResponseBestProduct
 }
