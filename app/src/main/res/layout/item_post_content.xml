@@ -18,10 +18,10 @@
 
         <ImageView
             android:id="@+id/iv_content_image"
+            imageUrl="@{content.image}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@{context.getDrawable(content.image)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/Radius4"

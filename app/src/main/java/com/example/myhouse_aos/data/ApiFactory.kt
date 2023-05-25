@@ -1,6 +1,7 @@
 package com.example.myhouse_aos.data
 
 import com.example.myhouse_aos.BuildConfig
+import com.example.myhouse_aos.data.service.PostService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -26,5 +27,5 @@ object ApiFactory {
 }
 
 object ServicePool {
-
+    val postContentService = ApiFactory.create<PostService>()
 }
