@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RequestScrapDto(
+data class RequestAddFolderDto(
     @SerialName("image_url")
-    val image_url: String,
+    val image_url: String?,
 )

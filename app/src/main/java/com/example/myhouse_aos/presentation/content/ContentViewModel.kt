@@ -21,6 +21,9 @@ class ContentViewModel : ViewModel() {
     private val _scrapResult: MutableLiveData<ResponseScrapDto> = MutableLiveData()
     val scrapResult: LiveData<ResponseScrapDto> = _scrapResult
 
+    private val _scrapDeleteResult: MutableLiveData<ResponseDeleteScrapDto> = MutableLiveData()
+    val scrapDeleteResult: LiveData<ResponseDeleteScrapDto> = _scrapDeleteResult
+
     val contentDetail = ContentDetailData(
         1,
         "nickname",

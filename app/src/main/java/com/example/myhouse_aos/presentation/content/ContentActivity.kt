@@ -3,19 +3,14 @@ package com.example.myhouse_aos.presentation.content
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
 import com.example.myhouse_aos.databinding.ActivityContentBinding
 import com.example.myhouse_aos.presentation.content.adapter.*
 import com.example.myhouse_aos.presentation.home.BottomSheetDialog
-import com.example.myhouse_aos.util.binding.BindingActivity
 import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
-import kotlinx.serialization.json.Json
-import retrofit2.Call
-import retrofit2.Response
 
 class ContentActivity : AppCompatActivity() {
     lateinit var binding: ActivityContentBinding
@@ -30,8 +25,7 @@ class ContentActivity : AppCompatActivity() {
         viewModel.completeGetUsers()
 
 
-
-        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar,viewModel)
+        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar, viewModel)
         binding.rvContentDetail.adapter = contentDetailAdapter
 
 
@@ -46,7 +40,6 @@ class ContentActivity : AppCompatActivity() {
         }
 
 
-
         val contentUserimageAdapter = ItemContentUserimageAdapter()
         binding.rvContentUserimage.adapter = contentUserimageAdapter
         contentUserimageAdapter.submitList(viewModel.userimageList)
@@ -59,7 +52,7 @@ class ContentActivity : AppCompatActivity() {
         binding.rvContentUserbest.adapter = contentUserBestAdapter
         contentUserBestAdapter.submitList(viewModel.userBestList)
 
-        viewModel.contentDetailResult.observe(this){contentDetailResult->
+        viewModel.contentDetailResult.observe(this) { contentDetailResult ->
             binding.data = contentDetailResult
             val hashtaglist = viewModel.createHashTagArray(contentDetailResult.data.hast_tag)
             flexboxAdapter.submitList(hashtaglist)
@@ -74,7 +67,7 @@ class ContentActivity : AppCompatActivity() {
     }
 
     private fun showScrapSnackBar(imageUrl: String) {
-        ScrapSnackBar(binding.root,imageUrl) {
+        ScrapSnackBar(binding.root, imageUrl) {
             showFolderBottomSheet(imageUrl)
         }.show()
     }

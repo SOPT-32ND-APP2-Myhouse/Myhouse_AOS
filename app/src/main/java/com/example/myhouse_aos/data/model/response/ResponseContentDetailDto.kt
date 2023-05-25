@@ -36,15 +36,15 @@ data class ResponseContentDetailDto(
         val comment_count: Int,
         @SerialName("view_count")
         val view_count: Int,
-    ){
+    ) {
         @Serializable
         data class Image(
             @SerialName("image_id")
-            val image_id : Int,
+            val image_id: Int,
             @SerialName("image_url")
-            val image_url : String,
+            val image_url: String,
             @SerialName("content")
-            val content : String?,
+            val content: String?,
         )
     }
 }

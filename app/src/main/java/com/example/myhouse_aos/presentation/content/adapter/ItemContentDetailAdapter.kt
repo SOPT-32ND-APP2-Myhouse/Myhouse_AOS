@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
 import com.example.myhouse_aos.databinding.ItemContentDetailBinding
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
-import kotlin.reflect.KFunction0
 import com.example.myhouse_aos.presentation.content.ContentViewModel as ContentViewModel
 
 class ItemContentDetailAdapter(
@@ -22,7 +21,7 @@ class ItemContentDetailAdapter(
             onContentsTheSame = { old, new -> old == new }
         )
     ) {
-    var recentScrapId = 1
+
     class ItemContentDetailViewHolder(private val binding: ItemContentDetailBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(
@@ -41,12 +40,11 @@ class ItemContentDetailAdapter(
                     binding.btnItemContentdetailScrap.isSelected = false
                 } else {
                     contentViewModel.scrap(data.image_url)
-                    contentViewModel.imageUrl = data.image_url
                     binding.btnItemContentdetailScrap.isSelected = true
                 }
             }
 
-            contentViewModel.scrapResult.observeForever { scrapResult->
+            contentViewModel.scrapResult.observeForever { scrapResult ->
                 showScrapSnackBar(data.image_url)
             }
 
