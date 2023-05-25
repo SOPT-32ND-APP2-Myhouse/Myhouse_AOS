@@ -11,14 +11,13 @@ import com.example.myhouse_aos.data.service.AuthState
 import com.example.myhouse_aos.databinding.FragmentHomeBinding
 import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.presentation.common.ViewModelFactory
-import com.example.myhouse_aos.presentation.post.PostViewModel
 import com.example.myhouse_aos.util.binding.BindingFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.launch
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val viewModel: HomeViewModel by viewModels { ViewModelFactory(requireContext()) }
-    private val recommendHomeList: MutableList<RecommendHomeModel>  = mutableListOf()
+    private val recommendHomeList: MutableList<RecommendHomeModel> = mutableListOf()
     private lateinit var popularContentsAdapter: PopularContentsAdapter
     private lateinit var recommendHomeAdapter: RecommendHomeAdapter
     private lateinit var recommendProductAdapter: RecommendProductAdapter
@@ -35,7 +34,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-        getPopularContentsData()
         getRecommendHomeData()
         getRecommendProduct()
         getModernInterior()
@@ -50,35 +48,20 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         initBestTab()
     }
 
-    private fun getPopularContentsData(){
+    private fun getRecommendHomeData() {
         viewModel.getListState.observe(viewLifecycleOwner) { getListState ->
-            if(getListState == AuthState.SUCCESS){
-                viewLifecycleOwner.lifecycleScope.launch {
-                    viewModel.popularContentsList?.let { contentsList ->
-                        popularContentsAdapter.submitList(contentsList)
-                        Log.e("success", contentsList.toString())
-                    }
-                }
-            }else{
-                Log.e("fail", "fail")
-            }
-        }
-    }
-
-    private fun getRecommendHomeData(){
-        viewModel.getListState.observe(viewLifecycleOwner) { getListState ->
-            if(getListState == AuthState.SUCCESS){
+            if (getListState == AuthState.SUCCESS) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     viewModel.recommendHome?.let { recommendHome ->
                         repeat(4) {
                             recommendHomeList.addAll(listOf(recommendHome))
                         }
                         recommendHomeAdapter.submitList(recommendHomeList)
-                        Log.e("success", recommendHomeList.toString())
+                        Log.e("getRecommendHomeData_success", recommendHomeList.toString())
                     }
                 }
-            }else{
-                Log.e("fail", "fail")
+            } else {
+                Log.e("getRecommendHomeData_fail", "fail")
             }
         }
     }
@@ -112,16 +95,18 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         binding.rvHomePlan.adapter = planAdapter
     }
 
+
     private fun initBestTab() {
         val tabLayout = binding.homeTabLayout
+        val pagerFragment = PagerFragment()
         val pagerAdapter = PagerFragmentAdapter(requireActivity())
             .apply {
-                addFragment(PagerFragment())
-                addFragment(PagerFragment())
-                addFragment(PagerFragment())
-                addFragment(PagerFragment())
-                addFragment(PagerFragment())
-                addFragment(PagerFragment())
+                addFragment(pagerFragment)
+                addFragment(pagerFragment)
+                addFragment(pagerFragment)
+                addFragment(pagerFragment)
+                addFragment(pagerFragment)
+                addFragment(pagerFragment)
             }
 
         val viewPager = binding.homeViewPager.apply {

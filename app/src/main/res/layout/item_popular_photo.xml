@@ -42,7 +42,7 @@
             android:layout_marginTop="3dp"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="@{PopularContentsModel.rate}"
+            android:text="@{PopularContentsModel.rate.toString()}"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.caption01"
             android:textColor="@color/white"

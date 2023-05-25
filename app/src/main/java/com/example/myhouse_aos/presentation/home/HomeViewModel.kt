@@ -6,17 +6,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myhouse_aos.R
+import com.example.myhouse_aos.data.repository.GetBestProductRepositoryImpl
 import com.example.myhouse_aos.data.repository.GetPopularContentsRespositoryImpl
 import com.example.myhouse_aos.data.repository.GetRecommendHomeRepositoryImpl
 import com.example.myhouse_aos.data.service.AuthState
 import com.example.myhouse_aos.domain.model.*
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val getPopularContentsRespositoryImpl: GetPopularContentsRespositoryImpl,
-    private val getRecommendHomeRepositoryImpl: GetRecommendHomeRepositoryImpl
+    private val getRecommendHomeRepositoryImpl: GetRecommendHomeRepositoryImpl,
+    private val getBestProductRepositoryImpl: GetBestProductRepositoryImpl
 ) :
     ViewModel() {
     private val _getListState = MutableLiveData<AuthState>()
@@ -27,6 +27,10 @@ class HomeViewModel(
     val popularContentsList: List<PopularContentsModel>?
         get() = _popularContentsList.value
 
+    private var _bestProductList = MutableLiveData<List<BestProductModel>>()
+    val bestProductList: List<BestProductModel>?
+        get() = _bestProductList.value
+
     private var _recommendHome = MutableLiveData<RecommendHomeModel>()
     val recommendHome: RecommendHomeModel?
         get() = _recommendHome.value
@@ -34,6 +38,7 @@ class HomeViewModel(
     init {
         getPopularContentList()
         getRecommendHomeList()
+        getBestProductList()
     }
 
     private fun getPopularContentList() {
@@ -49,6 +54,19 @@ class HomeViewModel(
         }
     }
 
+    private fun getBestProductList() {
+        viewModelScope.launch {
+            getBestProductRepositoryImpl.getBestProduct()
+                .onSuccess { response ->
+                    _bestProductList.value = response
+                    _getListState.value = AuthState.SUCCESS
+                }
+                .onFailure {
+                    _getListState.value = AuthState.FAIL
+                }
+        }
+    }
+
     private fun getRecommendHomeList() {
         viewModelScope.launch {
             getRecommendHomeRepositoryImpl.getRecommendHome()
@@ -56,7 +74,7 @@ class HomeViewModel(
                     _recommendHome.value = response
                     _getListState.value = AuthState.SUCCESS
                 }
-                .onFailure {response ->
+                .onFailure { response ->
                     _getListState.value = AuthState.FAIL
                     Log.e("home", "Failed to get recommend home: ${response.message}", response)
                 }
@@ -65,41 +83,37 @@ class HomeViewModel(
 
     val recommendProductList = listOf(
         BestProductModel(
-            imageUrl = R.drawable.img_recommend_product,
+            imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 1,
         ),
         BestProductModel(
-            imageUrl = R.drawable.img_recommend_product,
+            imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 2,
 
+            ),
+        BestProductModel(
+            imageUrl = "drawable://" + R.drawable.img_recommend_product,
+            postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
+            discount = 56,
+            brand = "헬로우슬립",
+            price = 34900,
+            rank = 3,
         ),
         BestProductModel(
-            imageUrl = R.drawable.img_recommend_product,
+            imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
-        ),
-        BestProductModel(
-            imageUrl = R.drawable.img_recommend_product,
-            postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = "56%",
-            brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 4,
         ),
     )
 
@@ -218,42 +232,39 @@ class HomeViewModel(
             subDescription = ""
         ),
     )
+
     val colorProductList = listOf(
         BestProductModel(
-            imageUrl = R.drawable.img_color_product,
+            imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 1,
         ),
         BestProductModel(
-            imageUrl = R.drawable.img_color_product,
+            imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 2,
         ),
         BestProductModel(
-            imageUrl = R.drawable.img_color_product,
+            imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 3,
         ),
         BestProductModel(
-            imageUrl = R.drawable.img_color_product,
+            imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = "56%",
+            discount = 56,
             brand = "헬로우슬립",
-            price = "34,900",
-            rate = "",
-            reviewsCount = ""
+            price = 34900,
+            rank = 4,
         ),
     )
     val reviewList = listOf(
@@ -377,33 +388,6 @@ class HomeViewModel(
             subDescription = ""
         )
     )
-    val bestList = listOf(
-        BestProductModel(
-            imageUrl = R.drawable.img_best,
-            postTitle = "Q4 유로탑 롤팩 매트리...",
-            discount = "56%",
-            brand = "",
-            price = "34,900",
-            rate = "1",
-            reviewsCount = ""
-        ),
-        BestProductModel(
-            imageUrl = R.drawable.img_best,
-            postTitle = "Q4 유로탑 롤팩 매트리...",
-            discount = "56%",
-            brand = "",
-            price = "34,900",
-            rate = "2",
-            reviewsCount = ""
-        ),
-        BestProductModel(
-            imageUrl = R.drawable.img_best,
-            postTitle = "Q4 유로탑 롤팩 매트리...",
-            discount = "56%",
-            brand = "",
-            price = "34,900",
-            rate = "3",
-            reviewsCount = ""
-        ),
-    )
+
+
 }

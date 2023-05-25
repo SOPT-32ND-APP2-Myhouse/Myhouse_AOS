@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
-            android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
+            android:src="@drawable/img_color_product"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                android:text="@{BestProductModel.discount}"
+                android:text="@{BestProductModel.discount.toString()}"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"
                 android:includeFontPadding="false"
-                android:text="@{BestProductModel.price}"
+                android:text="@{BestProductModel.price.toString()}"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/black"
                 tools:text="34,900" />
