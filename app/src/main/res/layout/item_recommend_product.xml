@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="BestProductModel"
             type="com.example.myhouse_aos.domain.model.BestProductModel" />
@@ -17,11 +18,22 @@
             android:id="@+id/iv_home_recommend_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
             android:layout_marginEnd="8dp"
+            tools:src="@drawable/img_recommend_product"
+            android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_home_recommend_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_home_recommend_image"
+            app:layout_constraintEnd_toEndOf="@+id/iv_home_recommend_image" />
 
 
         <TextView
@@ -29,10 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{BestProductModel.brand}"
             android:includeFontPadding="false"
-            android:textColor="@color/dark_grey"
+            android:text="@{BestProductModel.brand}"
             android:textAppearance="@style/TextAppearance.miniCaption02"
+            android:textColor="@color/dark_grey"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_home_recommend_image" />
@@ -44,40 +56,41 @@
             android:layout_marginTop="6dp"
             android:includeFontPadding="false"
             android:text="@{BestProductModel.postTitle}"
-            tools:text="[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전... "
             android:textAppearance="@style/TextAppearance.body02"
             app:layout_constraintEnd_toEndOf="@id/iv_home_recommend_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_brand" />
+            app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_brand"
+            tools:text="[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전... " />
 
         <LinearLayout
-            android:id="@+id/layout"
+            android:id="@+id/layout_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="7dp"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_title"
-            android:orientation="horizontal">
-        <TextView
-            android:id="@+id/iv_home_recommend_discount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{BestProductModel.discount}"
-            tools:text="56%"
-            android:includeFontPadding="false"
-            android:textColor="@color/main_color"
-            android:textAppearance="@style/TextAppearance.title01" />
+            app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_title">
 
-        <TextView
-            android:id="@+id/iv_home_recommend_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:includeFontPadding="false"
-            android:text="@{BestProductModel.price}"
-            tools:text="34,900"
-            android:textColor="@color/black"
-            android:textAppearance="@style/TextAppearance.title01" />
+            <TextView
+                android:id="@+id/iv_home_recommend_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{BestProductModel.discount}"
+                android:textAppearance="@style/TextAppearance.title01"
+                android:textColor="@color/main_color"
+                tools:text="56%" />
+
+            <TextView
+                android:id="@+id/iv_home_recommend_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:includeFontPadding="false"
+                android:text="@{BestProductModel.price}"
+                android:textAppearance="@style/TextAppearance.title01"
+                android:textColor="@color/black"
+                tools:text="34,900" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
