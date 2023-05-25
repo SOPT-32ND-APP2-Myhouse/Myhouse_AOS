@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -18,10 +19,45 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:src="@drawable/img_popular_photo"
+            tools:src="@drawable/img_popular_photo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:shapeAppearanceOverlay="@style/Radius4" />
+
+        <ImageView
+            android:id="@+id/iv_home_popular_photo_ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_photo_ranking"
+            app:layout_constraintTop_toTopOf="@+id/iv_home_popular_photo_image"
+            app:layout_constraintStart_toStartOf="@+id/iv_home_popular_photo_image" />
+
+        <TextView
+            android:id="@+id/tv_home_popular_photo_ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{PopularContentsModel.rate}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.caption01"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@id/iv_home_popular_photo_image"
+            app:layout_constraintTop_toTopOf="@id/iv_home_popular_photo_image" />
+        <ImageView
+            android:id="@+id/iv_home_popular_photo_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="11dp"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_home_popular_photo_image"
+            app:layout_constraintEnd_toEndOf="@+id/iv_home_popular_photo_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

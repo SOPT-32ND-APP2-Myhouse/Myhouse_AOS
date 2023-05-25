@@ -123,6 +123,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
                 addFragment(PagerFragment())
                 addFragment(PagerFragment())
             }
+
         val viewPager = binding.homeViewPager.apply {
             adapter = pagerAdapter
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

@@ -3,49 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="contentsData"
             type="com.example.myhouse_aos.domain.model.ContentsData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginBottom="11dp">
 
         <ImageView
             android:id="@+id/iv_home_summer_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@{context.getDrawable(contentsData.image)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Radius4" />
+
+        <ImageView
+            android:id="@+id/iv_home_summer_bookmark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@{context.getDrawable(contentsData.image)}"
-            android:layout_marginEnd="6dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="11dp"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_home_summer_image"
+            app:layout_constraintEnd_toEndOf="@+id/iv_home_summer_image" />
 
         <TextView
             android:id="@+id/tv_home_summer_description"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="6dp"
-            android:text="@{contentsData.description}"
             android:includeFontPadding="false"
-            android:textColor="@color/main_color"
+            android:text="@{contentsData.description}"
             android:textAppearance="@style/TextAppearance.caption02"
+            android:textColor="@color/main_color"
+            app:layout_constraintEnd_toEndOf="@id/iv_home_summer_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_home_summer_image" />
 
         <TextView
             android:id="@+id/tv_home_summer_sub_description"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="11dp"
-            android:text="@{contentsData.subDescription}"
             android:includeFontPadding="false"
-            android:textColor="@color/black"
+            android:text="@{contentsData.subDescription}"
             android:textAppearance="@style/TextAppearance.caption02"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/iv_home_summer_image"
             app:layout_constraintStart_toEndOf="@id/tv_home_summer_description"
             app:layout_constraintTop_toBottomOf="@id/iv_home_summer_image" />
 
