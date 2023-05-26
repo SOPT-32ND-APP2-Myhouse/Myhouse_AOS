@@ -50,7 +50,7 @@
         <item>주방용품</item>
         <item>식품</item>
     </string-array>
-
+    <string name="string_home_discount_percent">%s%%</string>
     <!--  post  -->
     <string name="hint_search">오늘의집 통합검색</string>
     <string name="post_tab_recommandation">추천</string>
@@ -75,4 +75,5 @@
     <string name="tv_btsheet_3">친구 집들이 선물</string>
     <string name="tv_btsheet_4">인테리어 꿀팁 모음</string>
     <string name="tofolder">폴더로 이동했습니다.</string>
+    <string name="string_best_product_description">Q4 유로탑 롤팩 매트리...</string>
 </resources>

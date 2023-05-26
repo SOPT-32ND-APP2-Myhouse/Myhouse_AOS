@@ -19,10 +19,9 @@
                 android:id="@+id/iv_home_recommend_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@{context.getDrawable(RecommendHomeModel.imageUrl)}"
+                imageUrl="@{RecommendHomeModel.imageUrl}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:shapeAppearanceOverlay="@style/Radius4"
                 tools:src="@drawable/img_recommend_home" />
 
@@ -30,7 +29,7 @@
                 android:id="@+id/iv_home_recommend_bookmark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="11dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginBottom="13dp"
                 android:src="@drawable/ic_bookmark"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_home_recommend_image"
