@@ -9,6 +9,6 @@ interface DeleteScrapService {
     @DELETE("scrap/{scrap_id}")
     fun delete(
         @Path("scrap_id")
-        scrap_id: Int
+        scrapId: Int
     ): Call<ResponseDeleteScrapDto>
 }

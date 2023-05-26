@@ -11,7 +11,7 @@ interface AddFolderService {
     @POST("scrap/{folder_id}")
     fun add(
         @Path("folder_id")
-        folder_id: Int,
+        folderId: Int,
         @Body request: RequestAddFolderDto,
     ): Call<ResponseAddFolderDto>
 }

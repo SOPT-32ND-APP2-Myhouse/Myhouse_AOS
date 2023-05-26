@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
 import com.example.myhouse_aos.databinding.ItemContentDetailBinding
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
@@ -17,7 +16,7 @@ class ItemContentDetailAdapter(
 ) :
     ListAdapter<ResponseContentDetailDto.Data.Image, ItemContentDetailAdapter.ItemContentDetailViewHolder>(
         ItemDiffCallback<ResponseContentDetailDto.Data.Image>(
-            onItemsTheSame = { old, new -> old.image_id == new.image_id },
+            onItemsTheSame = { old, new -> old.imageId == new.imageId },
             onContentsTheSame = { old, new -> old == new }
         )
     ) {
@@ -30,7 +29,7 @@ class ItemContentDetailAdapter(
             contentViewModel: ContentViewModel,
         ) {
             binding.data = data
-            Glide.with(binding.root.context).load(data.image_url).into(binding.ivItemContentdetail)
+
             if (data.content == null) {
                 binding.tvItemContentdetail.visibility = View.GONE
             }
@@ -39,13 +38,13 @@ class ItemContentDetailAdapter(
                 if (binding.btnItemContentdetailScrap.isSelected) {
                     binding.btnItemContentdetailScrap.isSelected = false
                 } else {
-                    contentViewModel.scrap(data.image_url)
+                    contentViewModel.scrap(data.imageUrl)
                     binding.btnItemContentdetailScrap.isSelected = true
                 }
             }
 
             contentViewModel.scrapResult.observeForever { scrapResult ->
-                showScrapSnackBar(data.image_url)
+                showScrapSnackBar(data.imageUrl)
             }
 
         }

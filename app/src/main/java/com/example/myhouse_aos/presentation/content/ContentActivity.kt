@@ -54,7 +54,7 @@ class ContentActivity : AppCompatActivity() {
 
         viewModel.contentDetailResult.observe(this) { contentDetailResult ->
             binding.data = contentDetailResult
-            val hashtaglist = viewModel.createHashTagArray(contentDetailResult.data.hast_tag)
+            val hashtaglist = viewModel.createHashTagArray(contentDetailResult.data.hashTag)
             flexboxAdapter.submitList(hashtaglist)
             contentDetailAdapter.submitList(contentDetailResult.data.images)
         }

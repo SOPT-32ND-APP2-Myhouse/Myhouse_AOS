@@ -21,7 +21,7 @@ data class ResponseScrapDto(
         @SerialName("folder")
         val folder: FolderData,
         @SerialName("image_url")
-        val image_url: String,
+        val imageUrl: String,
     ) {
         @Serializable
         data class FolderData(

@@ -23,6 +23,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:layout_marginTop="16dp"
+            imageUrl="@{data.imageUrl}"
             app:layout_constraintBottom_toTopOf="@id/iv_item_contentdetail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

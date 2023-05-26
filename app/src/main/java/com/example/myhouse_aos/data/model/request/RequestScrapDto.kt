@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class RequestScrapDto(
     @SerialName("image_url")
-    val image_url: String,
+    val imageUrl: String,
 )

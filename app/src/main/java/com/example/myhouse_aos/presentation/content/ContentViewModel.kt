@@ -55,28 +55,28 @@ class ContentViewModel : ViewModel() {
 
     val hashTagList = listOf(
         HashTagData(
-            hash_tag = "#취미일상"
+            hashTag = "#취미일상"
         ),
         HashTagData(
-            hash_tag = "#6평"
+            hashTag = "#6평"
         ),
         HashTagData(
-            hash_tag = "#원룸"
+            hashTag = "#원룸"
         ),
         HashTagData(
-            hash_tag = "#오피스텔"
+            hashTag = "#오피스텔"
         ),
         HashTagData(
-            hash_tag = "#방꾸미기"
+            hashTag = "#방꾸미기"
         ),
         HashTagData(
-            hash_tag = "#홈테코"
+            hashTag = "#홈테코"
         ),
         HashTagData(
-            hash_tag = "#홈스타일링"
+            hashTag = "#홈스타일링"
         ),
         HashTagData(
-            hash_tag = "#인테리어"
+            hashTag = "#인테리어"
         )
     )
 

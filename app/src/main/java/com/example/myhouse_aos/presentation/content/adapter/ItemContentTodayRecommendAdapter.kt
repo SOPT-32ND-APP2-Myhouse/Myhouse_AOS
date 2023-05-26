@@ -12,7 +12,7 @@ class ItemContentTodayRecommendAdapter(
 ) :
     ListAdapter<TodayRecommendData, ItemContentTodayRecommendAdapter.ItemContentTodayRecommendViewHolder>(
         ItemDiffCallback<TodayRecommendData>(
-            onItemsTheSame = { old, new -> old.todayrecommend_id == new.todayrecommend_id },
+            onItemsTheSame = { old, new -> old.todayrecommendId == new.todayrecommendId },
             onContentsTheSame = { old, new -> old == new }
         )
     ) {

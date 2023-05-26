@@ -17,10 +17,10 @@ data class ResponseAddFolderDto(
     @Serializable
     data class Data(
         @SerialName("folder_id")
-        val folder_id: Int,
+        val folderId: Int,
         @SerialName("scrap_id")
-        val scrap_id: Int,
+        val scrapId: Int,
         @SerialName("image_url")
-        val image_url: String,
+        val imageUrl: String,
     )
 }

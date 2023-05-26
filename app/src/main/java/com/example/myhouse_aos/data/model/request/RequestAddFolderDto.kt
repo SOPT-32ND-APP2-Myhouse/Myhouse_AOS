@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class RequestAddFolderDto(
     @SerialName("image_url")
-    val image_url: String?,
+    val imageUrl: String?,
 )
