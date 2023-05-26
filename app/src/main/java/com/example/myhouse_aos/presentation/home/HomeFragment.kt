@@ -13,6 +13,8 @@ import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.presentation.common.ViewModelFactory
 import com.example.myhouse_aos.util.binding.BindingFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -33,7 +35,10 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     private lateinit var bestAdapter: BestAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initBestTab()
         initAdapter()
+        getPopularContentsData()
+        //getBestProductData()
         getRecommendHomeData()
         getRecommendProduct()
         getModernInterior()
@@ -45,7 +50,22 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         getMenu()
         getPopularPhoto()
         getTodayPlan()
-        initBestTab()
+
+    }
+
+    private fun getPopularContentsData(){
+        viewModel.getListState.observe(viewLifecycleOwner) { getListState ->
+            if(getListState == AuthState.SUCCESS){
+                viewLifecycleOwner.lifecycleScope.launch {
+                    viewModel.popularContentsList?.let { contentsList ->
+                        popularContentsAdapter.submitList(contentsList)
+                        Log.e("success", contentsList.toString())
+                    }
+                }
+            }else{
+                Log.e("fail", "fail")
+            }
+        }
     }
 
     private fun getRecommendHomeData() {
@@ -98,17 +118,15 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
 
     private fun initBestTab() {
         val tabLayout = binding.homeTabLayout
-        val pagerFragment = PagerFragment()
         val pagerAdapter = PagerFragmentAdapter(requireActivity())
             .apply {
-                addFragment(pagerFragment)
-                addFragment(pagerFragment)
-                addFragment(pagerFragment)
-                addFragment(pagerFragment)
-                addFragment(pagerFragment)
-                addFragment(pagerFragment)
+                addFragment(PagerFragment())
+                addFragment(PagerFragment())
+                addFragment(PagerFragment())
+                addFragment(PagerFragment())
+                addFragment(PagerFragment())
+                addFragment(PagerFragment())
             }
-
         val viewPager = binding.homeViewPager.apply {
             adapter = pagerAdapter
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -163,6 +181,5 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     private fun getTodayPlan() {
         planAdapter.submitList(viewModel.planList)
     }
-
 }
 

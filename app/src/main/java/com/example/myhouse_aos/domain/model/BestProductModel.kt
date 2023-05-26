@@ -1,10 +1,13 @@
 package com.example.myhouse_aos.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 class BestProductModel(
     val rank: Int?,
-    val imageUrl: String,
-    val postTitle: String,
-    val discount: Int?,
-    val price: Int?,
-    val brand: String,
+    var imageUrl: String,
+    var postTitle: String,
+    var discount: Int?,
+    var price: Int?,
+    var brand: String,
 )
