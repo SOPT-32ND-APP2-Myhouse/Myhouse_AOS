@@ -11,7 +11,7 @@ import com.example.myhouse_aos.util.extension.ItemDiffCallback
 class ItemContentHashtagAdapter :
     ListAdapter<HashTagData, ItemContentHashtagAdapter.ItemContentHashtagViewHolder>(
         ItemDiffCallback<HashTagData>(
-            onItemsTheSame = { old, new -> old.hash_tag == new.hash_tag },
+            onItemsTheSame = { old, new -> old.hashTag == new.hashTag },
             onContentsTheSame = { old, new -> old == new }
         )
     ) {

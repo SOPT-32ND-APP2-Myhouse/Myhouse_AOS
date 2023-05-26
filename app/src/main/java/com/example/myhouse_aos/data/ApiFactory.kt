@@ -1,6 +1,10 @@
 package com.example.myhouse_aos.data
 
 import com.example.myhouse_aos.BuildConfig
+import com.example.myhouse_aos.data.service.AddFolderService
+import com.example.myhouse_aos.data.service.DeleteScrapService
+import com.example.myhouse_aos.data.service.GetContentDetailService
+import com.example.myhouse_aos.data.service.ScrapService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -26,5 +30,8 @@ object ApiFactory {
 }
 
 object ServicePool {
-
+    val getContentDetailService = ApiFactory.create<GetContentDetailService>()
+    val deleteScrapService = ApiFactory.create<DeleteScrapService>()
+    val ScrapService = ApiFactory.create<ScrapService>()
+    val addFolderService = ApiFactory.create<AddFolderService>()
 }

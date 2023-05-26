@@ -21,7 +21,7 @@
         android:paddingHorizontal="10dp"
         android:paddingTop="4dp"
         android:paddingBottom="5dp"
-        android:text="@{data.hash_tag}"
+        android:text="@{data.hashTag}"
         android:textColor="@color/dark_grey"
         android:theme="@style/TextAppearance.body01"
         tools:text="#취미일상" />

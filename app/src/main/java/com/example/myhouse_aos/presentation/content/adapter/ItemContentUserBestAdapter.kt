@@ -9,7 +9,6 @@ import com.example.myhouse_aos.domain.model.UserBestData
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
 class ItemContentUserBestAdapter(
-    val showScrapSnackBar: () -> Unit,
 ) :
     ListAdapter<UserBestData, ItemContentUserBestAdapter.ItemContentUserBestViewHolder>(
         ItemDiffCallback<UserBestData>(
@@ -21,7 +20,6 @@ class ItemContentUserBestAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(
             data: UserBestData,
-            showScrapSnackBar: () -> Unit,
         ) {
             binding.data = data
 
@@ -30,7 +28,6 @@ class ItemContentUserBestAdapter(
                     binding.btnContentUserbestBookmark.isSelected = false
                 } else {
                     binding.btnContentUserbestBookmark.isSelected = true
-                    showScrapSnackBar()
                 }
             }
         }
@@ -46,7 +43,7 @@ class ItemContentUserBestAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemContentUserBestViewHolder, position: Int) {
-        holder.onBind(getItem(position), showScrapSnackBar)
+        holder.onBind(getItem(position))
     }
 
 }
