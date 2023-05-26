@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 class BestProductModel(
     val rank: Int?,
-    var imageUrl: String,
+    var imageUrl: String?,
     var postTitle: String,
-    var discount: Int?,
-    var price: Int?,
+    var discount: Double?,
+    var price: Long?,
     var brand: String,
 )

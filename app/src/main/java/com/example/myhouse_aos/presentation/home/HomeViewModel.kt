@@ -85,7 +85,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 1,
@@ -93,7 +93,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 2,
@@ -102,7 +102,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 3,
@@ -110,7 +110,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_recommend_product,
             postTitle = "[10%쿠폰] 부드러운 카스\n테라 항균 옥수수솜 충전..",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 4,
@@ -237,7 +237,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 1,
@@ -245,7 +245,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 2,
@@ -253,7 +253,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 3,
@@ -261,7 +261,7 @@ class HomeViewModel(
         BestProductModel(
             imageUrl = "drawable://" + R.drawable.img_color_product,
             postTitle = "LED 오로라 블루투스 스\n피커 무드등 인기상품임...",
-            discount = 56,
+            discount = 56.0,
             brand = "헬로우슬립",
             price = 34900,
             rank = 4,

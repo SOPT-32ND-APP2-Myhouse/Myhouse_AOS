@@ -16,19 +16,19 @@ data class ResponseBestProduct(
     @Serializable
     data class Data(
         @SerialName("image_url")
-        val image_url: String,
+        val image_url: String?,
         @SerialName("post_title")
         val post_title: String,
         @SerialName("category")
         val category: String,
         @SerialName("discount")
-        val discount: Int,
+        val discount: Double,
         @SerialName("price")
-        val price: Int,
+        val price: Long,
         @SerialName("reviews_count")
-        val reviews_count: Int,
+        val reviews_count: Long,
         @SerialName("rate")
-        val rate: Int,
+        val rate: Double,
         @SerialName("rank")
         val rank: Int,
     )
