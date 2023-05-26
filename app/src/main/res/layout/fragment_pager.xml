@@ -16,11 +16,11 @@
 
         <ImageView
             android:id="@+id/iv_best_image_1"
+            imageUrl="@{BestProductModel.imageUrl}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_best"
             app:layout_constraintEnd_toStartOf="@id/iv_best_image_2"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
             android:background="@drawable/rectanglewithcorner"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="1"
+            android:text="@{BestProductModel.rank.toString()}"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.caption01"
             android:textColor="@color/white"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:includeFontPadding="false"
-            android:text="Q4 유로탑 롤팩 매트리..."
+            android:text="@string/string_best_product_description"
             android:textAppearance="@style/TextAppearance.miniCaption02"
             app:layout_constraintBottom_toTopOf="@id/layout_1"
             app:layout_constraintStart_toStartOf="@id/iv_best_image_1"
@@ -68,22 +68,22 @@
 
             <TextView
                 android:id="@+id/tv_best_discount_1"
+                discount="@{BestProductModel.discount}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                android:text="56%"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
 
             <TextView
                 android:id="@+id/tv_best_price_1"
+                priceAmount="@{BestProductModel.price}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"
                 android:includeFontPadding="false"
-                android:text="34,900"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/black"
                 tools:text="34,900" />
@@ -91,11 +91,11 @@
 
         <ImageView
             android:id="@+id/iv_best_image_2"
+            imageUrl="@{BestProductModel.imageUrl}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_best"
             app:layout_constraintEnd_toStartOf="@id/iv_best_image_3"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@id/iv_best_image_1"
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:includeFontPadding="false"
-            android:text="Q4 유로탑 롤팩 매트리..."
+            android:text="@string/string_best_product_description"
             android:textAppearance="@style/TextAppearance.miniCaption02"
             app:layout_constraintBottom_toTopOf="@id/layout_2"
             app:layout_constraintStart_toStartOf="@id/iv_best_image_2"
@@ -143,22 +143,22 @@
 
             <TextView
                 android:id="@+id/tv_best_discount_2"
+                discount="@{BestProductModel.discount}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                android:text="56%"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
 
             <TextView
                 android:id="@+id/tv_best_price_2"
+                priceAmount="@{BestProductModel.price}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"
                 android:includeFontPadding="false"
-                android:text="34,900"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/black"
                 tools:text="34,900" />
@@ -166,10 +166,10 @@
 
         <ImageView
             android:id="@+id/iv_best_image_3"
+            imageUrl="@{BestProductModel.imageUrl}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_best"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@id/iv_best_image_2"
@@ -201,7 +201,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:includeFontPadding="false"
-            android:text="Q4 유로탑 롤팩 매트리..."
+            android:text="@string/string_best_product_description"
             android:textAppearance="@style/TextAppearance.miniCaption02"
             app:layout_constraintBottom_toTopOf="@id/layout_3"
             app:layout_constraintStart_toStartOf="@id/iv_best_image_3"
@@ -218,22 +218,22 @@
 
             <TextView
                 android:id="@+id/tv_best_discount_3"
+                discount="@{BestProductModel.discount}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                android:text="56%"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
 
             <TextView
                 android:id="@+id/tv_best_price_3"
+                priceAmount="@{BestProductModel.price}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"
                 android:includeFontPadding="false"
-                android:text="34,900"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/black"
                 tools:text="34,900" />

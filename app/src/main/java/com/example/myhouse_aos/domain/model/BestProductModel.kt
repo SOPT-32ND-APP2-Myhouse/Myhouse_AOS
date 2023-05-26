@@ -1,13 +1,10 @@
 package com.example.myhouse_aos.domain.model
 
-import androidx.annotation.DrawableRes
-
-class BestProductModel (
-    val rate: String,
-    @DrawableRes val imageUrl: Int,
-    val postTitle: String,
-    val discount: String,
-    val price: String,
-    val brand: String,
-    val reviewsCount: String
-    )
+class BestProductModel(
+    val rank: Int?,
+    var imageUrl: String?,
+    var postTitle: String,
+    var discount: Double?,
+    var price: Long?,
+    var brand: String,
+)
