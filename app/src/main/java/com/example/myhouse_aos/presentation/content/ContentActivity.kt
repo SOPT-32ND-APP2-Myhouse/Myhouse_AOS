@@ -25,7 +25,7 @@ class ContentActivity : AppCompatActivity() {
         viewModel.completeGetUsers()
 
 
-        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar, viewModel)
+        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar, ::scrapContent)
         binding.rvContentDetail.adapter = contentDetailAdapter
 
 
@@ -64,6 +64,10 @@ class ContentActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun scrapContent(imageUrl: String){
+        viewModel.scrap(imageUrl)
     }
 
     private fun showScrapSnackBar(imageUrl: String) {

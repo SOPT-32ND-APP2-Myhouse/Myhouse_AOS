@@ -24,11 +24,7 @@ class ItemContentUserBestAdapter(
             binding.data = data
 
             binding.btnContentUserbestBookmark.setOnClickListener {
-                if (binding.btnContentUserbestBookmark.isSelected) {
-                    binding.btnContentUserbestBookmark.isSelected = false
-                } else {
-                    binding.btnContentUserbestBookmark.isSelected = true
-                }
+                binding.btnContentUserbestBookmark.isSelected = !binding.btnContentUserbestBookmark.isSelected
             }
         }
     }

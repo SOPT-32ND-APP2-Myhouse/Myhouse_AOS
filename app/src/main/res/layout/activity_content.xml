@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="data"
             type="com.example.myhouse_aos.data.model.response.ResponseContentDetailDto" />
@@ -19,34 +19,34 @@
             android:id="@+id/btn_content_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/back"
-            android:padding="12dp"
             android:layout_marginStart="7dp"
             android:layout_marginTop="11dp"
+            android:background="@null"
+            android:contentDescription="@string/back"
+            android:padding="12dp"
+            android:src="@drawable/back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/back"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_content_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/more"
-            android:padding="12dp"
             android:layout_marginTop="11dp"
             android:layout_marginEnd="6dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:background="@null"
+            android:contentDescription="@string/more"
+            android:padding="12dp"
+            android:src="@drawable/more"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/more"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/btn_content_back"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/btn_content_back">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -56,100 +56,96 @@
                     android:id="@+id/iv_content_profile1"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/profile"
                     android:layout_marginStart="14dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:src="@drawable/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_content_username1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@{data.Data.userName}"
-                    tools:text="@string/nickname"
                     android:layout_marginStart="10dp"
                     android:includeFontPadding="false"
+                    android:text="@{data.Data.userName}"
                     android:textColor="@color/black"
-                    app:layout_constraintTop_toTopOf="@id/iv_content_profile1"
-                    app:layout_constraintStart_toEndOf="@id/iv_content_profile1"
                     android:theme="@style/TextAppearance.headline01"
-                    />
+                    app:layout_constraintStart_toEndOf="@id/iv_content_profile1"
+                    app:layout_constraintTop_toTopOf="@id/iv_content_profile1"
+                    tools:text="@string/nickname" />
 
                 <TextView
                     android:id="@+id/tv_content_createddate1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@{data.Data.createdDate}"
-                    tools:text="@string/created_date"
                     android:layout_marginTop="3dp"
                     android:includeFontPadding="false"
+                    android:text="@{data.Data.createdDate}"
                     android:textColor="@color/dark_grey"
+                    android:theme="@style/TextAppearance.caption01"
                     app:layout_constraintStart_toStartOf="@id/tv_content_username1"
                     app:layout_constraintTop_toBottomOf="@id/tv_content_username1"
-                    android:theme="@style/TextAppearance.caption01"
-                    />
+                    tools:text="@string/created_date" />
 
                 <Button
                     android:id="@+id/btn_content_follow1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
                     android:backgroundTint="@color/main_color"
                     android:includeFontPadding="false"
                     android:text="@string/follow"
                     android:textColor="@color/white"
-                    android:theme="@style/TextAppearance.headline02"
 
-                    android:layout_marginEnd="14dp"
+                    android:theme="@style/TextAppearance.headline02"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/v_content_line1"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:background="@color/light_grey"
                     android:layout_marginTop="34dp"
-                    app:layout_constraintTop_toBottomOf="@id/iv_content_profile1"
-                    />
+                    android:background="@color/light_grey"
+                    app:layout_constraintTop_toBottomOf="@id/iv_content_profile1" />
 
                 <TextView
                     android:id="@+id/tv_content_optiontag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{data.Data.optionTag}"
-                    tools:text="@string/option_tag"
-                    android:textColor="@color/dark_grey"
-                    android:includeFontPadding="false"
-                    android:theme="@style/TextAppearance.body02"
-                    android:layout_marginTop="14dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:includeFontPadding="false"
+                    android:text="@{data.Data.optionTag}"
+                    android:textColor="@color/dark_grey"
+                    android:theme="@style/TextAppearance.body02"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/v_content_line1"
-                    />
+                    tools:text="@string/option_tag" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_content_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/tv_content_optiontag"
-                    tools:listitem="@layout/item_content_detail"
-                    tools:itemCount="2"/>
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_content_detail" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_content_hashtag"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
-                    android:overScrollMode="never"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="16dp"
-                    app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false"
                     android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/rv_content_detail"
-                    tools:listitem="@layout/item_content_hashtag"
-                    tools:itemCount="1"/>
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_content_hashtag" />
 
                 <View
                     android:id="@+id/v_content_line2"
@@ -157,57 +153,55 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/grey"
-                    app:layout_constraintTop_toBottomOf="@id/rv_content_hashtag"/>
+                    app:layout_constraintTop_toBottomOf="@id/rv_content_hashtag" />
 
                 <ImageView
                     android:id="@+id/iv_content_profile2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/profile"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintTop_toBottomOf="@id/v_content_line2"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:src="@drawable/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line2" />
 
                 <TextView
                     android:id="@+id/tv_content_username2"
                     android:layout_width="0dp"
                     android:layout_height="20dp"
-                    android:text="@{data.Data.userName}"
-                    tools:text="@string/nickname"
                     android:layout_marginStart="10dp"
                     android:includeFontPadding="false"
+                    android:text="@{data.Data.userName}"
                     android:textColor="@color/black"
-                    app:layout_constraintTop_toTopOf="@id/iv_content_profile2"
-                    app:layout_constraintStart_toEndOf="@id/iv_content_profile2"
                     android:theme="@style/TextAppearance.headline01"
-                    />
+                    app:layout_constraintStart_toEndOf="@id/iv_content_profile2"
+                    app:layout_constraintTop_toTopOf="@id/iv_content_profile2"
+                    tools:text="@string/nickname" />
 
                 <TextView
                     android:id="@+id/tv_content_createddate2"
                     android:layout_width="0dp"
                     android:layout_height="17dp"
-                    android:text="@{data.Data.createdDate}"
-                    tools:text="@string/created_date"
                     android:layout_marginTop="3dp"
                     android:includeFontPadding="false"
+                    android:text="@{data.Data.createdDate}"
                     android:textColor="@color/dark_grey"
+                    android:theme="@style/TextAppearance.caption01"
                     app:layout_constraintStart_toStartOf="@id/tv_content_username2"
                     app:layout_constraintTop_toBottomOf="@id/tv_content_username2"
-                    android:theme="@style/TextAppearance.caption01"
-                    />
+                    tools:text="@string/created_date" />
 
                 <Button
                     android:id="@+id/btn_content_follow2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="14dp"
                     android:backgroundTint="@color/main_color"
                     android:includeFontPadding="false"
                     android:text="@string/follow"
                     android:textColor="@color/white"
                     android:theme="@style/TextAppearance.headline02"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="14dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/v_content_line2"
                     tools:ignore="HardcodedText" />
@@ -217,12 +211,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    tools:listitem="@layout/item_content_userimage"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"
-                    tools:itemCount="1"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_content_profile2"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_content_userimage" />
 
                 <View
                     android:id="@+id/v_content_line3"
@@ -230,232 +224,229 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="14dp"
                     android:background="@color/grey"
-                    app:layout_constraintTop_toBottomOf="@id/rv_content_userimage"/>
+                    app:layout_constraintTop_toBottomOf="@id/rv_content_userimage" />
 
                 <TextView
                     android:id="@+id/tv_content_likecount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(data.Data.likeCount)}"
-                    tools:text="@string/like"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="14dp"
+                    android:layout_marginTop="20dp"
                     android:includeFontPadding="false"
-                    app:layout_constraintTop_toBottomOf="@id/v_content_line3"
+                    android:text="@{@string/like(data.Data.likeCount)}"
+                    android:theme="@style/TextAppearance.caption02"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:theme="@style/TextAppearance.caption02"/>
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line3"
+                    tools:text="좋아요" />
 
                 <TextView
                     android:id="@+id/tv_content_scrapcount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(data.Data.scrapCount)}"
-                    tools:text="@string/scrap"
                     android:layout_marginStart="12dp"
                     android:includeFontPadding="false"
-                    app:layout_constraintTop_toTopOf="@id/tv_content_likecount"
+                    android:text="@{@string/scrap(data.Data.scrapCount)}"
+                    android:theme="@style/TextAppearance.caption02"
                     app:layout_constraintStart_toEndOf="@id/tv_content_likecount"
-                    android:theme="@style/TextAppearance.caption02"/>
+                    app:layout_constraintTop_toTopOf="@id/tv_content_likecount"
+                    tools:text="스크랩" />
 
                 <TextView
                     android:id="@+id/tv_content_commentcount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(data.Data.commentCount)}"
-                    tools:text="@string/comment"
                     android:layout_marginStart="12dp"
                     android:includeFontPadding="false"
-                    app:layout_constraintTop_toTopOf="@id/tv_content_likecount"
+                    android:text="@{@string/comment(data.Data.commentCount)}"
+                    android:theme="@style/TextAppearance.caption02"
                     app:layout_constraintStart_toEndOf="@id/tv_content_scrapcount"
-                    android:theme="@style/TextAppearance.caption02"/>
+                    app:layout_constraintTop_toTopOf="@id/tv_content_likecount"
+                    tools:text="댓글" />
 
                 <TextView
                     android:id="@+id/tv_content_viewcount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(data.Data.viewCount)}"
-                    tools:text="조회수"
                     android:layout_marginStart="12dp"
                     android:includeFontPadding="false"
-                    app:layout_constraintTop_toTopOf="@id/tv_content_likecount"
+                    android:text="@{@string/comment(data.Data.viewCount)}"
+                    android:theme="@style/TextAppearance.caption02"
                     app:layout_constraintStart_toEndOf="@id/tv_content_commentcount"
-                    android:theme="@style/TextAppearance.caption02"/>
+                    app:layout_constraintTop_toTopOf="@id/tv_content_likecount"
+                    tools:text="조회수" />
 
                 <View
                     android:id="@+id/v_content_line4"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey"
                     android:layout_marginTop="24dp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_content_likecount"/>
+                    android:background="@color/grey"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_likecount" />
 
                 <TextView
                     android:id="@+id/tv_content_totalcomment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:theme="@style/TextAppearance.miniCaption01"
-                    android:text="@string/total_comment"
-                    android:layout_marginTop="25dp"
                     android:layout_marginStart="14dp"
-                    app:layout_constraintTop_toBottomOf="@id/v_content_line4"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:layout_marginTop="25dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/total_comment"
+                    android:theme="@style/TextAppearance.miniCaption01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line4" />
 
                 <ImageView
                     android:id="@+id/iv_content_profile3"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/profile"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="22dp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_content_totalcomment"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:src="@drawable/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_totalcomment" />
 
                 <TextView
                     android:id="@+id/tv_content_username3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@{data.Data.userName}"
                     android:layout_marginStart="10dp"
                     android:includeFontPadding="false"
+                    android:text="@{data.Data.userName}"
                     android:textColor="@color/black"
-                    app:layout_constraintTop_toTopOf="@id/iv_content_profile3"
-                    app:layout_constraintStart_toEndOf="@id/iv_content_profile3"
                     android:theme="@style/TextAppearance.headline02"
-                    />
+                    app:layout_constraintStart_toEndOf="@id/iv_content_profile3"
+                    app:layout_constraintTop_toTopOf="@id/iv_content_profile3" />
 
                 <TextView
                     android:id="@+id/tv_content_usercomment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/user_comment"
                     android:includeFontPadding="false"
+                    android:text="@string/user_comment"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="@id/tv_content_username3"
-                    app:layout_constraintTop_toBottomOf="@id/tv_content_username3"
                     android:theme="@style/TextAppearance.body02"
-                    />
+                    app:layout_constraintStart_toStartOf="@id/tv_content_username3"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_username3" />
 
                 <TextView
                     android:id="@+id/tv_content_commentoption"
                     android:layout_width="0dp"
                     android:layout_height="13dp"
-                    android:text="@string/comment_option"
-                    android:theme="@style/TextAppearance.miniCaption01"
-                    android:textColor="@color/dark_grey"
-                    android:includeFontPadding="false"
                     android:layout_marginTop="5dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/comment_option"
+                    android:textColor="@color/dark_grey"
+                    android:theme="@style/TextAppearance.miniCaption01"
                     app:layout_constraintStart_toStartOf="@id/tv_content_usercomment"
-                    app:layout_constraintTop_toBottomOf="@id/tv_content_usercomment"/>
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_usercomment" />
 
                 <View
                     android:id="@+id/v_content_line5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey"
                     android:layout_marginTop="28dp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_content_commentoption"/>
+                    android:background="@color/grey"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_commentoption" />
 
                 <EditText
                     android:id="@+id/et_content_comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="13dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="14dp"
                     android:background="@drawable/edittext_shape"
                     android:hint="@string/input_comment"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
                     android:paddingVertical="13dp"
                     android:paddingStart="16dp"
                     android:paddingEnd="70dp"
-                    android:inputType="text"
-                    android:includeFontPadding="false"
                     android:theme="@style/TextAppearance.body01"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/v_content_line5"/>
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line5" />
 
                 <Button
                     android:id="@+id/btn_content_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/comment_btn"
                     android:background="#00ff0000"
-                    android:theme="@style/TextAppearance.body01"
-                    android:textColor="@color/main_color"
                     android:includeFontPadding="false"
+                    android:text="@string/comment_btn"
+                    android:textColor="@color/main_color"
+                    android:theme="@style/TextAppearance.body01"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/et_content_comment"/>
+                    app:layout_constraintTop_toTopOf="@id/et_content_comment" />
 
                 <View
                     android:id="@+id/v_content_line6"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@id/btn_content_comment"/>
+                    android:background="@color/grey"
+                    app:layout_constraintTop_toBottomOf="@id/btn_content_comment" />
 
                 <TextView
                     android:id="@+id/tv_content_todayrecommend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:theme="@style/TextAppearance.title01"
-                    android:text="@string/today_recommend"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="14dp"
-                    app:layout_constraintTop_toBottomOf="@id/v_content_line6"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:layout_marginTop="20dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/today_recommend"
+                    android:textColor="@color/black"
+                    android:theme="@style/TextAppearance.title01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line6" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_content_todayrecommend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_content_todayrecommend"/>
+                    app:layout_constraintTop_toBottomOf="@id/tv_content_todayrecommend" />
 
                 <View
                     android:id="@+id/v_content_line7"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/grey"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintTop_toBottomOf="@id/rv_content_todayrecommend"/>
+                    android:background="@color/grey"
+                    app:layout_constraintTop_toBottomOf="@id/rv_content_todayrecommend" />
 
                 <TextView
                     android:id="@+id/tv_content_userbest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/user_best"
-                    android:includeFontPadding="false"
-                    android:theme="@style/TextAppearance.title01"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="14dp"
+                    android:layout_marginTop="20dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/user_best"
+                    android:textColor="@color/black"
+                    android:theme="@style/TextAppearance.title01"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/v_content_line7"/>
+                    app:layout_constraintTop_toBottomOf="@id/v_content_line7" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_content_userbest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:layout_marginStart="11dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="11dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="2"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_content_userbest"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:spanCount="2" />
 
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    app:layout_constraintTop_toBottomOf="@id/rv_content_userbest"/>
-
+                    app:layout_constraintTop_toBottomOf="@id/rv_content_userbest" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
