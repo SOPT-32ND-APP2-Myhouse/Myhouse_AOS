@@ -27,7 +27,7 @@ data class ResponseScrap(
             @Serializable
             data class Scrap(
                 @SerialName("image_url")
-                val imageUrl: String,
+                val imageUrl: String?,
                 @SerialName("scrap_id")
                 val scrapId: Int,
             )
