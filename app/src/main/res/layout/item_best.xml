@@ -4,88 +4,240 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="BestProductModel"
             type="com.example.myhouse_aos.domain.model.BestProductModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_best_image"
-            android:layout_width="wrap_content"
+            android:id="@+id/iv_best_image_1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@{context.getDrawable(BestProductModel.imageUrl)}"
             android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_best"
+            app:layout_constraintEnd_toStartOf="@id/iv_best_image_2"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_best" />
 
 
         <TextView
-            android:id="@+id/iv_best_ranking"
+            android:id="@+id/iv_best_ranking_1"
             android:layout_width="19dp"
             android:layout_height="19dp"
-            android:background="@drawable/rectanglewithcorner"
-            android:text="@{BestProductModel.rate}"
-            android:includeFontPadding="false"
-            android:textSize="7sp"
-            android:gravity="center"
-            android:textColor="@color/white"
             android:layout_marginEnd="93dp"
+            android:background="@drawable/rectanglewithcorner"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="1"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/iv_best_image"
-            app:layout_constraintStart_toStartOf="@id/iv_best_image"
-            app:layout_constraintTop_toTopOf="@id/iv_best_image"
-            android:textAppearance="@style/TextAppearance.caption01" />
-
+            android:textAppearance="@style/TextAppearance.caption01"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_1"
+            app:layout_constraintTop_toTopOf="@id/iv_best_image_1" />
 
 
         <TextView
-            android:id="@+id/tv_best_title"
+            android:id="@+id/tv_best_title_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:includeFontPadding="false"
-            android:text="@{BestProductModel.postTitle}"
+            android:text="Q4 유로탑 롤팩 매트리..."
             android:textAppearance="@style/TextAppearance.miniCaption02"
-            app:layout_constraintBottom_toTopOf="@id/layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_best_image"
+            app:layout_constraintBottom_toTopOf="@id/layout_1"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_1"
+            app:layout_constraintTop_toBottomOf="@id/iv_best_image_1"
             tools:text="Q4 유로탑 롤팩 매트리..." />
 
         <LinearLayout
-            android:id="@+id/layout"
+            android:id="@+id/layout_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_best_title"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_best_title_1">
+
             <TextView
-                android:id="@+id/tv_best_discount"
+                android:id="@+id/tv_best_discount_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                tools:text="56%"
-                android:text="@{BestProductModel.discount}"
+                android:text="56%"
+                android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
-                android:textAppearance="@style/TextAppearance.caption01" />
+                tools:text="56%" />
 
             <TextView
-                android:id="@+id/tv_best_price"
+                android:id="@+id/tv_best_price_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"
-                android:text="@{BestProductModel.price}"
-                tools:text="34,900"
                 android:includeFontPadding="false"
+                android:text="34,900"
+                android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/black"
-                android:textAppearance="@style/TextAppearance.caption01" />
+                tools:text="34,900" />
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/iv_best_image_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_best"
+            app:layout_constraintEnd_toStartOf="@id/iv_best_image_3"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/iv_best_image_1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_best" />
+
+
+        <TextView
+            android:id="@+id/iv_best_ranking_2"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="93dp"
+            android:background="@drawable/rectanglewithcorner"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="2"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.caption01"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_2"
+            app:layout_constraintTop_toTopOf="@id/iv_best_image_2" />
+
+
+        <TextView
+            android:id="@+id/tv_best_title_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:includeFontPadding="false"
+            android:text="Q4 유로탑 롤팩 매트리..."
+            android:textAppearance="@style/TextAppearance.miniCaption02"
+            app:layout_constraintBottom_toTopOf="@id/layout_2"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_2"
+            app:layout_constraintTop_toBottomOf="@id/iv_best_image_2"
+            tools:text="Q4 유로탑 롤팩 매트리..." />
+
+        <LinearLayout
+            android:id="@+id/layout_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_2"
+            app:layout_constraintTop_toBottomOf="@id/tv_best_title_2">
+
+            <TextView
+                android:id="@+id/tv_best_discount_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:includeFontPadding="false"
+                android:text="56%"
+                android:textAppearance="@style/TextAppearance.caption01"
+                android:textColor="@color/main_color"
+                tools:text="56%" />
+
+            <TextView
+                android:id="@+id/tv_best_price_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="42dp"
+                android:includeFontPadding="false"
+                android:text="34,900"
+                android:textAppearance="@style/TextAppearance.caption01"
+                android:textColor="@color/black"
+                tools:text="34,900" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_best_image_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_best"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/iv_best_image_2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_best" />
+
+
+        <TextView
+            android:id="@+id/iv_best_ranking_3"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="93dp"
+            android:background="@drawable/rectanglewithcorner"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="3"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.caption01"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_3"
+            app:layout_constraintTop_toTopOf="@id/iv_best_image_3" />
+
+
+        <TextView
+            android:id="@+id/tv_best_title_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:includeFontPadding="false"
+            android:text="Q4 유로탑 롤팩 매트리..."
+            android:textAppearance="@style/TextAppearance.miniCaption02"
+            app:layout_constraintBottom_toTopOf="@id/layout_3"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_3"
+            app:layout_constraintTop_toBottomOf="@id/iv_best_image_3"
+            tools:text="Q4 유로탑 롤팩 매트리..." />
+
+        <LinearLayout
+            android:id="@+id/layout_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/iv_best_image_3"
+            app:layout_constraintTop_toBottomOf="@id/tv_best_title_3">
+
+            <TextView
+                android:id="@+id/tv_best_discount_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:includeFontPadding="false"
+                android:text="56%"
+                android:textAppearance="@style/TextAppearance.caption01"
+                android:textColor="@color/main_color"
+                tools:text="56%" />
+
+            <TextView
+                android:id="@+id/tv_best_price_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="42dp"
+                android:includeFontPadding="false"
+                android:text="34,900"
+                android:textAppearance="@style/TextAppearance.caption01"
+                android:textColor="@color/black"
+                tools:text="34,900" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

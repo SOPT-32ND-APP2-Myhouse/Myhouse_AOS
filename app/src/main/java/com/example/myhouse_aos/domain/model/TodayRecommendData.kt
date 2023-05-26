@@ -3,7 +3,7 @@ package com.example.myhouse_aos.domain.model
 import androidx.annotation.DrawableRes
 
 data class TodayRecommendData(
-    val todayrecommend_id: Int,
+    val todayrecommendId: Int,
     @DrawableRes val image: Int,
     val manufacture: String,
     val product: String,
