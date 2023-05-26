@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Myhouse_AOS</string>
 
+    <!--  content  -->
     <string name="home">홈</string>
     <string name="todayfind">오늘의 발견</string>
     <string name="shopping">쇼핑</string>
@@ -16,9 +17,10 @@
     <string name="nickname">nickname</string>
     <string name="created_date">created_date</string>
     <string name="option_tag">option_tag</string>
-    <string name="like">좋아요</string>
-    <string name="scrap">스크랩</string>
-    <string name="comment">댓글</string>
+    <string name="like">좋아요 %d</string>
+    <string name="scrap">스크랩 %d</string>
+    <string name="comment">댓글 %d</string>
+    <string name="view">조회수 %d</string>
     <string name="user_comment">와 너무 예뻐요</string>
     <string name="back">back</string>
     <string name="more">more</string>
@@ -51,6 +53,7 @@
         <item>식품</item>
     </string-array>
     <string name="string_home_discount_percent">%s%%</string>
+
     <!--  post  -->
     <string name="hint_search">오늘의집 통합검색</string>
     <string name="post_tab_recommandation">추천</string>
@@ -68,6 +71,7 @@
     <string name="scraped">스크랩했습니다.</string>
     <string name="btn_folder">폴더에 담기</string>
     <string name="btn_scrapbook">스크랩북 보기</string>
+
     <!--    bottom sheet-->
     <string name="tv_btsheet_title">폴더 선택</string>
     <string name="tv_btsheet_1">새로운 폴더 추가하기</string>
