@@ -4,48 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="RecommendHomeModel"
             type="com.example.myhouse_aos.domain.model.RecommendHomeModel" />
     </data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="3dp"
+        android:layout_marginBottom="7dp">
+
+        <ImageView
+            android:id="@+id/iv_home_recommend_image"
+            imageUrl="@{RecommendHomeModel.imageUrl}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/Radius4"
+            tools:src="@drawable/img_recommend_home" />
+
+        <ImageView
+            android:id="@+id/iv_home_recommend_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="13dp"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_home_recommend_image"
+            app:layout_constraintEnd_toEndOf="@+id/iv_home_recommend_image" />
+
+        <TextView
+            android:id="@+id/iv_home_recommend_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="3dp"
-            android:layout_marginBottom="7dp">
-
-            <ImageView
-                android:id="@+id/iv_home_recommend_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                imageUrl="@{RecommendHomeModel.imageUrl}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:shapeAppearanceOverlay="@style/Radius4"
-                tools:src="@drawable/img_recommend_home" />
-
-            <ImageView
-                android:id="@+id/iv_home_recommend_bookmark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="13dp"
-                android:src="@drawable/ic_bookmark"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_home_recommend_image"
-                app:layout_constraintEnd_toEndOf="@+id/iv_home_recommend_image" />
-
-            <TextView
-                android:id="@+id/iv_home_recommend_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:text="@{RecommendHomeModel.title}"
-                android:includeFontPadding="false"
-                tools:text="소형평수반려묘를 위한 아이디\n어! 24평 구축 리모델링"
-                android:textAppearance="@style/TextAppearance.caption02"
-                app:layout_constraintEnd_toEndOf="@id/iv_home_recommend_image"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_home_recommend_image" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="7dp"
+            android:includeFontPadding="false"
+            android:text="@{RecommendHomeModel.title}"
+            android:textAppearance="@style/TextAppearance.caption02"
+            app:layout_constraintEnd_toEndOf="@id/iv_home_recommend_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_recommend_image"
+            tools:text="소형평수반려묘를 위한 아이디\n어! 24평 구축 리모델링" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
