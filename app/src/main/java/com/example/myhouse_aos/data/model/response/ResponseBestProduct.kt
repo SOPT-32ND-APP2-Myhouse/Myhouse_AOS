@@ -2,7 +2,6 @@ package com.example.myhouse_aos.data.model.response
 
 
 import com.example.myhouse_aos.domain.model.BestProductModel
-import com.example.myhouse_aos.domain.model.PopularContentsModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

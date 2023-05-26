@@ -10,7 +10,10 @@ import com.example.myhouse_aos.data.repository.GetBestProductRepositoryImpl
 import com.example.myhouse_aos.data.repository.GetPopularContentsRespositoryImpl
 import com.example.myhouse_aos.data.repository.GetRecommendHomeRepositoryImpl
 import com.example.myhouse_aos.data.service.AuthState
-import com.example.myhouse_aos.domain.model.*
+import com.example.myhouse_aos.domain.model.BestProductModel
+import com.example.myhouse_aos.domain.model.ContentsData
+import com.example.myhouse_aos.domain.model.PopularContentsModel
+import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import kotlinx.coroutines.launch
 
 class HomeViewModel(

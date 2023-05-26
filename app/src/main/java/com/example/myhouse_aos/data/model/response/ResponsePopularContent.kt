@@ -6,7 +6,7 @@ import com.example.myhouse_aos.domain.model.PostContent
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@kotlinx.serialization.Serializable
+@Serializable
 data class ResponsePopularContent(
     val status: Int,
     val success: Boolean,

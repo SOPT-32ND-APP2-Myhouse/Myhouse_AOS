@@ -11,7 +11,6 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -144,11 +143,11 @@
 
             <TextView
                 android:id="@+id/tv_best_discount_2"
+                discount="@{BestProductModel.discount}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                discount="@{BestProductModel.discount}"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
@@ -219,11 +218,11 @@
 
             <TextView
                 android:id="@+id/tv_best_discount_3"
+                discount="@{BestProductModel.discount}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:includeFontPadding="false"
-                discount="@{BestProductModel.discount}"
                 android:textAppearance="@style/TextAppearance.caption01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
