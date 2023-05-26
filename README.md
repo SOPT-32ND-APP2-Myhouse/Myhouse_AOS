@@ -2,7 +2,8 @@
 
 ## 📷Video📷
 
-https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_AOS/assets/81434152/9e5fa2fa-259d-412e-bb12-44465e42392c
+
+https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_AOS/assets/81434152/31704cc0-24b2-4a79-bdbd-d64e413f6c6f
 
 
 
