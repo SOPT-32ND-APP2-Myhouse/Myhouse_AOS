@@ -1,6 +1,5 @@
 package com.example.myhouse_aos.presentation.home
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -49,25 +48,25 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
         val behavior = (dialog as BottomSheetDialog).behavior
         behavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
-        binding.ivBottomCell1.setOnClickListener {
+        binding.layoutFolderAdd.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(1, imageUrl)
             dismiss()
             SuccessSnackBar(rootView).show()
         }
-        binding.ivBottomCell2.setOnClickListener {
+        binding.layoutFolderInterior.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(2, imageUrl)
             dismiss()
             SuccessSnackBar(rootView).show()
         }
-        binding.ivBottomCell3.setOnClickListener {
+        binding.layoutFolderHousewarming.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(3, imageUrl)
             dismiss()
             SuccessSnackBar(rootView).show()
         }
-        binding.ivBottomCell4.setOnClickListener {
+        binding.layoutFolderTip.setOnClickListener {
             Log.e("test log", "isSuccessful")
             addFolder(4, imageUrl)
             dismiss()
