@@ -1,9 +1,8 @@
 package com.example.myhouse_aos.domain.model
 
-import androidx.annotation.DrawableRes
-
 data class PostContent(
+    val postRate: Int?,
     val postId: Int,
-    @DrawableRes val image: Int,
+    val image: Any?,
     val title: String,
 )
