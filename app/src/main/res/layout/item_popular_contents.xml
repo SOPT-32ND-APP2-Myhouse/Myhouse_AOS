@@ -50,7 +50,7 @@
             android:includeFontPadding="false"
             android:text="@{PopularContentsModel.title}"
             android:textAppearance="@style/TextAppearance.caption02"
-            android:textColor="@color/main_color"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_home_popular_image" />
