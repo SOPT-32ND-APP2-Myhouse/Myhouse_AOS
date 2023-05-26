@@ -12,6 +12,7 @@ import com.example.myhouse_aos.util.extension.ItemDiffCallback
 class ItemContentDetailAdapter(
     private val showScrapSnackBar: (String) -> Unit,
     private val scrapContent: (String) -> Unit,
+    private val addFolder: (Int, String) -> Unit,
 ) :
     ListAdapter<ResponseContentDetailDto.Data.Image, ItemContentDetailAdapter.ItemContentDetailViewHolder>(
         ItemDiffCallback<ResponseContentDetailDto.Data.Image>(
@@ -26,6 +27,7 @@ class ItemContentDetailAdapter(
             data: ResponseContentDetailDto.Data.Image,
             showScrapSnackBar: (String) -> Unit,
             scrapContent: (String) -> Unit,
+            addFolder: (Int, String) -> Unit,
         ) {
             binding.data = data
 
@@ -39,6 +41,7 @@ class ItemContentDetailAdapter(
                 } else {
                     scrapContent(data.imageUrl)
                     showScrapSnackBar(data.imageUrl)
+                    addFolder(1, data.imageUrl)
                     binding.btnItemContentdetailScrap.isSelected = true
                 }
             }
@@ -52,6 +55,6 @@ class ItemContentDetailAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemContentDetailViewHolder, position: Int) {
-        holder.onBind(getItem(position), showScrapSnackBar, scrapContent)
+        holder.onBind(getItem(position), showScrapSnackBar, scrapContent, addFolder)
     }
 }

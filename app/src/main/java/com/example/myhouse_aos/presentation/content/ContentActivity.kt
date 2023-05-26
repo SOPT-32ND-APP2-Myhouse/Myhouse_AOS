@@ -2,18 +2,18 @@ package com.example.myhouse_aos.presentation.content
 
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import com.example.myhouse_aos.R
 import com.example.myhouse_aos.databinding.ActivityContentBinding
 import com.example.myhouse_aos.presentation.content.adapter.*
 import com.example.myhouse_aos.presentation.home.BottomSheetDialog
+import com.example.myhouse_aos.util.binding.BindingActivity
 import com.example.myhouse_aos.util.snackbar.ScrapSnackBar
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 
-class ContentActivity : AppCompatActivity() {
-    lateinit var binding: ActivityContentBinding
+class ContentActivity : BindingActivity<ActivityContentBinding>(R.layout.activity_content) {
     private val viewModel: ContentViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,8 @@ class ContentActivity : AppCompatActivity() {
         viewModel.completeGetUsers()
 
 
-        val contentDetailAdapter = ItemContentDetailAdapter(::showScrapSnackBar, ::scrapContent)
+        val contentDetailAdapter =
+            ItemContentDetailAdapter(::showScrapSnackBar, ::scrapContent, ::addFolder)
         binding.rvContentDetail.adapter = contentDetailAdapter
 
 
@@ -66,7 +67,11 @@ class ContentActivity : AppCompatActivity() {
 
     }
 
-    private fun scrapContent(imageUrl: String){
+    private fun addFolder(id: Int, imageUrl: String) {
+        viewModel.addFolder(id, imageUrl)
+    }
+
+    private fun scrapContent(imageUrl: String) {
         viewModel.scrap(imageUrl)
     }
 
@@ -77,7 +82,7 @@ class ContentActivity : AppCompatActivity() {
     }
 
     private fun showFolderBottomSheet(imageUrl: String) {
-        val bottomSheetDialog = BottomSheetDialog.newInstance(imageUrl)
+        val bottomSheetDialog = BottomSheetDialog.newInstance(imageUrl, viewModel)
         bottomSheetDialog.show(this.supportFragmentManager, bottomSheetDialog.tag)
     }
 
