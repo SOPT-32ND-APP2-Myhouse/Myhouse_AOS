@@ -9,11 +9,11 @@ class GetRecommendHomeRepositoryImpl(private val getRecommendHomeDataSource: Get
     override suspend fun getRecommendHome(): Result<RecommendHomeModel> =
         runCatching {
             RecommendHomeModel(
-                postId = getRecommendHomeDataSource.getRecommendHome().data.post.post_id,
+                postId = getRecommendHomeDataSource.getRecommendHome().data.post.postId,
                 tag = getRecommendHomeDataSource.getRecommendHome().data.post.tag,
-                userName = getRecommendHomeDataSource.getRecommendHome().data.post.user_name,
+                userName = getRecommendHomeDataSource.getRecommendHome().data.post.userName,
                 title = getRecommendHomeDataSource.getRecommendHome().data.post.title,
-                imageUrl = getRecommendHomeDataSource.getRecommendHome().data.post.image_url
+                imageUrl = getRecommendHomeDataSource.getRecommendHome().data.post.imageUrl
             )
         }
 }
