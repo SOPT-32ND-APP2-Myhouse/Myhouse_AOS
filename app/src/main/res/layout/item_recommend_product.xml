@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="@{BestProductModel.discount.toString()}"
+                discount="@{BestProductModel.discount}"
                 android:textAppearance="@style/TextAppearance.title01"
                 android:textColor="@color/main_color"
                 tools:text="56%" />
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:includeFontPadding="false"
-                android:text="@{BestProductModel.price.toString()}"
+                priceAmount="@{BestProductModel.price}"
                 android:textAppearance="@style/TextAppearance.title01"
                 android:textColor="@color/black"
                 tools:text="34,900" />
