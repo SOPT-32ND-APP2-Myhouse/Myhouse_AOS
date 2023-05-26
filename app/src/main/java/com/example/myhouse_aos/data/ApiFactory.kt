@@ -1,6 +1,7 @@
 package com.example.myhouse_aos.data
 
 import com.example.myhouse_aos.BuildConfig
+import com.example.myhouse_aos.data.service.PostService
 import com.example.myhouse_aos.data.service.AddFolderService
 import com.example.myhouse_aos.data.service.DeleteScrapService
 import com.example.myhouse_aos.data.service.GetContentDetailService
@@ -30,6 +31,7 @@ object ApiFactory {
 }
 
 object ServicePool {
+    val postContentService = ApiFactory.create<PostService>()
     val scrapService = ApiFactory.create<ScrapService>()
     val getContentDetailService = ApiFactory.create<GetContentDetailService>()
     val deleteScrapService = ApiFactory.create<DeleteScrapService>()
