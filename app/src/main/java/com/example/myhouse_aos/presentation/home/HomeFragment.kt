@@ -13,8 +13,6 @@ import com.example.myhouse_aos.domain.model.RecommendHomeModel
 import com.example.myhouse_aos.presentation.common.ViewModelFactory
 import com.example.myhouse_aos.util.binding.BindingFragment
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -38,7 +36,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
         initBestTab()
         initAdapter()
         getPopularContentsData()
-        //getBestProductData()
         getRecommendHomeData()
         getRecommendProduct()
         getModernInterior()
@@ -53,16 +50,16 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
 
     }
 
-    private fun getPopularContentsData(){
+    private fun getPopularContentsData() {
         viewModel.getListState.observe(viewLifecycleOwner) { getListState ->
-            if(getListState == AuthState.SUCCESS){
+            if (getListState == AuthState.SUCCESS) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     viewModel.popularContentsList?.let { contentsList ->
                         popularContentsAdapter.submitList(contentsList)
                         Log.e("success", contentsList.toString())
                     }
                 }
-            }else{
+            } else {
                 Log.e("fail", "fail")
             }
         }
