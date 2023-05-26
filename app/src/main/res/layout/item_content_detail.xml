@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="com.example.myhouse_aos.domain.model.ContentDetailData.Images" />
+            type="com.example.myhouse_aos.data.model.response.ResponseContentDetailDto.Data.Image" />
 
     </data>
 
@@ -23,7 +23,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:layout_marginTop="16dp"
-            android:src="@{context.getDrawable(data.image)}"
+            imageUrl="@{data.imageUrl}"
             app:layout_constraintBottom_toTopOf="@id/iv_item_contentdetail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

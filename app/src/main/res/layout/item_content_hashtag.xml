@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="data"
             type="com.example.myhouse_aos.domain.model.HashTagData" />
@@ -13,16 +14,16 @@
         android:id="@+id/tv_item_contenthashtag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background ="@drawable/round"
-        android:textColor="@color/dark_grey"
-        android:paddingHorizontal="10dp"
-        android:paddingTop ="4dp"
-        android:paddingBottom="5dp"
-        android:includeFontPadding="false"
-        android:theme="@style/TextAppearance.body01"
-        android:layout_marginEnd="6dp"
         android:layout_marginTop="6dp"
-        android:text="@{data.hash_tag}"
-        tools:text = "#취미일상"/>
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/round"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="5dp"
+        android:text="@{data.hashTag}"
+        android:textColor="@color/dark_grey"
+        android:theme="@style/TextAppearance.body01"
+        tools:text="#취미일상" />
 
 </layout>

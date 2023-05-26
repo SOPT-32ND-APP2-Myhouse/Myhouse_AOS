@@ -8,7 +8,7 @@ import com.example.myhouse_aos.databinding.ItemBestBinding
 import com.example.myhouse_aos.domain.model.BestProductModel
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
 
-class BestAdapter : ListAdapter<BestProductModel, BestAdapter.ContentViewHolder>(
+class BestAdapter() : ListAdapter<BestProductModel, BestAdapter.ContentViewHolder>(
     ItemDiffCallback<BestProductModel>(
         onItemsTheSame = { old, new -> old.imageUrl == new.imageUrl },
         onContentsTheSame = { old, new -> old == new }

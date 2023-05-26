@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.myhouse_aos.presentation.scrap.ScrapViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
