@@ -1,7 +1,9 @@
 # 🏠Myhouse_AOS🏠
 
 ## 📷Video📷
-https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_AOS/assets/77060011/038f0a92-e28d-4161-ae33-f0769a85143e
+https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_AOS/assets/77060011/4bdf25b3-b75a-433a-b529-55f7d0bfebe4
+
+9a85143e
 
 ## 💙Contributors💙
 |                                         [@Dani43](https://github.com/Dan2dani)                                         | [@sxunea](https://github.com/sxunea) | [@Sangwook123](https://github.com/Sangwook123) |
