@@ -50,7 +50,7 @@
         <item>주방용품</item>
         <item>식품</item>
     </string-array>
-
+    <string name="string_home_discount_percent">%s%%</string>
     <!--  post  -->
     <string name="hint_search">오늘의집 통합검색</string>
     <string name="post_tab_recommandation">추천</string>
