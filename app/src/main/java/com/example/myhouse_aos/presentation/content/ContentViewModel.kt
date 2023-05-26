@@ -8,77 +8,23 @@ import com.example.myhouse_aos.R
 import com.example.myhouse_aos.data.ServicePool
 import com.example.myhouse_aos.data.model.request.RequestScrapDto
 import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
-import com.example.myhouse_aos.data.model.response.ResponseDeleteScrapDto
 import com.example.myhouse_aos.data.model.response.ResponseScrapDto
-import com.example.myhouse_aos.domain.model.*
+import com.example.myhouse_aos.domain.model.HashTagData
+import com.example.myhouse_aos.domain.model.TodayRecommendData
+import com.example.myhouse_aos.domain.model.UserBestData
+import com.example.myhouse_aos.domain.model.UserimageData
 import retrofit2.Call
 import retrofit2.Response
 
 class ContentViewModel : ViewModel() {
+    private val getContentDetailService = ServicePool.getContentDetailService
+    private val scrapService = ServicePool.scrapService
+
     private val _contentDetailResult: MutableLiveData<ResponseContentDetailDto> = MutableLiveData()
     val contentDetailResult: LiveData<ResponseContentDetailDto> = _contentDetailResult
 
     private val _scrapResult: MutableLiveData<ResponseScrapDto> = MutableLiveData()
     val scrapResult: LiveData<ResponseScrapDto> = _scrapResult
-
-    private val _scrapDeleteResult: MutableLiveData<ResponseDeleteScrapDto> = MutableLiveData()
-    val scrapDeleteResult: LiveData<ResponseDeleteScrapDto> = _scrapDeleteResult
-
-    val contentDetail = ContentDetailData(
-        1,
-        "nickname",
-        "2023-05-19",
-        "20평대 | 내추럴스타일 | 아파트",
-        "#취미일상 #6평 #원룸 #오피스텔 #방꾸미기 #홈테코 #홈스타일링 #인테리어",
-        "좋아요  90",
-        "스크랩  598",
-        "댓글  7",
-        "조회수  27,764"
-    )
-    val ContentDetailList = listOf(
-        ContentDetailData.Images(
-            imageId = 1,
-            image = R.drawable.content_detail_card,
-            content = "식물들 창가로 몰아주기"
-        ),
-        ContentDetailData.Images(
-            imageId = 2,
-            image = R.drawable.content_detail_card,
-            content = null
-        ),
-        ContentDetailData.Images(
-            imageId = 3,
-            image = R.drawable.content_detail_card,
-            content = null
-        )
-    )
-
-    val hashTagList = listOf(
-        HashTagData(
-            hashTag = "#취미일상"
-        ),
-        HashTagData(
-            hashTag = "#6평"
-        ),
-        HashTagData(
-            hashTag = "#원룸"
-        ),
-        HashTagData(
-            hashTag = "#오피스텔"
-        ),
-        HashTagData(
-            hashTag = "#방꾸미기"
-        ),
-        HashTagData(
-            hashTag = "#홈테코"
-        ),
-        HashTagData(
-            hashTag = "#홈스타일링"
-        ),
-        HashTagData(
-            hashTag = "#인테리어"
-        )
-    )
 
     val userimageList = listOf(
         UserimageData(
@@ -146,7 +92,6 @@ class ContentViewModel : ViewModel() {
         )
     )
 
-    private val getContentDetailService = ServicePool.getContentDetailService
     fun completeGetUsers() {
         getContentDetailService.get()
             .enqueue(object : retrofit2.Callback<ResponseContentDetailDto> {
@@ -176,7 +121,6 @@ class ContentViewModel : ViewModel() {
         }.toList()
     }
 
-    val scrapService = ServicePool.scrapService
     fun scrap(image_url: String) {
         scrapService.scrap(RequestScrapDto(image_url))
             .enqueue(object : retrofit2.Callback<ResponseScrapDto> {
@@ -194,29 +138,6 @@ class ContentViewModel : ViewModel() {
                 }
 
                 override fun onFailure(call: Call<ResponseScrapDto>, t: Throwable) {
-                    Log.e("test log", "onFailure", t)
-                }
-            })
-    }
-
-    val deleteScrapService = ServicePool.deleteScrapService
-    fun deleteScrap(image_id: Int) {
-        deleteScrapService.delete(image_id)
-            .enqueue(object : retrofit2.Callback<ResponseDeleteScrapDto> {
-                override fun onResponse(
-                    call: Call<ResponseDeleteScrapDto>,
-                    response: Response<ResponseDeleteScrapDto>,
-                ) {
-                    if (response.isSuccessful) {
-                        _scrapDeleteResult.value = response.body()
-                        Log.e("test log", "isSuccessful")
-
-                    } else {
-                        Log.e("test log", "isnotSuccessful")
-                    }
-                }
-
-                override fun onFailure(call: Call<ResponseDeleteScrapDto>, t: Throwable) {
                     Log.e("test log", "onFailure", t)
                 }
             })

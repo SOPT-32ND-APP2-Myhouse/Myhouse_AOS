@@ -8,11 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myhouse_aos.data.model.response.ResponseContentDetailDto
 import com.example.myhouse_aos.databinding.ItemContentDetailBinding
 import com.example.myhouse_aos.util.extension.ItemDiffCallback
-import com.example.myhouse_aos.presentation.content.ContentViewModel as ContentViewModel
 
 class ItemContentDetailAdapter(
-    val showScrapSnackBar: (String) -> Unit,
-    val contentViewModel: ContentViewModel
+    private val showScrapSnackBar: (String) -> Unit,
+    private val scrapContent: (String) -> Unit,
 ) :
     ListAdapter<ResponseContentDetailDto.Data.Image, ItemContentDetailAdapter.ItemContentDetailViewHolder>(
         ItemDiffCallback<ResponseContentDetailDto.Data.Image>(
@@ -26,7 +25,7 @@ class ItemContentDetailAdapter(
         fun onBind(
             data: ResponseContentDetailDto.Data.Image,
             showScrapSnackBar: (String) -> Unit,
-            contentViewModel: ContentViewModel,
+            scrapContent: (String) -> Unit,
         ) {
             binding.data = data
 
@@ -38,15 +37,11 @@ class ItemContentDetailAdapter(
                 if (binding.btnItemContentdetailScrap.isSelected) {
                     binding.btnItemContentdetailScrap.isSelected = false
                 } else {
-                    contentViewModel.scrap(data.imageUrl)
+                    scrapContent(data.imageUrl)
+                    showScrapSnackBar(data.imageUrl)
                     binding.btnItemContentdetailScrap.isSelected = true
                 }
             }
-
-            contentViewModel.scrapResult.observeForever { scrapResult ->
-                showScrapSnackBar(data.imageUrl)
-            }
-
         }
     }
 
@@ -57,6 +52,6 @@ class ItemContentDetailAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemContentDetailViewHolder, position: Int) {
-        holder.onBind(getItem(position), showScrapSnackBar, contentViewModel)
+        holder.onBind(getItem(position), showScrapSnackBar, scrapContent)
     }
 }

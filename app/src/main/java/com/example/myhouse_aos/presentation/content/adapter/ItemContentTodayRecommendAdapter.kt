@@ -24,11 +24,7 @@ class ItemContentTodayRecommendAdapter(
             binding.data = data
 
             binding.btnItemContentTodayrecommendBookmark.setOnClickListener {
-                if (binding.btnItemContentTodayrecommendBookmark.isSelected) {
-                    binding.btnItemContentTodayrecommendBookmark.isSelected = false
-                } else {
-                    binding.btnItemContentTodayrecommendBookmark.isSelected = true
-                }
+                binding.btnItemContentTodayrecommendBookmark.isSelected = !binding.btnItemContentTodayrecommendBookmark.isSelected
             }
         }
     }
