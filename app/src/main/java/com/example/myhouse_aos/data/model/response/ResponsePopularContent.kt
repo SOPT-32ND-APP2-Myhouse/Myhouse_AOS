@@ -1,8 +1,6 @@
 package com.example.myhouse_aos.data.model.response
 
-import androidx.annotation.DrawableRes
 import com.example.myhouse_aos.domain.model.PopularContentsModel
-import com.example.myhouse_aos.domain.model.PostContent
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -22,7 +20,7 @@ data class ResponsePopularContent(
         @SerialName("title")
         val title: String,
         @SerialName("subtitle")
-        val subtitle: String,
+        val subTitle: String,
         @SerialName("rate")
         val rate: Int,
     )
@@ -33,7 +31,7 @@ data class ResponsePopularContent(
             image = content.image,
             postId = content.postId,
             title = content.title,
-            subTitle = content.subtitle
+            subTitle = content.subTitle
         )
     }
 }

@@ -18,13 +18,13 @@ data class ResponseRecommendHome(
         @Serializable
         data class Post(
             @SerialName("image_url")
-            val image_url: String,
+            val imageUrl: String,
             @SerialName("post_id")
-            val post_id: Int,
+            val postId: Int,
             @SerialName("title")
             val title: String,
             @SerialName("user_name")
-            val user_name: String,
+            val userName: String,
             @SerialName("tag")
             val tag: String,
         )
@@ -33,9 +33,9 @@ data class ResponseRecommendHome(
     fun toRecommendHomeModel(post: Data.Post): RecommendHomeModel {
         return RecommendHomeModel(
             tag = post.tag,
-            userName = post.user_name,
-            postId = post.post_id,
-            imageUrl = post.image_url,
+            userName = post.userName,
+            postId = post.postId,
+            imageUrl = post.imageUrl,
             title = post.title
         )
     }

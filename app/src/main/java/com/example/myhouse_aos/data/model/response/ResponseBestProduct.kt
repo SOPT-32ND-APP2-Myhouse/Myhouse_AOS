@@ -15,9 +15,9 @@ data class ResponseBestProduct(
     @Serializable
     data class Data(
         @SerialName("image_url")
-        val image_url: String?,
+        val imageUrl: String?,
         @SerialName("post_title")
-        val post_title: String,
+        val postTitle: String,
         @SerialName("category")
         val category: String,
         @SerialName("discount")
@@ -25,7 +25,7 @@ data class ResponseBestProduct(
         @SerialName("price")
         val price: Long,
         @SerialName("reviews_count")
-        val reviews_count: Long,
+        val reviewsCount: Long,
         @SerialName("rate")
         val rate: Double,
         @SerialName("rank")
@@ -35,11 +35,11 @@ data class ResponseBestProduct(
     fun toBestProductModel() = data.map { content ->
         BestProductModel(
             rank = content.rank,
-            brand = content.post_title,
-            imageUrl = content.image_url,
+            brand = content.postTitle,
+            imageUrl = content.imageUrl,
             discount = content.discount,
             price = content.price,
-            postTitle = content.post_title
+            postTitle = content.postTitle
         )
     }
 }
