@@ -30,8 +30,8 @@ object ApiFactory {
 }
 
 object ServicePool {
+    val scrapService = ApiFactory.create<ScrapService>()
     val getContentDetailService = ApiFactory.create<GetContentDetailService>()
     val deleteScrapService = ApiFactory.create<DeleteScrapService>()
-    val ScrapService = ApiFactory.create<ScrapService>()
     val addFolderService = ApiFactory.create<AddFolderService>()
 }

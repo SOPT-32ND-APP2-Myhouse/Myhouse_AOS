@@ -176,7 +176,7 @@ class ContentViewModel : ViewModel() {
         }.toList()
     }
 
-    val scrapService = ServicePool.ScrapService
+    val scrapService = ServicePool.scrapService
     fun scrap(image_url: String) {
         scrapService.scrap(RequestScrapDto(image_url))
             .enqueue(object : retrofit2.Callback<ResponseScrapDto> {
