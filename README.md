@@ -1,7 +1,9 @@
 # 🏠Myhouse_AOS🏠
 
 ## 📷Video📷
-https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_AOS/assets/77060011/4bdf25b3-b75a-433a-b529-55f7d0bfebe4
+
+https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_AOS/assets/81434152/9e5fa2fa-259d-412e-bb12-44465e42392c
+
 
 애뮬이 살짝 오락가락해서,,가끔 초록화면이 생기네용 ㅜㅜ 확대해서 보면 정상적이게 나옵니다!
 
